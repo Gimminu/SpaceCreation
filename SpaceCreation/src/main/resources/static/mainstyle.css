@@ -22,10 +22,12 @@
     --pale-orange: #FFE0B2;
 }
 
-body {
+html, body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--medium-beige);
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 .navbar-light-beige {
@@ -83,22 +85,16 @@ body {
     font : 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
     width : 33%
 }
-
-
-.carousel {
+.carousel,
+.carousel-inner,
+.carousel-item,
+.carousel-img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     height: 480px;
 }
 
-.carousel-inner {
-    height: 100%;
-}
-
-.carousel-item {
-    height: 100%;
-}
-
 .carousel-img {
-    height: 100%;
     object-fit: cover;
-    width: 100%;
 }

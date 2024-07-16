@@ -40,4 +40,4 @@ application-private.properties
 
 #### asset image file ###
 # Ignore assert directory
-/assert/
+/images/
