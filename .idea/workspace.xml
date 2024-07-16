@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e29fc5a5-4cbc-445e-ab98-6ad83f418ca0" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/images/interior (1).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/images/interior (2).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/images/interior (3).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/mainstyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/View/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main~1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main~1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test~1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test~1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,34 +74,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Gradle.SpaceCreation 빌드.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.SpaceCreationApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Gradle.SpaceCreation 빌드.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.SpaceCreationApplication.executor": "Run",
+    "git-widget-placeholder": "practice-gimiminu",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/jingj/OneDrive/문서/GitHub/SpaceCreation/SpaceCreation/src/main/java/com/aws/spacecreation",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates" />
+      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\java\com\aws\spacecreation" />
       <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources" />
+      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\static\images" />
+      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates\layout\fragments" />
       <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates" />
     </key>
   </component>
@@ -128,6 +146,7 @@
       <workItem from="1720844862233" duration="663000" />
       <workItem from="1720850394915" duration="2705000" />
       <workItem from="1720864528656" duration="43000" />
+      <workItem from="1721040104378" duration="15937000" />
     </task>
     <servers />
   </component>
