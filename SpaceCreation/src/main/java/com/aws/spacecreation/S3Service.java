@@ -1,7 +1,6 @@
 package com.aws.spacecreation;
 
 import com.amazonaws.services.s3.AmazonS3;
-
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import lombok.RequiredArgsConstructor;
