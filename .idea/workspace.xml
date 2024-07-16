@@ -5,24 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e29fc5a5-4cbc-445e-ab98-6ad83f418ca0" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/images/interior (1).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/images/interior (2).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/images/interior (3).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/mainstyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/View/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main~1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main~1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test~1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test~1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/QuestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/mainstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/mainstyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/Form_errors.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/Form_errors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/View/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/login_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/login_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/question_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/question/question_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/question_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/question/question_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/question/question_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/signup_form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +60,9 @@
     &quot;accountId&quot;: &quot;0714b49a-b5fd-49d9-ba6b-1b0bd1a0b906&quot;
   }
 }</component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -85,7 +82,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.SpaceCreationApplication.executor": "Run",
-    "git-widget-placeholder": "practice-gimiminu",
+    "git-widget-placeholder": "practice-gimminu",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/jingj/OneDrive/문서/GitHub/SpaceCreation/SpaceCreation/src/main/java/com/aws/spacecreation",
     "node.js.detected.package.eslint": "true",
@@ -104,6 +101,8 @@
       <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates\View\question" />
+      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates\View" />
       <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\static\images" />
       <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates\layout\fragments" />
       <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates" />
@@ -147,6 +146,7 @@
       <workItem from="1720850394915" duration="2705000" />
       <workItem from="1720864528656" duration="43000" />
       <workItem from="1721040104378" duration="15937000" />
+      <workItem from="1721093655934" duration="949000" />
     </task>
     <servers />
   </component>

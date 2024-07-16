@@ -4,7 +4,7 @@ package com.aws.spacecreation.review;
 import java.io.IOException;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,15 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+@RequiredArgsConstructor
 @RequestMapping("/question")
 @Controller
 public class QuestionController {
-
-	@Autowired
-	private QuestionRepository questionRepository;
-	
-	@Autowired
-	private QuestionService questionService;
+	private final QuestionRepository questionRepository;
+	private final QuestionService questionService;
 	
 	@Value("${cloud.aws.s3.endpoint}")
 	private String downpath;
@@ -33,7 +30,7 @@ public class QuestionController {
     public String list(Model model) {
         List<Question> questionList = this.questionRepository.findAll();
         model.addAttribute("questionList", questionList);
-        return "question_list";
+        return "view/question/question_list";
     }
     
     //@GetMapping(value = "/question/detail/{id}")
@@ -44,12 +41,12 @@ public class QuestionController {
         model.addAttribute("question", question);
         model.addAttribute("downpath", "https://" + downpath);
 
-        return "question_detail";
+        return "view/question/question_detail";
     }
     
     @GetMapping("/create")
     public String questionCreate() {
-        return "question_form";
+        return "view/question/question_form";
     }
     
     @PostMapping("/create")
