@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html layout:decorate="~{layout/layout}">
 <div layout:fragment="content" class = container>
+    <h1 class="mb-4">소개 페이지</h1>
+    <p>회사페이지.</p>
 
+    <div id="adminSection" class="my-4" style="display: none;">
+        <button class="btn btn-primary" onclick="editPage()">페이지 수정</button>
+    </div>
+
+    <script>
+        function checkAdmin() {
+            const isAdmin = true;
+            if (isAdmin) {
+                document.getElementById('adminSection').style.display = 'block';
+            }
+        }
+
+        function editPage() {
+            alert('페이지 수정 기능을 구현하세요.');
+        }
+
+        window.onload = checkAdmin;
+    </script>
 </div>
 </html>

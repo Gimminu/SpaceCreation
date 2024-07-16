@@ -29,6 +29,9 @@ html, body {
     height: 100%;
     overflow-x: hidden;
 }
+body {
+    background-color: var(--light-pink);
+}
 
 .navbar-light-beige {
     background-color: var(--light-beige);
