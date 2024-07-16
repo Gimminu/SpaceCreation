@@ -16,14 +16,17 @@ import lombok.Data;
 @Entity
 public class ReviewReply {
 	@Id
-	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 private Integer id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 
-	 @Column(columnDefinition = "TEXT")
-	 private String content;
+	@Column
+	private String username;
 
-	 private LocalDateTime createDate; 
-	 
-	 @ManyToOne
-	 private Review review;
+	@Column(columnDefinition = "TEXT")
+	private String content;
+
+	private LocalDateTime createDate;
+
+	@ManyToOne
+	private Review review;
 }

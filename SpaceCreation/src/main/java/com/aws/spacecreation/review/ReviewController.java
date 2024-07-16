@@ -18,17 +18,17 @@ public class ReviewController {
 	@Autowired
 	private ReviewService reviewService;
 
-	@GetMapping("/review")
+	@GetMapping("")
 	public String review() {
-		return "review";
+		return "review_list";
 	}
 
-	@GetMapping("/review/create")
+	@GetMapping("/create")
 	public String create() {
 		return "review_create";
 	}
 	
-	@PostMapping("/review/create")
+	@PostMapping("/create")
 	public String create(@ModelAttribute Review review,
 			@RequestParam("file1") MultipartFile file1,
 			@RequestParam("file2") MultipartFile file2,

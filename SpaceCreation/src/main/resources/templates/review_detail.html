@@ -1,0 +1,43 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	
+		<h1 th:text="${review.subject}"></h1>
+	<div th:text="${review.content}"></div>
+	
+	<a th:href="@{|/review/delete/${review.id}|}" class="btn btn-danger" >삭제</a>
+	<a th:href="@{|/review/update/${review.id}|}" class="btn btn-primary" >수정</a>
+	
+	<h5 th:text="|${#lists.size(review.answerList)}개의 답변이 있습니다.|"></h5>
+	<div>
+	    <ul>
+	        <li th:each="answer : ${review.answerList}" th:text="${answer.content}"></li>
+	    </ul>
+	    			<img th:src="|${downpath}${review.image1}|" >
+	    			<img th:src="|${downpath}${review.image2}|" >
+	    			<img th:src="|${downpath}${review.image3}|" >
+	    
+	</div>
+	<form th:action="@{|/answer/create/${review.id}|}" method="post">
+	    <textarea name="content" id="summernote" rows="15"></textarea>
+	    <input type="submit" value="답변등록">
+	</form>
+	<script>
+      $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
+    </script>
+</div>
