@@ -2,13 +2,17 @@ package com.aws.spacecreation.review;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.aws.spacecreation.DataNotFoundException;
 import com.aws.spacecreation.S3Service;
+import com.mysite.sbb.question.Question;
 
 @Service
 public class ReviewService {
@@ -18,7 +22,8 @@ public class ReviewService {
 	@Autowired
 	private ReviewRepository reviewRepository;
 
-	public void create(Review review, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
+	public void create(Review review, MultipartFile file1, MultipartFile file2, MultipartFile file3)
+			throws IOException {
 		UUID uuid1 = UUID.randomUUID();
 		String fileName1 = uuid1 + "_" + file1.getOriginalFilename();
 		UUID uuid2 = UUID.randomUUID();
@@ -35,5 +40,22 @@ public class ReviewService {
 		review.setImage3(fileName2);
 		review.setImage3(fileName3);
 		this.reviewRepository.save(review);
+	}
+
+	public Review getReview(Integer id) {
+		Optional<Review> review = this.reviewRepository.findById(id);
+		if (review.isPresent()) {
+			return review.get();
+		} else {
+			throw new DataNotFoundException("review not found");
+		}
+	}
+	
+	public void delete(Integer id) {
+		reviewRepository.deleteById(id);
+	}
+	
+	public List<Review> searchkw(String kw){
+		return reviewRepository.findBySubjectLike("%"+kw+"%");
 	}
 }
