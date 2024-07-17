@@ -12,7 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.aws.spacecreation.DataNotFoundException;
 import com.aws.spacecreation.S3Service;
-import com.mysite.sbb.question.Question;
 
 @Service
 public class ReviewService {
