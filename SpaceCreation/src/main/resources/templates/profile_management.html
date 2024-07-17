@@ -1,0 +1,59 @@
+<html>
+<head>
+  <title>Profile update</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</head>
+<body style="background-color: #FFD5CD">
+  <div class="container" >
+    <div class="row px-3" >
+      <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+        <div class="img-left2 d-none d-md-flex" style="max-width:100%;"></div>
+
+        <div class="card-body" >
+          <h1 class="title text-center mt-4">
+            Profile
+          </h1>
+          <form class="form-box px-3" th:action="@{/user/update}" th:object="${userCreateForm}" method="post">
+            <div th:fragment="formErrorsFragment" class="alert alert-danger"
+                 role="alert" th:if="${#fields.hasAnyErrors()}">
+              <div th:each="err : ${#fields.allErrors()}" th:text="${err}"></div>
+            </div>
+            <div class="form-input">
+              <div style="font-size: small; margin-left: 20px; margin-bottom: 1px;">아이디</div>
+              <input type="text" th:field="*{username}" tabindex="10" readonly>
+            </div>
+            <div class="form-input">
+              <div style="font-size: small; margin-left: 20px; margin-bottom: 1px;">비밀번호 수정</div>
+              <input type="password" th:field="*{password1}" required>
+            </div>
+            <div class="form-input">
+              <div style="font-size: small; margin-left: 20px; margin-bottom: 1px;">비밀번호 확인</div>
+              <input type="password" th:field="*{password2}" required>
+            </div>
+            <div class="form-input">
+              <div style="font-size: small; margin-left: 20px; margin-bottom: 1px;">이메일 수정</div>
+              <input type="email" th:field="*{email}" required>
+            </div>
+
+            <div class="mb-3">
+              <input type="submit" class="btn btn-block text-uppercase" style="background-color: #F9813A" value="수정하기">
+            </div>
+          </form>
+            <hr class="my-4">
+
+            <div class="text-center mb-2">
+              <a th:href="@{/user/withdraw}" style=" color:black; font-size: small; text-decoration:underline;">
+                회원 탈퇴하기
+              </a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
