@@ -22,14 +22,14 @@ public class ReviewReplyController {
 	
 	private final ReviewReplyService reviewreplyService;
 	
-	@PostMapping("/create")
+	@PostMapping("/create/{id}")
 	public String create(Model model, @PathVariable("id") Integer id,
-			@RequestParam(value = "username") String username,
+//			@RequestParam(value = "username") String username,
 			@RequestParam(value = "content") String content)  {
 		Review review = this.reviewService.getReview(id);
-		reviewreplyService.create(review, username, content);
+		reviewreplyService.create(review,  content);
 
-		return "redirect:/review/${review.id}";
+		return String.format("redirect:/review/detail/%s", id);
 	}
 
 }

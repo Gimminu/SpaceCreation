@@ -10,17 +10,17 @@
 	<a th:href="@{|/review/delete/${review.id}|}" class="btn btn-danger" >삭제</a>
 	<a th:href="@{|/review/update/${review.id}|}" class="btn btn-primary" >수정</a>
 	
-	<h5 th:text="|${#lists.size(review.answerList)}개의 답변이 있습니다.|"></h5>
+	<h5 th:text="|${#lists.size(review.replyList)}개의 답변이 있습니다.|"></h5>
 	<div>
 	    <ul>
-	        <li th:each="answer : ${review.answerList}" th:text="${answer.content}"></li>
+	        <li th:each="reviewReply : ${review.replyList}" th:text="${reviewReply.content}"></li>
 	    </ul>
 	    			<img th:src="|${downpath}${review.image1}|" >
 	    			<img th:src="|${downpath}${review.image2}|" >
 	    			<img th:src="|${downpath}${review.image3}|" >
 	    
 	</div>
-	<form th:action="@{|/answer/create/${review.id}|}" method="post">
+	<form th:action="@{|/reply/create/${review.id}|}" method="post">
 	    <textarea name="content" id="summernote" rows="15"></textarea>
 	    <input type="submit" value="답변등록">
 	</form>

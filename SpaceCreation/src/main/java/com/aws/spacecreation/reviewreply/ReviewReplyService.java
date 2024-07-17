@@ -3,10 +3,12 @@ package com.aws.spacecreation.reviewreply;
 import java.time.LocalDateTime;
 
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import com.aws.spacecreation.review.Review;
 import com.aws.spacecreation.user.SiteUser;
+import com.aws.spacecreation.user.UserService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -14,19 +16,21 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class ReviewReplyService {
 	
+	private final JavaMailSender mailSender;
 	private final ReviewReplyRepository reviewReplyRepository;
+	private final UserService userService;
 	
-	public void create(Review review, String username, String content) {
+	public void create(Review review,  String content) {
 		
 		ReviewReply reviewReply = new ReviewReply();
 		
-		reviewReply.setUsername(username);
+//		reviewReply.setUsername(username);
 		reviewReply.setContent(content);
 		reviewReply.setCreateDate(LocalDateTime.now());
 		reviewReply.setReview(review);
 		this.reviewReplyRepository.save(reviewReply);
 		
-		SiteUser username = userService.authen();
+//		SiteUser postername = userService.authen();
 
 		SimpleMailMessage message = new SimpleMailMessage();
 

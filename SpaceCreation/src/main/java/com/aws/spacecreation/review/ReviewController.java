@@ -48,7 +48,7 @@ public class ReviewController {
 		Review review = this.reviewService.getReview(id);
 		model.addAttribute("review", review);
 		model.addAttribute("downpath", "https://" + downpath);
-		return "review_create";
+		return "review_detail";
 	}
 	
 	
