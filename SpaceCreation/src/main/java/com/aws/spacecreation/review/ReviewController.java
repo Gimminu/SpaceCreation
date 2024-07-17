@@ -36,10 +36,8 @@ public class ReviewController {
 	
 	@PostMapping("/create")
 	public String create(@ModelAttribute Review review,
-			@RequestParam("file1") MultipartFile file1,
-			@RequestParam("file2") MultipartFile file2,
-			@RequestParam("file3") MultipartFile file3) throws IOException {
-		reviewService.create(review,file1,file2,file3);
+			@RequestParam("file") MultipartFile file) throws IOException {
+		reviewService.create(review,file);
 		return"redirect:/review";
 	}
 	

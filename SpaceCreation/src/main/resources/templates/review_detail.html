@@ -15,9 +15,9 @@
 	    <ul>
 	        <li th:each="reviewReply : ${review.replyList}" th:text="${reviewReply.content}"></li>
 	    </ul>
-	    			<img th:src="|${downpath}${review.image1}|" >
-	    			<img th:src="|${downpath}${review.image2}|" >
-	    			<img th:src="|${downpath}${review.image3}|" >
+	    			<img th:src="|${downpath}/${review.image1}|" >
+	    			<img th:src="|${downpath}/${review.image2}|" >
+	    			<img th:src="|${downpath}/${review.image3}|" >
 	    
 	</div>
 	<form th:action="@{|/reply/create/${review.id}|}" method="post">

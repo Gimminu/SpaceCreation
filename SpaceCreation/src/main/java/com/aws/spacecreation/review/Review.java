@@ -35,9 +35,8 @@ public class Review {
 
     private LocalDateTime createDate;
     
-    private String image1;
-    private String image2;
-    private String image3;
+    private String image;
+   
     
     @OneToMany(mappedBy="review" , cascade = CascadeType.REMOVE)
     private List<ReviewReply> replyList;
