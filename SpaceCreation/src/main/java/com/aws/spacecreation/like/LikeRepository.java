@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.aws.spacecreation.review.Review;
 
-public interface LikeRepository extends JpaRepository<Like, Integer> {
-	Optional<Like> findByReviewAndUsername(Review review, String username);
+public interface LikeRepository extends JpaRepository<Likes, Integer> {
+	Optional<Likes> findByReviewAndUsername(Review review, String username);
 }

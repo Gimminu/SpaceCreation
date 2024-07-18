@@ -20,7 +20,7 @@ public class LikeService {
 	public void like(Review review) {
 		SiteUser username = userService.authen();
 		
-		Like like = new Like();
+		Likes like = new Likes();
 		like.setUsername(username.getUsername());
 		like.setReview(review);
 		likeRepository.save(like);
