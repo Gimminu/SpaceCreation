@@ -24,7 +24,7 @@ public class LikeService {
 		like.setUsername(username.getUsername());
 		like.setReview(review);
 		likeRepository.save(like);
-		review.setLike(review.getLike()+1);
+		review.setLikes(review.getLikes()+1);
 		this.reviewRepository.save(review);
 	}
 	
@@ -32,7 +32,7 @@ public class LikeService {
 		
 		SiteUser username = userService.authen();
 		likeRepository.findByReviewAndUsername(review, username.getUsername());
-		review.setLike(review.getLike()-1);
+		review.setLikes(review.getLikes()-1);
 		this.reviewRepository.save(review);
 	}
 }
