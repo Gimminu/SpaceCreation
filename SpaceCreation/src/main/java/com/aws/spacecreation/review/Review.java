@@ -31,6 +31,8 @@ public class Review {
     @Column(columnDefinition = "TEXT")
     private String content;
     
+    private Integer viewed;
+    
     
 
     private LocalDateTime createDate;

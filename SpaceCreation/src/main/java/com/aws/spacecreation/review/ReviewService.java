@@ -1,10 +1,8 @@
 package com.aws.spacecreation.review;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +24,7 @@ public class ReviewService {
 		
 		
 		
-
+		review.setViewed(0);
 		review.setImage(s3Service.uploadmanyFiles(file));
 		
 		this.reviewRepository.save(review);
@@ -35,7 +33,10 @@ public class ReviewService {
 	public Review getReview(Integer id) {
 		Optional<Review> review = this.reviewRepository.findById(id);
 		if (review.isPresent()) {
-			return review.get();
+			Review review1 = review.get();
+			review1.setViewed(review1.getViewed()+1);
+			this.reviewRepository.save(review1);
+			return review1;
 		} else {
 			throw new DataNotFoundException("review not found");
 		}
