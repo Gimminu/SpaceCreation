@@ -3,6 +3,7 @@ package com.aws.spacecreation.review;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.aws.spacecreation.like.Like;
 import com.aws.spacecreation.reviewreply.ReviewReply;
 
 import jakarta.persistence.CascadeType;
@@ -32,6 +33,10 @@ public class Review {
     private String content;
     
     private Integer viewed;
+    private Integer like;
+    private Integer square;
+    private String region;
+    
     
     
 
@@ -42,4 +47,7 @@ public class Review {
     
     @OneToMany(mappedBy="review" , cascade = CascadeType.REMOVE)
     private List<ReviewReply> replyList;
+    
+    @OneToMany(mappedBy="review" , cascade = CascadeType.REMOVE)
+    private List<Like> likelist;
 }

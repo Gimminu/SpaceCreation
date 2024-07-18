@@ -1,4 +1,4 @@
-<html layout:decorate="~{layout}">
+<html layout:decorate="~{layout/layout}">
 <div layout:fragment="content" class="container my-3">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
@@ -15,9 +15,8 @@
 	    <ul>
 	        <li th:each="reviewReply : ${review.replyList}" th:text="${reviewReply.content}"></li>
 	    </ul>
-	    			<img th:src="|${downpath}/${review.image1}|" >
-	    			<img th:src="|${downpath}/${review.image2}|" >
-	    			<img th:src="|${downpath}/${review.image3}|" >
+	    			<img th:src="|${downpath}/${review.image}|" >
+	    			
 	    
 	</div>
 	<form th:action="@{|/reply/create/${review.id}|}" method="post">

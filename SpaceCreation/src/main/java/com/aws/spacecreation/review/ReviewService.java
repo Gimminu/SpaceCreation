@@ -49,4 +49,6 @@ public class ReviewService {
 	public List<Review> searchkw(String kw){
 		return reviewRepository.findBySubjectLike("%"+kw+"%");
 	}
+	
+	
 }
