@@ -1,0 +1,401 @@
+@font-face {
+	font-family: 'GowunBatang-Regular';
+	src:
+		url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #ffd5cd;
+}
+
+/* 헤더 스타일 */
+header {
+	background-color: #333;
+	color: white;
+	padding: 10px 0;
+	text-align: center;
+}
+
+header h1 {
+	margin: 0;
+}
+
+header nav ul {
+	list-style: none;
+	padding: 0;
+}
+
+header nav ul li {
+	display: inline;
+	margin: 0 15px;
+}
+
+header nav ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+/* 필터 스타일 */
+.filters {
+	display: flex;
+	justify-content: center;
+	align-items: center; /* 세로 정렬 가운데 */
+	padding: 20px 0;
+	background-color: #efefef;
+	margin-bottom: 20px;
+}
+
+.filters h1 {
+	margin-right: 30px;
+	font-family: 'GowunBatang-Regular', sans-serif; /* 헤더에만 폰트 적용 */
+}
+
+.filters select {
+	margin: 0 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+/* 컨테이너 스타일 */
+.container-medium {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+/* 프로젝트 리스트 스타일 */
+.project-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: flex-start; /* 왼쪽 정렬 */
+}
+
+.project-item {
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	width: calc(25% - 20px); /* 네 개씩 정렬되도록 설정 */
+	height: 300px; /* 고정 높이 설정 */
+	margin-bottom: 20px;
+	overflow: hidden;
+	transition: transform 0.2s;
+	box-sizing: border-box; /* padding과 border를 width에 포함 */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* 아이템 내용물들 간에 공간을 균등하게 분배 */
+}
+
+.project-item:hover {
+	transform: scale(1.05);
+}
+
+.project-item img {
+	width: 100%;
+	height: 60%; /* 이미지 높이를 60%로 설정 */
+	object-fit: cover; /* 이미지를 컨테이너에 맞추어 크기 조정 */
+	border-bottom: 1px solid #ddd;
+}
+
+.project-item h2, .project-item p {
+	padding: 10px;
+}
+
+.project-item h2 {
+	font-size: 1.2em;
+	margin: 0;
+	flex: 1; /* 가변적으로 공간 차지 */
+}
+
+.project-item p {
+	margin: 0;
+	color: #555;
+}
+
+.project-item p:last-child {
+	color: #888;
+}
+
+.like-icon {
+	cursor: pointer;
+	font-size: 35px;
+	color: #888;
+	transition: font-size 0.3s;
+}
+
+.like-icon.liked {
+	color: #da5f5f;
+	font-size: 40px; /* 크기 증가 */
+}
+
+.like-container {
+	position: absolute;
+	top: 10px;
+	padding: 10px;
+}
+
+.text-container {
+	position: relative;
+	padding: 10px;
+	flex: 1; /* 가변적으로 공간 차지 */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* 내용물들 간에 공간을 균등하게 분배 */
+}
+
+.text-container .like-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.register-button {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: white;
+	background-color: #386fa5;
+	border: none;
+	border-radius: 25px; /* 둥근 모서리 */
+	cursor: pointer;
+	transition: background-color 0.3s;
+	margin: 20px 0;
+	font-family: 'GowunBatang-Regular', sans-serif;
+}
+
+.register-button:hover {
+	background-color: #0056b3;
+}
+
+.filter-button {
+	position: relative;
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 25px; /* 둥근 모서리 */
+	cursor: pointer;
+	transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	font-family: 'GowunBatang-Regular', sans-serif;
+}
+
+.filter-button:hover {
+	background-color: #f0f0f0;
+	border-color: #bbb;
+}
+
+.filter-button.active {
+	background-color: #007bff;
+	color: white;
+	border-color: #007bff;
+}
+
+.filter-dropdown {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	min-width: 160px;
+	background-color: white;
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	border-radius: 10px; /* 둥근 모서리 */
+	border: 1px solid #ddd;
+	padding: 10px 0;
+}
+
+.filter-button:hover .filter-dropdown {
+	display: block;
+}
+
+.filter-dropdown a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	transition: background-color 0.3s;
+}
+
+.filter-dropdown a:hover {
+	background-color: #f0f0f0;
+}
+
+/* 반응형 디자인 */
+@media ( max-width : 1200px) {
+	.project-item {
+		width: calc(33.333% - 20px); /* 세 개씩 정렬되도록 설정 */
+	}
+}
+
+@media ( max-width : 992px) {
+	.project-item {
+		width: calc(50% - 20px); /* 두 개씩 정렬되도록 설정 */
+	}
+}
+
+@media ( max-width : 768px) {
+	.filters {
+		flex-direction: column;
+	}
+	.filters h1 {
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+	.project-item {
+		width: calc(100% - 20px); /* 한 개씩 정렬되도록 설정 */
+	}
+}
+
+.filters.search-bar {
+	display: flex;
+	align-items: center;
+	position: relative;
+	width: 300px; /* 검색바의 너비 설정 */
+}
+
+.filters .search-bar input {
+	width: 100%;
+	padding: 10px 10px 10px 0;
+	border: none;
+	border-bottom: 1px solid #000;
+	font-size: 16px;
+	text-align: center;
+}
+
+.filters .search-bar input::placeholder {
+	color: #999;
+}
+
+.filters .search-bar .search-icon {
+	position: absolute;
+	right: 0;
+	font-size: 20px;
+	cursor: pointer;
+	color: #999;
+}
+
+
+ .filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #efefef;
+    margin-bottom: 20px;
+  }
+
+  .filters h1 {
+    margin-right: 30px;
+    font-family: 'GowunBatang-Regular', sans-serif;
+  }
+
+  .filters .filter-buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  .filter-button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .filter-button:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+  }
+
+  .filter-button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+
+  .filter-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+  }
+
+  .filter-button:hover .filter-dropdown {
+    display: block;
+  }
+
+  .filter-dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+  }
+
+  .filter-dropdown a:hover {
+    background-color: #f0f0f0;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    margin-left: 20px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 10px 20px 10px 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .search-bar input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+  }
+
+  .register-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #386fa5;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 20px;
+  }
+
+  .register-button:hover {
+    background-color: #0056b3;
+  }
