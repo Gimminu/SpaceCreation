@@ -13,9 +13,9 @@
     <content url="file://$MODULE_DIR$/../../SpaceCreation/src/test">
       <sourceFolder url="file://$MODULE_DIR$/../../SpaceCreation/src/test/java" isTestSource="true" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="17" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="SpaceCreation.SpaceCreation.main~1" />
+    <orderEntry type="module" module-name="SpaceCreation.SpaceCreation.main" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-data-jdbc:3.3.1" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-data-jpa:3.3.1" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-jdbc:3.3.1" level="project" />

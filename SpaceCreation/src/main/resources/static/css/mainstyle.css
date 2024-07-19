@@ -94,6 +94,14 @@ body {
     font : 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
     width : 33%
 }
+.nav-underline div {
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 10px;
+}
+
 .carousel-item {
     height: 500px;
 }
@@ -205,6 +213,7 @@ body {
         margin-bottom: 5px;
     }
 }
+
 
 @media (max-width: 576px) {
     .navbar {

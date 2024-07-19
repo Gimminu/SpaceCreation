@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.aws.spacecreation.review.Question;
-import com.aws.spacecreation.review.QuestionService;
+import com.aws.spacecreation.review.Infomation;
+import com.aws.spacecreation.review.InfoService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,17 +17,17 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/answer")
 public class AnswerController {
 
-	private final QuestionService questionService;
+	private final InfoService infoService;
 	private final AnswerService answerService;
 	
 	@PostMapping("/create/{id}")
 	public String createAnswer(Model model,
 						@PathVariable("id")Integer id,
 						@RequestParam(value="content")String content) {
-		Question question = this.questionService.getQuestion(id);
+		Infomation infomation = this.infoService.getQuestion(id);
 		
-		answerService.create(question, content);
-		return "redirect:/question/detail/"+id;
+		answerService.create(infomation, content);
+		return "redirect:/infomation/detail/"+id;
 	}
 		
 }

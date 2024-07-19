@@ -1,4 +1,4 @@
-package com.aws.spacecreation;
+package com.aws.spacecreation.interiorboard;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

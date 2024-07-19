@@ -17,52 +17,51 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @RequiredArgsConstructor
-@RequestMapping("/question")
+@RequestMapping("/info")
 @Controller
-public class QuestionController {
-	private final QuestionRepository questionRepository;
-	private final QuestionService questionService;
+public class InfomationController {
+	private final InfoRepository infoRepository;
+	private final InfoService infoService;
 	
 	@Value("${cloud.aws.s3.endpoint}")
 	private String downpath;
 	
     @GetMapping("/list")
     public String list(Model model) {
-        List<Question> questionList = this.questionRepository.findAll();
-        model.addAttribute("questionList", questionList);
-        return "view/question/question_list";
+        List<Infomation> infomationList = this.infoRepository.findAll();
+        model.addAttribute("infomationlist", infomationList);
+        return "view/info/infomation_list";
     }
     
     //@GetMapping(value = "/question/detail/{id}")
     @GetMapping("/detail/{id}")
     public String detail(Model model, @PathVariable("id") Integer id) {
     	
-        Question question = this.questionService.getQuestion(id);
-        model.addAttribute("question", question);
+        Infomation infomation = this.infoService.getQuestion(id);
+        model.addAttribute("infomation", infomation);
         model.addAttribute("downpath", "https://" + downpath);
 
-        return "view/question/question_detail";
+        return "view/info/infomation_detail";
     }
     
     @GetMapping("/create")
-    public String questionCreate() {
-        return "view/question/question_form";
+    public String infomationCreate() {
+        return "view/info/infomation_form";
     }
     
     @PostMapping("/create")
-    public String questionCreate(@ModelAttribute Question question,
+    public String infomationCreate(@ModelAttribute Infomation infomation,
     		@RequestParam ("files") MultipartFile[] files) throws IOException {
-        // TODO 질문을 저장한다.
-    		questionService.create(question, files);
-        return "redirect:/question/list"; // 질문 저장후 질문목록으로 이동
+    		infoService.create(infomation, files);
+        return "redirect:/info/infomation_list"; // 질문 저장후 질문목록으로 이동
     }
     
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id) {
     	
-        questionService.delete(id);
+        infoService.delete(id);
 
-        return "redirect:/question/list"; //  질문목록으로 이동
+        return "redirect:/info/list"; //  질문목록으로 이동
     }
     
 }

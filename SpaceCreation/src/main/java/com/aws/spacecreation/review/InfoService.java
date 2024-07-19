@@ -9,31 +9,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.aws.spacecreation.DataNotFoundException;
+import com.aws.spacecreation.interiorboard.DataNotFoundException;
 import com.aws.spacecreation.S3Service;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class QuestionService {
+public class InfoService {
 
 	@Autowired
-	private final QuestionRepository questionRepoisitory;
+	private final InfoRepository infoRepoisitory;
 		
 	@Autowired
 	private S3Service s3Service;
-	 public Question getQuestion(Integer id) {  
-	        Optional<Question> question = this.questionRepoisitory.findById(id);
-	        if (question.isPresent()) {
-	            return question.get();
+	 public Infomation getQuestion(Integer id) {
+	        Optional<Infomation> infomation = this.infoRepoisitory.findById(id);
+	        if (infomation.isPresent()) {
+	            return infomation.get();
 	        } else { 
-	            throw new DataNotFoundException("question not found");
+	            throw new DataNotFoundException("infomation not found");
 	        }
 	    }
 	    
 	    
-	    public void create(Question question, MultipartFile[] files) throws IOException {
+	    public void create(Infomation infomation, MultipartFile[] files) throws IOException {
 
 			for(int i = 0; i < files.length; i++) {
 				MultipartFile file = files[i];
@@ -42,23 +42,23 @@ public class QuestionService {
 				s3Service.uploadmanyFiles(file);
 				switch(i) {
 				case 0:
-					question.setImage1(fileName);
+					infomation.setImage1(fileName);
 					break;
 				case 1:
-					question.setImage2(fileName);
+					infomation.setImage2(fileName);
 					break;
 				case 2:
-					question.setImage3(fileName);
+					infomation.setImage3(fileName);
 					break;
 				}
 			}
-			question.setCreateDate(LocalDateTime.now());
-			this.questionRepoisitory.save(question);
+			infomation.setCreateDate(LocalDateTime.now());
+			this.infoRepoisitory.save(infomation);
 	    }
 
 	
 	public void delete(Integer id) {
-		questionRepoisitory.deleteById(id);
+		infoRepoisitory.deleteById(id);
 	}
 	
 	 	
