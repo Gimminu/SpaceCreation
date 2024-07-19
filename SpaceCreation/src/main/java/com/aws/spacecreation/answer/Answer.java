@@ -2,7 +2,7 @@ package com.aws.spacecreation.answer;
 
 import java.time.LocalDateTime;
 
-import com.aws.spacecreation.review.Information;
+import com.aws.spacecreation.review.Question;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,5 +25,5 @@ private String content;
 private LocalDateTime createDate;
 
 @ManyToOne
-private Information information;
+private Question question;
 }

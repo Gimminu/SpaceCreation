@@ -2,7 +2,6 @@
     /** 기본 제공 색상 **/
     --dark-gray: #1A1C20;
     --light-beige: #FCF1F1;
-    --light-pink: #FFD5CD;
     --vivid-orange: #F9813A;
     /** 회색 계열 색상 추가 **/
     --medium-gray: #606060;
@@ -12,10 +11,6 @@
     --medium-beige: #F5E8E8;
     --dark-beige: #E0C4C4;
     --warm-beige: #FFF5F0;
-    /** 핑크 계열 색상 추가 **/
-    --vibrant-pink: #FFA6C9;
-    --deep-pink: #FF748E;
-    --pale-pink: #FFE4E1;
     /** 오랜지 계열 색상 추가 **/
     --burnt-orange: #CC6A21;
     --peach-orange: #FFAD60;
@@ -37,7 +32,9 @@ body {
 }
 
 .navbar-light-beige {
-    background-color: var(--light-pink);
+    background-color: var(--vivid-orange);
+    color : var(--light-beige);
+    font-size : 15px;
 }
 
 .navbar {
