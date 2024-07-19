@@ -2,6 +2,7 @@ package com.aws.spacecreation.reviewreply;
 
 import java.time.LocalDateTime;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -15,8 +16,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Service
 public class ReviewReplyService {
-	
-	private final JavaMailSender mailSender;
+	private JavaMailSender mailSender;
 	private final ReviewReplyRepository reviewReplyRepository;
 	private final UserService userService;
 	
