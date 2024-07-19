@@ -10,10 +10,6 @@ public class MainController {
     public String root() {
         return "view/index";
     }
-    @GetMapping("/index")
-    public String index() {
-        return "view/index";
-    }
     @GetMapping("/about")
     public String about() {
         return "view/about";

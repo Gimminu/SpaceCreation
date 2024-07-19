@@ -5,15 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e29fc5a5-4cbc-445e-ab98-6ad83f418ca0" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main~1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test~1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_classic_1_5_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/like/LikeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/like/LikeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/like/LikeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/like/Likes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/Review.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/ReviewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/ReviewRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/ReviewService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/reviewreply/ReviewReply.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/reviewreply/ReviewReplyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/reviewreply/ReviewReplyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/reviewreply/ReviewReplyService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main~1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test~1.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/kakao/KakaoLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/kakao/KakaoLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/DataNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/DataNotFoundException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,34 +64,34 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": [
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
     {
-      "id": {
-        "id": "PR_kwDOMVVSts511-yx",
-        "number": 19
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOMVVSts511-yx&quot;,
+        &quot;number&quot;: 19
       },
-      "lastSeen": 1721361547128
+      &quot;lastSeen&quot;: 1721361547128
     },
     {
-      "id": {
-        "id": "PR_kwDOMVVSts51dt5V",
-        "number": 14
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOMVVSts51dt5V&quot;,
+        &quot;number&quot;: 14
       },
-      "lastSeen": 1721361621125
+      &quot;lastSeen&quot;: 1721361621125
     },
     {
-      "id": {
-        "id": "PR_kwDOMVVSts5119kQ",
-        "number": 18
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOMVVSts5119kQ&quot;,
+        &quot;number&quot;: 18
       },
-      "lastSeen": 1721361632785
+      &quot;lastSeen&quot;: 1721361632785
     }
   ]
-}]]></component>
+}</component>
   <component name="GitToolBoxStore">
     <option name="recentBranches">
       <RecentBranches>
@@ -139,7 +153,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.SpaceCreationApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;practice-gimminu에 #19개&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;practice-gimminu&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/jingj/OneDrive/문서/GitHub/SpaceCreation/SpaceCreation/src/main/java/com/aws/spacecreation&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -168,7 +182,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="SpaceCreation.SpaceCreation.main~1" />
+      <module name="SpaceCreation.SpaceCreation.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.aws.spacecreation.SpaceCreationApplication" />
       <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
         <option name="credential" />
@@ -203,6 +217,9 @@
       <workItem from="1721040104378" duration="15937000" />
       <workItem from="1721354905141" duration="2895000" />
       <workItem from="1721361292965" duration="354000" />
+      <workItem from="1721362344658" duration="22000" />
+      <workItem from="1721362632861" duration="10000" />
+      <workItem from="1721362863588" duration="551000" />
     </task>
     <servers />
   </component>
