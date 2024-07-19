@@ -5,54 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e29fc5a5-4cbc-445e-ab98-6ad83f418ca0" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/InfoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/kakao/KaKaoApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/kakao/KakaoLoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/boarddetailstyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/interiorboardform.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/interiorboardliststyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/userstyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/images/kakao_login_medium_wide.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/images/logo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/accounts/login_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/accounts/profile_management.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/accounts/signup_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardform.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f69fbeab-c8fe-4fab-9af2-2587dd295dbf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f69fbeab-c8fe-4fab-9af2-2587dd295dbf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/infocss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__ch_qos_logback_logback_classic_1_5_6.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main~1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test~1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/DataNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/DataNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/S3Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/S3Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/answer/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/answer/Answer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/answer/AnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/answer/AnswerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/answer/AnswerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/answer/AnswerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/Infomation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/InfomationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/QuestionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/InfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserSecuritySerivce.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserSecuritySerivce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/mainstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/mainstyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/InfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/InforRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/InfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/InforService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/Infomation.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/Information.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/InfomationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/InformationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/login_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/question/question_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/infomation_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/question/question_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/infomation_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/question/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/infomation_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/signup_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/infomation_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/information_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/infomation_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/information_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/infomation_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/information_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardlist.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,8 +58,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -111,7 +82,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="practice-gimminu" />
-                    <option name="lastUsedInstant" value="1721303079" />
+                    <option name="lastUsedInstant" value="1721351545" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="practice-kimhyeonjin" />
+                    <option name="lastUsedInstant" value="1721351489" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="practice-honghyeonji" />
@@ -169,6 +144,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "모듈",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
@@ -258,7 +236,7 @@
       <workItem from="1721204019097" duration="1950000" />
       <workItem from="1721262819451" duration="5206000" />
       <workItem from="1721301429566" duration="10363000" />
-      <workItem from="1721348251466" duration="2954000" />
+      <workItem from="1721348251466" duration="5174000" />
     </task>
     <servers />
   </component>

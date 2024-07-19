@@ -18,7 +18,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Infomation {
+public class Information {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,7 +40,7 @@ public class Infomation {
     @ManyToOne
     private SiteUser user;
     
-	@OneToMany(mappedBy = "infomation", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "information", cascade = CascadeType.REMOVE)
 	private List<Answer> answerList;
 
 	
