@@ -3,6 +3,7 @@ package com.aws.spacecreation.review;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,9 +24,13 @@ public class ReviewService {
 			throws IOException {
 		
 		
-		
+		UUID uuid1 = UUID.randomUUID();
+		String fileName = uuid1 + "_" + file.getOriginalFilename();
 		review.setViewed(0);
-		review.setImage(s3Service.uploadmanyFiles(file));
+		review.setLikes(0);
+		review.setImage(fileName);
+		s3Service.uploadmanyFiles(file);
+		
 		
 		this.reviewRepository.save(review);
 	}
