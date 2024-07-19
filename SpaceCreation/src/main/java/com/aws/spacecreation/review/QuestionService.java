@@ -1,17 +1,17 @@
 package com.aws.spacecreation.review;
 
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.aws.spacecreation.DataNotFoundException;
-
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -31,6 +31,12 @@ public class QuestionService {
         return questionRepository.findAll(pageable);
     }
 
+    @Transactional(readOnly = true)
+    public Page<Question> getAllQuestionsSortedByViews(Pageable pageable) {
+        return questionRepository.findAllByOrderByViewsDesc(pageable);
+    }
+    
+    
     @Transactional(readOnly = true)
     public List<Question> getAllQuestions() {
         return questionRepository.findAll();
