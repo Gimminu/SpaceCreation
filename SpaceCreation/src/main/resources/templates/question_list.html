@@ -10,6 +10,11 @@
     <div layout:fragment="content" class="container my-3">
         <div class="card-header">
             <h5 class="my-3">Q&A 게시판</h5>
+            <div>
+            조회수 순 정렬
+                <a th:href="@{/question/list(page=${questionPage.number}, sort=views, direction=asc)}" class="btn btn-outline-warning">↑</a>
+                <a th:href="@{/question/list(page=${questionPage.number}, sort=views, direction=desc)}" class="btn btn-outline-warning">↓</a>
+            </div>
         </div>
         <div class="container my-3">
             <table class="table">
@@ -19,7 +24,7 @@
                         <th>제목</th>
                         <th>작성일시</th>
                         <th>조회수</th>
-                        <th></th> <!-- 새로 추가된 열 -->
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,16 +45,16 @@
                 <nav aria-label="Page navigation">
                 	<ul class ="pagination d-flex justify-content-center">
                         <li class="page-item" th:classappend="${questionPage.hasPrevious()} ? '' : 'disabled'">
-                            <a class="page-link" th:href="@{/question/list(page=${questionPage.number - 1})}" aria-label="Previous">
+                            <a class="page-link" th:href="@{/question/list(page=${questionPage.number - 1}, sort=${sort}, direction=${direction})}" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
                         <li class="page-item" th:each="i : ${#numbers.sequence(1, questionPage.totalPages)}"
                             th:classappend="${i == questionPage.number + 1} ? 'active'">
-                            <a class="page-link" th:href="@{/question/list(page=${i - 1})}" th:text="${i}">1</a>
+                            <a class="page-link" th:href="@{/question/list(page=${i - 1}, sort=${sort}, direction=${direction})}" th:text="${i}">1</a>
                         </li>
                         <li class="page-item" th:classappend="${questionPage.hasNext()} ? '' : 'disabled'">
-                            <a class="page-link" th:href="@{/question/list(page=${questionPage.number + 1})}" aria-label="Next">
+                            <a class="page-link" th:href="@{/question/list(page=${questionPage.number + 1}, sort=${sort}, direction=${direction})}" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
