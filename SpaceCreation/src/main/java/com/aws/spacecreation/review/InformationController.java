@@ -17,51 +17,51 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @RequiredArgsConstructor
-@RequestMapping("/info")
+@RequestMapping("/information")
 @Controller
-public class InfomationController {
-	private final InfoRepository infoRepository;
-	private final InfoService infoService;
+public class InformationController {
+	private final InforRepository inforRepository;
+	private final InforService inforService;
 	
 	@Value("${cloud.aws.s3.endpoint}")
 	private String downpath;
 	
     @GetMapping("/list")
     public String list(Model model) {
-        List<Infomation> infomationList = this.infoRepository.findAll();
-        model.addAttribute("infomationlist", infomationList);
-        return "view/info/infomation_list";
+        List<Information> informationList = this.inforRepository.findAll();
+        model.addAttribute("informationlist", informationList);
+        return "view/info/information_list";
     }
     
     //@GetMapping(value = "/question/detail/{id}")
     @GetMapping("/detail/{id}")
     public String detail(Model model, @PathVariable("id") Integer id) {
     	
-        Infomation infomation = this.infoService.getQuestion(id);
-        model.addAttribute("infomation", infomation);
+        Information information = this.inforService.getQuestion(id);
+        model.addAttribute("information", information);
         model.addAttribute("downpath", "https://" + downpath);
 
-        return "view/info/infomation_detail";
+        return "view/info/information_detail";
     }
     
     @GetMapping("/create")
     public String infomationCreate() {
-        return "view/info/infomation_form";
+        return "view/info/information_form";
     }
     
     @PostMapping("/create")
-    public String infomationCreate(@ModelAttribute Infomation infomation,
+    public String infomationCreate(@ModelAttribute Information information,
     		@RequestParam ("files") MultipartFile[] files) throws IOException {
-    		infoService.create(infomation, files);
-        return "redirect:/info/infomation_list"; // 질문 저장후 질문목록으로 이동
+    		inforService.create(information, files);
+        return "redirect:/information/list"; // 질문 저장후 질문목록으로 이동
     }
     
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id) {
     	
-        infoService.delete(id);
+        inforService.delete(id);
 
-        return "redirect:/info/list"; //  질문목록으로 이동
+        return "redirect:/information/list"; //  질문목록으로 이동
     }
     
 }

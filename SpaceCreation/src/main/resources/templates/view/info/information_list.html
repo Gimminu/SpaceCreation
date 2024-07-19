@@ -1,5 +1,7 @@
 <html layout:decorate="~{layout/layout}">
 <div layout:fragment="content" class="container my-3">
+    <link rel="stylesheet" href="/css/infocss.css">
+
 <div class="container my-3">
     <table class="table">
         <thead class="table-dark">
@@ -10,15 +12,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr th:each="infomation, loop : ${infomationList}">
+        <tr th:each="information, loop : ${informationlist}">
             <td th:text="${loop.count}"></td>
-            <td><a th:href="@{|/infomation/detail/${infomation.id}|}" th:text="${infomation.subject}"></a></td>
-            <td th:text="${#temporals.format(infomation.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+            <td><a th:href="@{|/information/detail/${information.id}|}" th:text="${information.subject}"></a></td>
+            <td th:text="${#temporals.format(information.createDate, 'yyyy-MM-dd HH:mm')}"></td>
         </tr>
     </tbody>
 </table>
 
-<a th:href="@{/infomation/create}" class="btn btn-primary">질문 등록하기</a>
+<a th:href="@{/information/create}" class="btn btn-primary">질문 등록하기</a>
 
 
 

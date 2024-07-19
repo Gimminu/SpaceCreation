@@ -16,15 +16,15 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class InfoService {
+public class InforService {
 
 	@Autowired
-	private final InfoRepository infoRepoisitory;
+	private final InforRepository infoRepoisitory;
 		
 	@Autowired
 	private S3Service s3Service;
-	 public Infomation getQuestion(Integer id) {
-	        Optional<Infomation> infomation = this.infoRepoisitory.findById(id);
+	 public Information getQuestion(Integer id) {
+	        Optional<Information> infomation = this.infoRepoisitory.findById(id);
 	        if (infomation.isPresent()) {
 	            return infomation.get();
 	        } else { 
@@ -33,7 +33,7 @@ public class InfoService {
 	    }
 	    
 	    
-	    public void create(Infomation infomation, MultipartFile[] files) throws IOException {
+	    public void create(Information information, MultipartFile[] files) throws IOException {
 
 			for(int i = 0; i < files.length; i++) {
 				MultipartFile file = files[i];
@@ -42,18 +42,18 @@ public class InfoService {
 				s3Service.uploadmanyFiles(file);
 				switch(i) {
 				case 0:
-					infomation.setImage1(fileName);
+					information.setImage1(fileName);
 					break;
 				case 1:
-					infomation.setImage2(fileName);
+					information.setImage2(fileName);
 					break;
 				case 2:
-					infomation.setImage3(fileName);
+					information.setImage3(fileName);
 					break;
 				}
 			}
-			infomation.setCreateDate(LocalDateTime.now());
-			this.infoRepoisitory.save(infomation);
+			information.setCreateDate(LocalDateTime.now());
+			this.infoRepoisitory.save(information);
 	    }
 
 	

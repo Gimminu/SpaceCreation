@@ -5,54 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e29fc5a5-4cbc-445e-ab98-6ad83f418ca0" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/InfoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/kakao/KaKaoApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/kakao/KakaoLoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/boarddetailstyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/interiorboardform.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/interiorboardliststyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/userstyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/images/kakao_login_medium_wide.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/images/logo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/accounts/login_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/accounts/profile_management.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/accounts/signup_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardform.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardlist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main~1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test~1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f69fbeab-c8fe-4fab-9af2-2587dd295dbf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f69fbeab-c8fe-4fab-9af2-2587dd295dbf.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main~1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test~1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/DataNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/DataNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/S3Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/S3Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/answer/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/answer/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/answer/AnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/answer/AnswerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/answer/AnswerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/answer/AnswerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/Infomation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/InfomationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/QuestionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/review/InfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserSecuritySerivce.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserSecuritySerivce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/mainstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/mainstyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/kakao/KakaoLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/kakao/KakaoLoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/login_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/question/question_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/infomation_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/question/question_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/infomation_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/question/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/infomation_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/signup_form.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,9 +28,6 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$/SpaceCreation">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -84,23 +42,42 @@
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="practice-gimminu" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Gimminu&quot;
-  }
-}</component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {}
+}]]></component>
+  <component name="GitHubPullRequestState"><![CDATA[{
+  "prStates": [
+    {
+      "id": {
+        "id": "PR_kwDOMVVSts511-yx",
+        "number": 19
+      },
+      "lastSeen": 1721361547128
+    },
+    {
+      "id": {
+        "id": "PR_kwDOMVVSts51dt5V",
+        "number": 14
+      },
+      "lastSeen": 1721361621125
+    },
+    {
+      "id": {
+        "id": "PR_kwDOMVVSts5119kQ",
+        "number": 18
+      },
+      "lastSeen": 1721361632785
+    }
+  ]
+}]]></component>
   <component name="GitToolBoxStore">
     <option name="recentBranches">
       <RecentBranches>
@@ -111,15 +88,19 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="practice-gimminu" />
-                    <option name="lastUsedInstant" value="1721303079" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="practice-honghyeonji" />
-                    <option name="lastUsedInstant" value="1721303053" />
+                    <option name="lastUsedInstant" value="1721356060" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="practice" />
-                    <option name="lastUsedInstant" value="1721117233" />
+                    <option name="lastUsedInstant" value="1721355791" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="practice_minyeonghyeon" />
+                    <option name="lastUsedInstant" value="1721355056" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="pratice-kimsunghyun" />
+                    <option name="lastUsedInstant" value="1721354955" />
                   </RecentBranch>
                 </list>
               </option>
@@ -147,32 +128,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Gradle.SpaceCreation [dependencies].executor": "Run",
-    "Gradle.SpaceCreation 빌드.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.SpaceCreationApplication.executor": "Run",
-    "git-widget-placeholder": "practice-gimminu",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/jingj/OneDrive/문서/GitHub/SpaceCreation/SpaceCreation/src/main/java/com/aws/spacecreation",
-    "last_opened_file_path": "C:/Users/jingj/OneDrive/문서/GitHub/SpaceCreation/SpaceCreation/src/main/java/com/aws/spacecreation",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.SpaceCreation 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.SpaceCreationApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;practice-gimminu에 #19개&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jingj/OneDrive/문서/GitHub/SpaceCreation/SpaceCreation/src/main/java/com/aws/spacecreation&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\java\com\aws\spacecreation" />
@@ -180,41 +158,17 @@
       <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\static\css" />
-      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates\view" />
       <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\static\images" />
-      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates\view\accounts" />
-      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\static" />
+      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates\layout\fragments" />
+      <recent name="C:\Users\jingj\OneDrive\문서\GitHub\SpaceCreation\SpaceCreation\src\main\resources\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpaceCreationApplication">
-    <configuration name="SpaceCreation [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/SpaceCreation" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="dependencies" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="SpaceCreationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="SpaceCreation.SpaceCreation.main" />
+      <module name="SpaceCreation.SpaceCreation.main~1" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.aws.spacecreation.SpaceCreationApplication" />
       <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
         <option name="credential" />
@@ -225,11 +179,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.SpaceCreation [dependencies]" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -252,17 +201,23 @@
       <workItem from="1720850394915" duration="2705000" />
       <workItem from="1720864528656" duration="43000" />
       <workItem from="1721040104378" duration="15937000" />
-      <workItem from="1721105372173" duration="11000" />
-      <workItem from="1721105627812" duration="17000" />
-      <workItem from="1721114023985" duration="23861000" />
-      <workItem from="1721204019097" duration="1950000" />
-      <workItem from="1721262819451" duration="5206000" />
-      <workItem from="1721301429566" duration="10363000" />
-      <workItem from="1721348251466" duration="2954000" />
+      <workItem from="1721354905141" duration="2895000" />
+      <workItem from="1721361292965" duration="354000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
