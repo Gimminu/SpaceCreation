@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface InteriorBoardRepository  extends JpaRepository<InteriorBoard, Integer> {
 
 /*
-    List<Question> findBySubjectLike(String kw);
+    List<Infomation> findBySubjectLike(String kw);
 */
 
 

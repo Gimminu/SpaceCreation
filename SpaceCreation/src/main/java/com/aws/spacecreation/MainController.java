@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
     @GetMapping("/")
     public String root() {
-        return "index";
+        return "view/index";
     }
-    @GetMapping("/index")
-    public String index() {
-        return "index";
+    @GetMapping("/about")
+    public String about() {
+        return "view/about";
     }
 }

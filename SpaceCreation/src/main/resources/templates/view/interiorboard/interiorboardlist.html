@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout/layout}">
+
+<!-- 피닉스 -->
+<link href="/vendors/prism/prism-okaidia.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="/vendors/simplebar/simplebar.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+<link href="/assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
+<link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+<link href="/assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
+<link href="/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+<!-- 피닉스 -->
+</head>
+<div layout:fragment="content">
+  <header>
+    <link rel="stylesheet" href="/css/interiorboardliststyle.css">
+    <h1>프로젝트 페이지</h1>
+    <nav>
+      <ul>
+        <!-- Navigation items -->
+      </ul>
+    </nav>
+  </header>
+  <section class="filters">
+    <h1>인테리어 게시판</h1>
+    <div class="filter-buttons">
+      <div class="filter-button">
+        최신순 <span class="dropdown-indicator">&#9662;</span>
+        <div class="filter-dropdown">     <아직 로직 미처리>
+          <a href="#">조회순</a>
+          <a href="#">인기순</a>
+          <a href="#">인기순</a>
+        </div>
+      </div>
+      <!-- 검색 바 추가 -->
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="검색어를 입력하세요" onkeyup="filterProjects()">
+      </div>
+      <a href="/interiorboard/interiorboardform" class="register-button">게시물 등록</a>
+    </div>
+  </section>
+  <div class="container-medium">
+    <main class="project-list" id="projectList">
+      <div th:each="board : ${boards}" class="project-item">
+        <img th:src="${board.image1}" alt="프로젝트 이미지">
+        <div class="text-container">
+          <div class="like-container">
+            <span class="like-icon" onclick="toggleLike(this)">&#9829;</span>
+          </div>
+          <h2 th:text="${board.subject}">프로젝트 제목</h2>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script>
+    function toggleLike(element) {
+      element.classList.toggle('liked');
+    }
+
+    
+    
+    //검색
+    function filterProjects() {
+      let input = document.getElementById('searchInput');
+      let filter = input.value.toLowerCase();
+      let projectList = document.getElementById('projectList');
+      let projects = projectList.getElementsByClassName('project-item');
+
+      for (let i = 0; i < projects.length; i++) {
+        let title = projects[i].getElementsByTagName("h2")[0];
+        if (title.innerHTML.toLowerCase().indexOf(filter) > -1) {
+          projects[i].style.display = "";
+        } else {
+          projects[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+  </div>
+</html>
