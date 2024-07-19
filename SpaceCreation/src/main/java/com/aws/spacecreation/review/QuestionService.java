@@ -1,40 +1,35 @@
 package com.aws.spacecreation.review;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.aws.spacecreation.interiorboard.DataNotFoundException;
-import com.aws.spacecreation.S3Service;
+import com.aws.spacecreation.DataNotFoundException;
 
-import lombok.RequiredArgsConstructor;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
-@RequiredArgsConstructor
 @Service
 @Transactional
 public class QuestionService {
 
-    private final EmailService emailService;
-    private final QuestionRepository questionRepository;
-    private final JavaMailSender mailSender;
+    @Autowired
+    private EmailService emailService;
+
+    @Autowired
+    private QuestionRepository questionRepository;
+
+    @Autowired
+    private JavaMailSender mailSender;
 
     @Transactional(readOnly = true)
     public Page<Question> getAllQuestions(Pageable pageable) {
         return questionRepository.findAll(pageable);
     }
-
-    @Transactional(readOnly = true)
-    public Page<Question> getAllQuestionsSortedByViews(Pageable pageable) {
-        return questionRepository.findAllByOrderByViewsDesc(pageable);
-    }
-
 
     @Transactional(readOnly = true)
     public List<Question> getAllQuestions() {
@@ -46,7 +41,7 @@ public class QuestionService {
         Optional<Question> optionalQuestion = questionRepository.findById(id);
         if (optionalQuestion.isPresent()) {
             Question question = optionalQuestion.get();
-            increaseViews(question);
+            increaseViews(question); 
             return question;
         } else {
             throw new DataNotFoundException("Question not found with id: " + id);
@@ -69,7 +64,7 @@ public class QuestionService {
     private void increaseViews(Question question) {
         int views = question.getViews();
         question.setViews(views + 1);
-        questionRepository.save(question);
+        questionRepository.save(question); 
     }
 
     @Transactional
