@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @RequiredArgsConstructor
 public class MainController {
-//	@GetMapping("/")
-//	public String root() {
-//		return "index";
-//	}
-//
-//	@GetMapping("/index")
-//	public String index() {
-//		return "index";
-//	}
+    @GetMapping("/")
+    public String root() {
+        return "view/index";
+    }
+    @GetMapping("/index")
+    public String index() {return "view/index";}
+    @GetMapping("/about")
+    public String about() {
+        return "view/about";
+    }
 }

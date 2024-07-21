@@ -8,7 +8,7 @@ public interface InteriorBoardRepository  extends JpaRepository<InteriorBoard, I
 	
 	Page<InteriorBoard> findBySubjectLike(Pageable pageable,String kw);
 /*
-    List<Question> findBySubjectLike(String kw);
+    List<Infomation> findBySubjectLike(String kw);
 */
 
 

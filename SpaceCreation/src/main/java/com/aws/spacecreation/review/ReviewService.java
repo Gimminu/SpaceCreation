@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.aws.spacecreation.DataNotFoundException;
+import com.aws.spacecreation.interiorboard.DataNotFoundException;
 import com.aws.spacecreation.S3Service;
 
 @Service

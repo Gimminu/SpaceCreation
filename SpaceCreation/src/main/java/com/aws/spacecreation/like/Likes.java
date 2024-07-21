@@ -15,9 +15,7 @@ public class Likes {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-	
-	
-	
+
 	private String username;
 	
 	@ManyToOne

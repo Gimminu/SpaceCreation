@@ -1,11 +1,11 @@
 package com.aws.spacecreation.like;
 
+import com.aws.spacecreation.user.UserSecuritySerivce;
 import org.springframework.stereotype.Service;
 
 import com.aws.spacecreation.review.Review;
 import com.aws.spacecreation.review.ReviewRepository;
 import com.aws.spacecreation.user.SiteUser;
-import com.aws.spacecreation.user.UserService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -14,12 +14,11 @@ import lombok.RequiredArgsConstructor;
 public class LikeService {
 	
 	private final LikeRepository likeRepository;
-	private final UserService userService;
+	private final UserSecuritySerivce userSecuritySerivce;
 	private final ReviewRepository reviewRepository;
 	
 	public void like(Review review) {
-		SiteUser username = userService.authen();
-		
+		SiteUser username = userSecuritySerivce.getauthen();
 		Likes like = new Likes();
 		like.setUsername(username.getUsername());
 		like.setReview(review);
@@ -30,7 +29,7 @@ public class LikeService {
 	
 	public void delete(Review review) {
 		
-		SiteUser username = userService.authen();
+		SiteUser username = userSecuritySerivce.getauthen();
 		likeRepository.findByReviewAndUsername(review, username.getUsername());
 		review.setLikes(review.getLikes()-1);
 		this.reviewRepository.save(review);

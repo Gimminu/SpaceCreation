@@ -1,39 +1,39 @@
 <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light navbar-light-beige border-bottom">
     <div class="container-fluid">
         <div class="logo">
-            <a href="/index"><img src="images/logo.png" height="70px"></a>
+            <a href="/index"><img src="/images/logo-removebg.png" height="50px"></a>
         </div>
         <div class="navbar-nav navbar-nav-center">
             <ul class="nav nav-underline">
-                <li class="nav-item"><a class="nav-link" href="index.html">소개</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">정보 게시판</a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                        <li><a class="dropdown-item" href="blog-home.html">고객 후기</a></li>
-                        <li><a class="dropdown-item" href="blog-post.html">인테리어 팁</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">고객센터</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about">소개</a></li>
+                <li class="nav-item"><a class="nav-link" href="/interiorboard/list">정보 게시판</a></li>
+                <li class="nav-item"><a class="nav-link" href="/question/list">고객센터</a></li>
             </ul>
         </div>
         <div class="navbar-nav navbar-custom-size-sm">
             <ul class="nav nav-underline">
+            <div sec:authorize="isAnonymous">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/user/login}">로그인</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">|</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/user/signup}">가입하기</a>
+                    </li>
+            </div>
+            <div sec:authorize="isAuthenticated()">
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/help}">로그인</a>
+                    <a class="nav-link" th:href="@{/user/logout}">로그아웃</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">|</a>
+                        <span class="nav-link">|</span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/join}">가입하기</a>
+                    <a class="nav-link" th:href="@{/user/update}">마이페이지</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link">|</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/mypage}">마이페이지</a>
-                </li>
+            </div>
             </ul>
         </div>
     </div>
