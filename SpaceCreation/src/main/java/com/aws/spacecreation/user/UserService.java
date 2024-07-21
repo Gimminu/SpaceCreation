@@ -1,8 +1,11 @@
 package com.aws.spacecreation.user;
 
-import lombok.RequiredArgsConstructor;
+import java.util.Optional;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
 
 @Service@RequiredArgsConstructor
 public class UserService {
