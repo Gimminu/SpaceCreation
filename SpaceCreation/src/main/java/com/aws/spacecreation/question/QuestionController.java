@@ -66,11 +66,11 @@ public class QuestionController {
         questionService.delete(id);
         return "redirect:/question/list";
     }
-
+/*
     @PostMapping("/delete/{id}")
     public String deleteQuestion(@PathVariable("id") Integer id) {
         questionService.deleteQuestion(id);
         return "redirect:/question/list";
     }
-    
+    */
 }

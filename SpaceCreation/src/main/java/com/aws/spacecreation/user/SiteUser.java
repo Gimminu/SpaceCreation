@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Entity@Data
 public class SiteUser {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,7 +15,7 @@ public class SiteUser {
 
     private String password;
 
-    
+    private UserRole role;
     @Column(unique = true)
     private String email;
 }

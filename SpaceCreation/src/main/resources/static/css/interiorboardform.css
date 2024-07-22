@@ -1,12 +1,13 @@
-@charset "UTF-8";
-
-
 @font-face {
     font-family: 'GowunBatang-Regular';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+body {
+	background-color: #ffd5cd ;
+}
+
 
 .form-container {
 	max-width: 600px;

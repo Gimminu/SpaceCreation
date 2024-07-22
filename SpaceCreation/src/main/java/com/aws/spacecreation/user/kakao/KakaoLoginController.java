@@ -18,6 +18,7 @@ public class KakaoLoginController {
 
         Map<String, Object> userInfo = kakaoApi.getUserInfo(accessToken);
 
+        String name = (String) userInfo.get("name");
         String email = (String) userInfo.get("email");
         String nickname = (String) userInfo.get("nickname");
 
