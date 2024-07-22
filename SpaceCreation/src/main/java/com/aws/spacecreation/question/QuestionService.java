@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import com.aws.spacecreation.user.SiteUser;
+import com.aws.spacecreation.user.UserRole;
+import com.aws.spacecreation.user.UserSecuritySerivce;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -22,6 +25,7 @@ public class QuestionService {
     private final EmailService emailService;
     private final QuestionRepository questionRepository;
     private final JavaMailSender mailSender;
+    private final UserSecuritySerivce userSecuritySerivce;
 
     @Transactional(readOnly = true)
     public Page<Question> getAllQuestions(Pageable pageable) {
@@ -60,7 +64,15 @@ public class QuestionService {
 
     @Transactional
     public void delete(Integer id) {
-        questionRepository.deleteById(id);
+        SiteUser siteuser = userSecuritySerivce.getauthen();
+        if(siteuser.equals(questionRepository.findById(id).get().getUser())||siteuser.getUserRole().equals(UserRole.ADMIN)){
+            questionRepository.deleteById(id);
+        }
+        else{
+            throw new SecurityException("게시물의 작성자 혹은 관리자만 지울 수 있습니다.");
+
+        }
+
     }
 
     // 조회수 증가 메서드
@@ -70,8 +82,13 @@ public class QuestionService {
         questionRepository.save(question);
     }
 
-    @Transactional
-    public void deleteQuestion(Integer id) {
-        questionRepository.deleteById(id);
+    public void update(Integer id, Question question){
+        Optional<Question> questionOpt = questionRepository.findById(id);
+        Question existQuestion = questionOpt.get();
+        existQuestion.setSubject(question.getSubject());
+        existQuestion.setContent(question.getContent());
+        existQuestion.setUpdateDate(LocalDateTime.now());
+        questionRepository.save(existQuestion);
     }
+
 }
