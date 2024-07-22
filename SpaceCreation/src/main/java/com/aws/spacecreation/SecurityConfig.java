@@ -1,11 +1,7 @@
 package com.aws.spacecreation;
 
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.logout;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
-
-import java.util.Collections;
-
+import com.aws.spacecreation.user.OAuthAttributes;
+import com.aws.spacecreation.user.SiteUser;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -25,8 +21,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.aws.spacecreation.user.OAuthAttributes;
-import com.aws.spacecreation.user.SiteUser;
+import java.util.Collections;
 
 @Configuration
 @EnableWebSecurity
