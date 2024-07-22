@@ -38,11 +38,20 @@ public class InteriorBoardController {
 		return "view/interiorboard/interiorboardform";
 	}
 
+<<<<<<< Updated upstream
 	@PostMapping("/interiorboardform") // 게시물 등록
 	public String create(InteriorBoard interiorBoard, @RequestParam("image") MultipartFile file1) {
 		interiorBoardService.create(interiorBoard, file1);
 		return "redirect:/interiorboard/list";
 	}
 	
+=======
+    @PostMapping("/interiorboardform")  //게시물 등록
+    public String create(InteriorBoard interiorBoard, @RequestParam("image") MultipartFile file1) {
+        interiorBoardService.create(interiorBoard, file1);
+        return "redirect:/interiorboard/list"; 
+    }
+    
+>>>>>>> Stashed changes
 
 }
