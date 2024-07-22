@@ -52,25 +52,24 @@
       </div>
     </main>
     <div th:if="${!boards.isEmpty()}">
-        <ul class="pagination justify-content-center">
-            <li class="page-item" th:classappend="${!boards.hasPrevious} ? 'disabled'">
-                <a class="page-link"
-                    th:href="@{|?page=${boards.number-1}|}">
-                    <span>이전</span>
-                </a>
-            </li>
-            <li th:each="page: ${#numbers.sequence(1, boards.totalPages)}"
-                th:classappend="${page == boards.number} ? 'active'" 
-                class="page-item">
-                <a th:text="${page}" class="page-link" th:href="@{|?page=${page-1}|}"></a>
-            </li>
-            <li class="page-item" th:classappend="${!boards.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=${boards.number+1}|}">
-                    <span>다음</span>
-                </a>
-            </li>
-        </ul>
-    </div>
+    <ul class="pagination justify-content-center">
+        <li class="page-item" th:classappend="${!boards.hasPrevious} ? 'disabled'">
+            <a class="page-link" th:href="@{|?page=${boards.number-1}|}">
+                <span>이전</span>
+            </a>
+        </li>
+        <li th:each="page: ${#numbers.sequence(1, boards.totalPages)}"
+            th:classappend="${page == boards.number + 1} ? 'active'" 
+            class="page-item">
+            <a th:text="${page}" class="page-link" th:href="@{|?page=${page-1}|}"></a>
+        </li>
+        <li class="page-item" th:classappend="${!boards.hasNext} ? 'disabled'">
+            <a class="page-link" th:href="@{|?page=${boards.number+1}|}">
+                <span>다음</span>
+            </a>
+        </li>
+    </ul>
+</div>
   </div>
   
   <script>
