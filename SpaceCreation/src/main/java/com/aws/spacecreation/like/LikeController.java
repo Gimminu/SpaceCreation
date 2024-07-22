@@ -5,8 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.aws.spacecreation.question.Review;
-import com.aws.spacecreation.question.ReviewService;
+import com.aws.spacecreation.interiorboard.InteriorBoard;
+import com.aws.spacecreation.interiorboard.InteriorBoardService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -15,17 +15,17 @@ import lombok.RequiredArgsConstructor;
 public class LikeController {
 	
 	private final LikeService likeService;
-	private final ReviewService reviewService;
+	private final InteriorBoardService interiorBoardService;
 	
 	@PostMapping("/like/{id}")
 	public void like(Model model, @PathVariable("id") Integer id) {
-		Review review = this.reviewService.getReview(id);
-		likeService.like(review);
+		InteriorBoard interiorBoard = this.interiorBoardService.getInteriorBoard(id);
+		likeService.like(interiorBoard);
 	}
 	
 	@PostMapping("/like/delete/{id}")
 	public void like_delete(Model model, @PathVariable("id") Integer id) {
-		Review review = this.reviewService.getReview(id);
-		likeService.delete(review);
+		InteriorBoard interiorBoard = this.interiorBoardService.getInteriorBoard(id);
+		likeService.delete(interiorBoard);
 	}
 }

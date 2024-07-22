@@ -1,12 +1,11 @@
 package com.aws.spacecreation.user;
 
-import lombok.RequiredArgsConstructor;
+import java.util.Optional;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
-import static com.aws.spacecreation.user.UserRole.USER;
+import lombok.RequiredArgsConstructor;
 
 @Service@RequiredArgsConstructor
 public class UserService {
@@ -18,7 +17,6 @@ public class UserService {
         user.setUsername(username);
         user.setEmail(email);
         user.setPassword(passwordEncoder.encode(password));
-        user.setUserRole(USER);
         this.userRepository.save(user);
     }
 

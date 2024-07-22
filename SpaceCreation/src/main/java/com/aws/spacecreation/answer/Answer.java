@@ -2,7 +2,7 @@ package com.aws.spacecreation.answer;
 
 import java.time.LocalDateTime;
 
-import com.aws.spacecreation.question.Question;
+import com.aws.spacecreation.review.Question;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
