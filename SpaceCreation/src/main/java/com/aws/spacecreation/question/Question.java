@@ -1,4 +1,4 @@
-package com.aws.spacecreation.review;
+package com.aws.spacecreation.question;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -32,7 +32,8 @@ public class Question {
 	
 	
 	private LocalDateTime createDate;
-	
+	private LocalDateTime updateDate;
+
 	private String image1;
     private String image2;
     private String image3;
