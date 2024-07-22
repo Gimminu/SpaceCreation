@@ -70,7 +70,6 @@ public class QuestionService {
         }
         else{
             throw new SecurityException("게시물의 작성자 혹은 관리자만 지울 수 있습니다.");
-
         }
 
     }
