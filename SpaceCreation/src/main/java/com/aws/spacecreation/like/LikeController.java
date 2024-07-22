@@ -23,9 +23,5 @@ public class LikeController {
 		likeService.like(interiorBoard);
 	}
 	
-	@PostMapping("/like/delete/{id}")
-	public void like_delete(Model model, @PathVariable("id") Integer id) {
-		InteriorBoard interiorBoard = this.interiorBoardService.getInteriorBoard(id);
-		likeService.delete(interiorBoard);
-	}
+	
 }
