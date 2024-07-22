@@ -25,6 +25,6 @@ public class KakaoLoginController {
         System.out.println("nickname = " + nickname);
         System.out.println("accessToken = " + accessToken);
 
-        return "redirect:/result";
+        return "redirect:/";
     }
 }

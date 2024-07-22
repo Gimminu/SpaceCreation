@@ -1,7 +1,7 @@
 package com.aws.spacecreation.answer;
 
-import com.aws.spacecreation.review.Question;
-import com.aws.spacecreation.review.QuestionService;
+import com.aws.spacecreation.question.Question;
+import com.aws.spacecreation.question.QuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,17 +1,13 @@
 package com.aws.spacecreation.reviewreply;
 
-import java.time.LocalDateTime;
-
-import org.springframework.context.annotation.Bean;
+import com.aws.spacecreation.question.Review;
+import com.aws.spacecreation.user.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import com.aws.spacecreation.review.Review;
-import com.aws.spacecreation.user.SiteUser;
-import com.aws.spacecreation.user.UserService;
-
-import lombok.RequiredArgsConstructor;
+import java.time.LocalDateTime;
 
 @RequiredArgsConstructor
 @Service

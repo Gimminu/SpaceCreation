@@ -1,6 +1,6 @@
 package com.aws.spacecreation.like;
 
-import com.aws.spacecreation.review.Review;
+import com.aws.spacecreation.question.Review;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

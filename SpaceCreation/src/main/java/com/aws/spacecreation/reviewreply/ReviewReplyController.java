@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.aws.spacecreation.review.Review;
-import com.aws.spacecreation.review.ReviewService;
+import com.aws.spacecreation.question.Review;
+import com.aws.spacecreation.question.ReviewService;
 
 import lombok.RequiredArgsConstructor;
 

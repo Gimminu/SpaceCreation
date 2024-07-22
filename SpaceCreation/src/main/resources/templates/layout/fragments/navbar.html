@@ -14,9 +14,13 @@
                     <a class="nav-link" href="/interiorboard/list">정보게시판</a>
                     <a class="nav-link" href="/question/list">고객센터</a>
                 </div>
-                <div class="navbar-nav-right">
+                <div class="navbar-nav-right" sec:authorize="isAnonymous">
                     <a class="nav-link" href="/user/login">로그인</a>
                     <a class="nav-link" href="/user/signup">회원가입</a>
+                </div>
+                <div class="navbar-nav-right" sec:authorize="isAuthenticated">
+                    <a class="nav-link" href="/user/logout">로그아웃</a>
+                    <a class="nav-link" href="/user/update">마이프로필</a>
                 </div>
             </div>
         </div>
