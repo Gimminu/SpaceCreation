@@ -63,5 +63,7 @@ public class InteriorBoardService {
         Page<InteriorBoard> page = interiorBoardRepository.findBySubjectLike(pageable,"%" + kw + "%");
         return page;
     }
+    
+    
 
 }
