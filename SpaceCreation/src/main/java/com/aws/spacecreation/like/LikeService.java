@@ -1,5 +1,7 @@
 package com.aws.spacecreation.like;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.aws.spacecreation.interiorboard.InteriorBoard;
@@ -30,7 +32,9 @@ public class LikeService {
 	public void delete(InteriorBoard interiorBoard) {
 		
 		SiteUser username = userSecuritySerivce.getauthen();
-		likeRepository.findByInteriorBoardAndUsername(interiorBoard, username.getUsername());
+		Optional<Likes> temp = likeRepository.findByInteriorBoardAndUsername(interiorBoard, username.getUsername());
+		Likes liked = temp.get();
+		likeRepository.delete(liked);
 		interiorBoard.setLikes(interiorBoard.getLikes()-1);
 		this.interiorBoardRepository.save(interiorBoard);
 	}
