@@ -34,6 +34,7 @@
       </div>
       <!-- 검색 바 추가 -->
       <div class="search-bar">
+      <form action="@{/interiorboard/list(,orderby=${orderby})}"
         <input type="text" id="searchInput" placeholder="검색어를 입력하세요" onkeyup="filterProjects()">
       </div>
       <a href="/interiorboard/interiorboardform" class="register-button">게시물 등록</a>

@@ -14,28 +14,28 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Service
 public class LikeService {
-	
+
 	private final LikeRepository likeRepository;
 	private final UserSecuritySerivce userSecuritySerivce;
 	private final InteriorBoardRepository interiorBoardRepository;
-	
+
 	public void like(InteriorBoard interiorBoard) {
 		SiteUser username = userSecuritySerivce.getauthen();
-		Likes like = new Likes();
-		like.setUsername(username.getUsername());
-		like.setInteriorBoard(interiorBoard);
-		likeRepository.save(like);
-		interiorBoard.setLikes(interiorBoard.getLikes()+1);
-		this.interiorBoardRepository.save(interiorBoard);
-	}
-	
-	public void delete(InteriorBoard interiorBoard) {
-		
-		SiteUser username = userSecuritySerivce.getauthen();
 		Optional<Likes> temp = likeRepository.findByInteriorBoardAndUsername(interiorBoard, username.getUsername());
-		Likes liked = temp.get();
-		likeRepository.delete(liked);
-		interiorBoard.setLikes(interiorBoard.getLikes()-1);
-		this.interiorBoardRepository.save(interiorBoard);
+		if (temp.isEmpty()) {
+			Likes like = new Likes();
+			like.setUsername(username.getUsername());
+			like.setInteriorBoard(interiorBoard);
+			likeRepository.save(like);
+			interiorBoard.setLikes(interiorBoard.getLikes() + 1);
+			this.interiorBoardRepository.save(interiorBoard);
+		} else {
+			Likes liked = temp.get();
+			likeRepository.delete(liked);
+			interiorBoard.setLikes(interiorBoard.getLikes() - 1);
+			this.interiorBoardRepository.save(interiorBoard);
+		}
+
 	}
+
 }
