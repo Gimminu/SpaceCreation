@@ -1,37 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko" layout:decorate="~{layout/layout}">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>질문 등록하기</title>
-    <link rel="stylesheet" href="style.css"> <!-- style.css 파일 링크 -->
-</head>
-
-<body>
-    <div layout:fragment="content" class="container">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="my-3">질문 등록하기</h5>
-            </div>
-            <div class="card-body">
-                <form id="questionForm" th:action="@{/question/create}" method="post">
-                    <div class="mb-3">
-                        <label for="subject" class="form-label">제목</label>
-                        <input type="text" class="form-control" id="subject" name="subject" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="content" class="form-label">내용</label>
-                        <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
-                    </div>
-                    <input type="submit" value="질문 등록" class="button--winona" data-text="질문 등록">
-                </form>
+<div layout:fragment="content" class="container">
+    <link rel="stylesheet" href="/css/questionstyle.css">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="my-3">질문 등록하기</h5>
+        </div>
+        <div class="card-body">
+            <form id="questionForm" th:action="@{/question/create}" method="post">
+                <div class="mb-3">
+                    <label for="subject" class="form-label">제목</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label">내용</label>
+                    <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+                </div>
+                <input type="submit" value="질문 등록" class="button--winona" data-text="질문 등록">
+            </form>
             <div class="card-footer d-flex justify-content-end">
                 <a th:href="@{/question/list}" class="button--winona">리스트로 돌아가기</a>
             </div>
-              </div>
         </div>
     </div>
-</body>
+</div>
 
 </html>

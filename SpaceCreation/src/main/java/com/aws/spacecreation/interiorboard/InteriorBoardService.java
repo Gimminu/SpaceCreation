@@ -40,7 +40,10 @@ public class InteriorBoardService {
             throw new RuntimeException("Failed to upload file", e);
         }
     }
-    
+    public List<InteriorBoard> getAllInteriorBoards() {
+        List<InteriorBoard> interiorBoards = this.interiorBoardRepository.findAll();
+        return interiorBoards;
+    }
     
 
 
