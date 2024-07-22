@@ -1,69 +1,70 @@
 <!DOCTYPE html>
 <html lang="ko" layout:decorate="~{layout/layout}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Q&A게시판</title>
-    <link rel="stylesheet" href="style.css"> <!-- style.css 파일 링크 -->
-</head>
-<body>
-    <div layout:fragment="content" class="container my-3">
-        <div class="card-header">
-            <h5 class="my-3">Q&A 게시판</h5>
-            <div>
+<div layout:fragment="content" class="container my-3">
+    <link rel="stylesheet" href="/css/questionstyle.css">
+    <div class="card-header">
+        <h5 class="my-3">Q&A 게시판</h5>
+        <div>
             조회수 순 정렬
-                <a th:href="@{/question/list(page=${questionPage.number}, sort=views, direction=asc)}" class="btn btn-outline-warning">↑</a>
-                <a th:href="@{/question/list(page=${questionPage.number}, sort=views, direction=desc)}" class="btn btn-outline-warning">↓</a>
-            </div>
-        </div>
-        <div class="container my-3">
-            <table class="table">
-                <thead class="table-orange">
-                    <tr>
-                        <th>번호</th>
-                        <th>제목</th>
-                        <th>작성일시</th>
-                        <th>조회수</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="question, loop : ${questionPage.content}">
-                        <td th:text="${questionPage.number * questionPage.size + loop.index + 1}"></td>
-                        <td><a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a></td>
-                        <td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd')}"></td>
-                        <td th:text="${question.views}"></td>
-                        <td>
-                            <form th:action="@{|/question/delete/${question.id}|}" method="post">
-                                <button type="submit" class="btn btn-sm btn-danger">X</button>
-                            </form>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div>
-                <nav aria-label="Page navigation">
-                	<ul class ="pagination d-flex justify-content-center">
-                        <li class="page-item" th:classappend="${questionPage.hasPrevious()} ? '' : 'disabled'">
-                            <a class="page-link" th:href="@{/question/list(page=${questionPage.number - 1}, sort=${sort}, direction=${direction})}" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item" th:each="i : ${#numbers.sequence(1, questionPage.totalPages)}"
-                            th:classappend="${i == questionPage.number + 1} ? 'active'">
-                            <a class="page-link" th:href="@{/question/list(page=${i - 1}, sort=${sort}, direction=${direction})}" th:text="${i}">1</a>
-                        </li>
-                        <li class="page-item" th:classappend="${questionPage.hasNext()} ? '' : 'disabled'">
-                            <a class="page-link" th:href="@{/question/list(page=${questionPage.number + 1}, sort=${sort}, direction=${direction})}" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-
-            <a th:href="@{/question/create}" class="button--winona">질문 등록하기</a>
+            <a th:href="@{/question/list(page=${questionPage.number}, sort=views, direction=asc)}"
+               class="btn btn-outline-warning">↑</a>
+            <a th:href="@{/question/list(page=${questionPage.number}, sort=views, direction=desc)}"
+               class="btn btn-outline-warning">↓</a>
         </div>
     </div>
-</body>
+    <div class="container container-list my-3">
+        <table class="table">
+            <thead class="table-orange">
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성일시</th>
+                <th>조회수</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="question, loop : ${questionPage.content}">
+                <td th:text="${questionPage.number * questionPage.size + loop.index + 1}"></td>
+                <td><a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a></td>
+                <td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd')}"></td>
+                <td th:text="${question.views}"></td>
+                <td>
+                    <form th:action="@{|/question/delete/${question.id}|}" method="post">
+                        <button type="submit" class="btn btn-sm btn-danger">X</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination d-flex justify-content-center">
+                    <li class="page-item" th:classappend="${questionPage.hasPrevious()} ? '' : 'disabled'">
+                        <a class="page-link"
+                           th:href="@{/question/list(page=${questionPage.number - 1}, sort=${sort}, direction=${direction})}"
+                           aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item" th:each="i : ${#numbers.sequence(1, questionPage.totalPages)}"
+                        th:classappend="${i == questionPage.number + 1} ? 'active'">
+                        <a class="page-link"
+                           th:href="@{/question/list(page=${i - 1}, sort=${sort}, direction=${direction})}"
+                           th:text="${i}">1</a>
+                    </li>
+                    <li class="page-item" th:classappend="${questionPage.hasNext()} ? '' : 'disabled'">
+                        <a class="page-link"
+                           th:href="@{/question/list(page=${questionPage.number + 1}, sort=${sort}, direction=${direction})}"
+                           aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <a th:href="@{/question/create}" class="button--winona">질문 등록하기</a>
+    </div>
+</div>
 </html>

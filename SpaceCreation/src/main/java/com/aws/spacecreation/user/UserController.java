@@ -4,12 +4,16 @@ import com.aws.spacecreation.user.kakao.KaKaoApi;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Collections;
+import java.util.Map;
 
 @RequiredArgsConstructor
 @Controller
@@ -107,5 +111,10 @@ public class UserController {
         }
         return "redirect:/user/logout";
     }
-
+    //로그인 상태 확인
+    @GetMapping("/api/check-authentication")
+    public Map<String, Boolean> checkAuthentication(Authentication authentication) {
+        boolean isAuthenticated = authentication != null && authentication.isAuthenticated();
+        return Collections.singletonMap("isAuthenticated", isAuthenticated);
+    }
 }

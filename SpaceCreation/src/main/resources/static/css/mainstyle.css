@@ -14,7 +14,14 @@
     /** 오랜지 계열 색상 추가 **/
     --burnt-orange: #CC6A21;
     --peach-orange: #FFAD60;
-    --pale-orange: #FFE0B2;
+    --pale-orange: ;
+}
+
+@font-face {
+    font-family: 'WavvePADO-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
 html, body {
@@ -23,93 +30,26 @@ html, body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    font-family: 'WavvePADO-Regular';
 }
+
 body {
     background-color: var(--light-beige);
 }
-.container-fluid{
-    padding:0;
+.body-content{
+    padding-top: 5rem;
 }
 
-.navbar-light-beige {
-    background-color: var(--vivid-orange);
-    color : var(--light-beige);
-    font-size : 15px;
+.container-fluid {
+    padding: 0;
 }
-
-.navbar {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--dark-gray); /* 하단에 얇은 선 추가 */
-
+.page-header {
+    background: linear-gradient(rgba(53, 53, 53, 0.7), rgba(53, 53, 53, 0.7)), url("/images/aboutusbackground.jpg") center center no-repeat;
+    background-size: cover;
 }
-
-.navbar-nav .nav-link {
-    color: var(--dark-gray);
-    margin-right: 15px;
+.breadcrumb ul{
+    margin-right:10px;
 }
-
-.navbar-nav .nav-link:hover {
-    color: var(--vivid-orange);
-}
-
-.nav-item.dropdown .dropdown-menu {
-    margin-top: 0;
-}
-
-.dropdown-menu .dropdown-item {
-    color: var(--dark-gray);
-}
-
-.dropdown-menu .dropdown-item:hover {
-    background-color: var(--vivid-orange);
-    color: var(--light-beige);
-}
-
-.logo {
-    flex: 0 1 auto;
-    width:33%;
-    padding-left:1%;;
-}
-
-.navbar-nav-center {
-    display: grid;
-    place-items: center;
-    flex: 1;
-    width:33%
-}
-
-.navbar-nav:last-child {
-    display: flex;
-    justify-content: flex-end;
-    width : 33%;
-    flex: 0 1 auto;
-}
-.navbar-custom-size-sm{
-    font : 10px "Helvetica Neue", Helvetica, Arial, sans-serif;
-    width : 33%
-}
-.nav-underline div {
-    display: flex;
-}
-
-.nav-item {
-    margin-right: 10px;
-}
-
-.carousel-item {
-    height: 500px;
-}
-
-.carousel-img {
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-}
-
-
 .feature-icon {
     display: flex;
     align-items: center;
@@ -186,14 +126,11 @@ body {
     color: var(--dark-gray);
 }
 
-.page-header {
-    background: linear-gradient(rgba(53, 53, 53, 0.7), rgba(53, 53, 53, 0.7)), url("/images/aboutusbackground.jpg") center center no-repeat;
-    background-size: cover;
+.bi {
+    font-size: 40px;
 }
-.bi{
-    font-size:40px;
-}
-.display-1.text-light{
+
+.display-1.text-light {
     color: var(--dark-gray);
 }
 @media (max-width: 768px) {
@@ -230,13 +167,17 @@ body {
         padding: 10px;
     }
 }
-.btn-custom-orange{
+
+.btn-custom-orange {
     background-color: var(--vivid-orange);
+    color: var(--light-beige);
 }
-.custom-color-ligth-beige{
-    background-color : var(--light-beige);
+
+.custom-color-ligth-beige {
+    background-color: var(--light-beige);
 }
-.text-position-center{
+
+.text-position-center {
     text-align: center;
 }
 
@@ -248,32 +189,11 @@ body {
     padding: 20px;
 }
 
-.team-hex {
-    width: 200px;
-    height: 200px;
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    background: #eee;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
 }
-.team-hex-item {
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    background-size: cover;
-    height: 300px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.hexagon-img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    position: absolute;
-}
-
 .team-info {
     position: absolute;
     width: 100%;
@@ -286,13 +206,15 @@ body {
     color: white;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
-footer{
+
+footer {
     background-color: var(--dark-gray);
     color: var(--light-beige);
-    margin:0px;
-    position: relative; (absolute -> relative)
-transform: translatY(-100%);
+    margin: 0px;
+    position: relative;
+(absolute - > relative) transform: translatY(- 100 %);
 }
+
 #wrap {
     min-height: 100%;
     position: relative;

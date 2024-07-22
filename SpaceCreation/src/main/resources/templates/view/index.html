@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html layout:decorate="~{layout/layout}">
-<div layout:fragment="content" class = "container-fluid">
-    <!-- 이미지 영역 -->
-    <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-                <img src="/images/interior%20(1).jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img src="/images/interior%20(2).jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="/images/interior%20(3).jpg" class="d-block w-100" alt="...">
+<div layout:fragment="content" class="container-fluid">
+    <div class="hero-section text-center position-relative">
+        <div class="overlay"></div>
+        <div class="hero-content position-absolute top-50 start-50 translate-middle">
+            <h1>당신의 공간<br>우리들의 디자인</h1>
+            <p>다양한 사람들과 많은 정보를 주고 받는 이 곳<br>당신의 공간을 아름답게 바꿔보세요</p>
+            <a href="#" class="btn btn-custom-orange custom-dashborder pd-2">더 알아보기</a>
+        </div>
+    </div>
+    <div class="content-section bg-white">
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="image-grid">
+                        <img src="images/interior-1.png" class="img-fluid" alt="Interior Design">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="board-section">
+                        <div class="board-header-container">
+                            <h2 class="board-header">정보게시판</h2>
+                            <a href="/interiorboard/list" class="btn btn-custom-more">+ 더보기</a>
+                        </div>
+                        <div th:each="post, iterStat : ${InteriorBoard}" th:if="${iterStat.count <= 4}">
+                            <a th:href="@{/interiorboard/interiorboarddetail/{id}(id=${post.id})}" class="board-item-link">
+                                <div class="board-item">
+                                    <h3 th:text="${post.subject}">게시글 제목</h3>
+                                    <p th:text="${post.content}">게시글 요약 내용</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
-
-    <!-- 게시판 더보기 페이지 링크 및 이미지  -->
-        게시판 더보기 및 기존 내용 끌고 오기
-    <div class="container">
-
-    </div>
-    <!-- 팀 소개 페이지 링크 및 이미지 -->
-    <div  class="container">
-
+    <div class="faq-section">
+        <div class="faq-text">
+            <h2 style="color: #35414b;">도움이 필요하신가요?</h2>
+            <p style="color: #35414b;">자주 묻는 질문(FAQ)에서<br>답을 찾아보세요!</p>
+            <a href="#" class="custom-faq-button">자세히 보기</a>
+        </div>
+        <div class="faq-image">
+            <img src="/images/FAQ.png" alt="FAQ Image">
+        </div>
     </div>
 </div>
 </html>
+
