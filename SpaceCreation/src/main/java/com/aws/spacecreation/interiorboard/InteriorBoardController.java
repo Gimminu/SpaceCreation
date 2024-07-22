@@ -27,6 +27,7 @@ public class InteriorBoardController {
         model.addAttribute("boards", boards);
         return "view/interiorboard/interiorboardlist";
     }
+	
 	/*
 	 * @GetMapping("/interiorboarddetail") //게시물 상세 public String detail() { return
 	 * "view/interiorboard/interiorboarddetail"; }
@@ -42,5 +43,6 @@ public class InteriorBoardController {
 		interiorBoardService.create(interiorBoard, file1);
 		return "redirect:/interiorboardlist";
 	}
+	
 
 }

@@ -1,9 +1,10 @@
 package com.aws.spacecreation.interiorboard;
 
-
-
 import java.time.LocalDateTime;
 import java.util.List;
+
+import com.aws.spacecreation.interiorboardreply.InteriorBoardReply;
+import com.aws.spacecreation.like.Likes;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -11,7 +12,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
 
@@ -19,28 +19,34 @@ import lombok.Data;
 @Data
 public class InteriorBoard {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+	@Column(length = 200)
+    private String poster;
 
-    @Column(length = 200)
-    private String subject;
+	@Column(length = 200)
+	private String subject;
 
-    @Column(columnDefinition = "TEXT")
-    private String content;
+	@Column(columnDefinition = "TEXT")
+	private String content;
 
-    private LocalDateTime createDate;
+	private Integer viewed;
 
-    private String image1;
+	private Integer likes;
 
-    //  private String addr;
+	private LocalDateTime createDate;
 
-    //private String cate;
+	private String image1;
 
-/*    @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
-    private List<Answer> answerList;
+	@OneToMany(mappedBy = "interiorBoard", cascade = CascadeType.REMOVE)
+	private List<InteriorBoardReply> replyList;
 
-    @ManyToOne
-    private SiteUser user;*/
+	@OneToMany(mappedBy = "interiorBoard", cascade = CascadeType.REMOVE)
+	private List<Likes> likelist;
+
+//	@ManyToOne
+//	private SiteUser user;
 
 }

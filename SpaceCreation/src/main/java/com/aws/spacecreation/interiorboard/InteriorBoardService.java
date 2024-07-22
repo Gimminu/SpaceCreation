@@ -28,7 +28,10 @@ public class InteriorBoardService {
     public InteriorBoard getInteriorBoard(Integer id) {
         Optional<InteriorBoard> interiorBoard = this.interiorBoardRepository.findById(id);
         if (interiorBoard.isPresent()) {
-            return interiorBoard.get();
+        	InteriorBoard interiorBoard1 = interiorBoard.get();
+			interiorBoard1.setViewed(interiorBoard1.getViewed()+1);
+			this.interiorBoardRepository.save(interiorBoard1);
+            return interiorBoard1;
         } else {
             throw new DataNotFoundException("board not found");
         }
@@ -38,6 +41,8 @@ public class InteriorBoardService {
         String fileName = UUID.randomUUID() + "_" + file.getOriginalFilename();
         try {
             String fileUrl = s3Service.uploadFile(file,fileName);
+            interiorBoard.setViewed(0);
+    		interiorBoard.setLikes(0);
             interiorBoard.setImage1(fileUrl);
             interiorBoard.setCreateDate(LocalDateTime.now());
             this.interiorBoardRepository.save(interiorBoard);
