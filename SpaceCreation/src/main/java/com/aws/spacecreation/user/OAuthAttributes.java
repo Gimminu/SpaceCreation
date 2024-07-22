@@ -36,7 +36,7 @@ public class OAuthAttributes {
         SiteUser user = new SiteUser();
         user.setUsername(this.name);
         user.setEmail(this.email);
-        user.setRole(UserRole.USER);
+        user.setUserRole(UserRole.USER);
         return user;
     }
 
