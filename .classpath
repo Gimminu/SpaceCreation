@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="com/aws/spacecreation/user/|com/aws/spacecreation/user/kakao/" kind="src" path="SpaceCreation/src/main/java"/>
+	<classpathentry excluding="kakao/" kind="src" path="SpaceCreation/src/main/java/com/aws/spacecreation/user"/>
+	<classpathentry kind="src" path="SpaceCreation/src/main/java/com/aws/spacecreation/user/kakao"/>
+	<classpathentry kind="src" path="SpaceCreation/src/test/java"/>
+	<classpathentry kind="lib" path="SpaceCreation/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

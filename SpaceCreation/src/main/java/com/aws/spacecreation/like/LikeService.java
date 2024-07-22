@@ -1,11 +1,11 @@
 package com.aws.spacecreation.like;
 
-import com.aws.spacecreation.user.UserSecuritySerivce;
 import org.springframework.stereotype.Service;
 
-import com.aws.spacecreation.review.Review;
-import com.aws.spacecreation.review.ReviewRepository;
+import com.aws.spacecreation.interiorboard.InteriorBoard;
+import com.aws.spacecreation.interiorboard.InteriorBoardRepository;
 import com.aws.spacecreation.user.SiteUser;
+import com.aws.spacecreation.user.UserSecuritySerivce;
 
 import lombok.RequiredArgsConstructor;
 
@@ -15,23 +15,23 @@ public class LikeService {
 	
 	private final LikeRepository likeRepository;
 	private final UserSecuritySerivce userSecuritySerivce;
-	private final ReviewRepository reviewRepository;
+	private final InteriorBoardRepository interiorBoardRepository;
 	
-	public void like(Review review) {
+	public void like(InteriorBoard interiorBoard) {
 		SiteUser username = userSecuritySerivce.getauthen();
 		Likes like = new Likes();
 		like.setUsername(username.getUsername());
-		like.setReview(review);
+		like.setInteriorBoard(interiorBoard);
 		likeRepository.save(like);
-		review.setLikes(review.getLikes()+1);
-		this.reviewRepository.save(review);
+		interiorBoard.setLikes(interiorBoard.getLikes()+1);
+		this.interiorBoardRepository.save(interiorBoard);
 	}
 	
-	public void delete(Review review) {
+	public void delete(InteriorBoard interiorBoard) {
 		
 		SiteUser username = userSecuritySerivce.getauthen();
-		likeRepository.findByReviewAndUsername(review, username.getUsername());
-		review.setLikes(review.getLikes()-1);
-		this.reviewRepository.save(review);
+		likeRepository.findByInteriorBoardAndUsername(interiorBoard, username.getUsername());
+		interiorBoard.setLikes(interiorBoard.getLikes()-1);
+		this.interiorBoardRepository.save(interiorBoard);
 	}
 }

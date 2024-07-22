@@ -1,4 +1,4 @@
-package com.aws.spacecreation.reviewreply;
+package com.aws.spacecreation.interiorboardreply;
 
 
 import org.springframework.stereotype.Controller;
@@ -8,28 +8,28 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.aws.spacecreation.review.Review;
-import com.aws.spacecreation.review.ReviewService;
+import com.aws.spacecreation.interiorboard.InteriorBoard;
+import com.aws.spacecreation.interiorboard.InteriorBoardService;
 
 import lombok.RequiredArgsConstructor;
 
 @RequestMapping("/reply")
 @RequiredArgsConstructor
 @Controller
-public class ReviewReplyController {
+public class InteriorBoardReplyController {
 	
-	private final ReviewService reviewService;
+	private final InteriorBoardService interiorBoardService;
 	
-	private final ReviewReplyService reviewreplyService;
+	private final InteriorBoardReplyService interiorBoardreplyService;
 	
 	@PostMapping("/create/{id}")
 	public String create(Model model, @PathVariable("id") Integer id,
 //			@RequestParam(value = "username") String username,
 			@RequestParam(value = "content") String content)  {
-		Review review = this.reviewService.getReview(id);
-		reviewreplyService.create(review,  content);
+		InteriorBoard interiorBoard = this.interiorBoardService.getInteriorBoard(id);
+		interiorBoardreplyService.create(interiorBoard,  content);
 
-		return String.format("redirect:/review/detail/%s", id);
+		return String.format("redirect:/interiorBoard/detail/%s", id);
 	}
 
 }

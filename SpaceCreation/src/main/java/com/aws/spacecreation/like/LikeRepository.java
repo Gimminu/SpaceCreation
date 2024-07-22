@@ -4,8 +4,8 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.aws.spacecreation.review.Review;
+import com.aws.spacecreation.interiorboard.InteriorBoard;
 
 public interface LikeRepository extends JpaRepository<Likes, Integer> {
-	Optional<Likes> findByReviewAndUsername(Review review, String username);
+	Optional<Likes> findByInteriorBoardAndUsername(InteriorBoard interiorBoard, String username);
 }

@@ -1,8 +1,8 @@
-package com.aws.spacecreation.reviewreply;
+package com.aws.spacecreation.interiorboardreply;
 
 import java.time.LocalDateTime;
 
-import com.aws.spacecreation.review.Review;
+import com.aws.spacecreation.interiorboard.InteriorBoard;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class ReviewReply {
+public class InteriorBoardReply {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -28,5 +28,5 @@ public class ReviewReply {
 	private LocalDateTime createDate;
 
 	@ManyToOne
-	private Review review;
+	private InteriorBoard interiorBoard;
 }

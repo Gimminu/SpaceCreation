@@ -1,6 +1,6 @@
 package com.aws.spacecreation.like;
 
-import com.aws.spacecreation.review.Review;
+import com.aws.spacecreation.interiorboard.InteriorBoard;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +19,7 @@ public class Likes {
 	private String username;
 	
 	@ManyToOne
-	private Review review;
+	private InteriorBoard interiorBoard;
 	
 	
 }
