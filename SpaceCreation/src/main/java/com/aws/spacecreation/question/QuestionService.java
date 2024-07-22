@@ -1,21 +1,20 @@
 package com.aws.spacecreation.question;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
-
+import com.aws.spacecreation.interiorboard.DataNotFoundException;
 import com.aws.spacecreation.user.SiteUser;
 import com.aws.spacecreation.user.UserRole;
 import com.aws.spacecreation.user.UserSecuritySerivce;
+import com.aws.spacecreation.user.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.aws.spacecreation.interiorboard.DataNotFoundException;
-
-import lombok.RequiredArgsConstructor;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -26,6 +25,7 @@ public class QuestionService {
     private final QuestionRepository questionRepository;
     private final JavaMailSender mailSender;
     private final UserSecuritySerivce userSecuritySerivce;
+    private final UserService userService;
 
     @Transactional(readOnly = true)
     public Page<Question> getAllQuestions(Pageable pageable) {
@@ -58,6 +58,7 @@ public class QuestionService {
     @Transactional
     public void create(Question question) {
         emailService.sendEmailFromDaum(question);
+        question.setUser(userSecuritySerivce.getauthen());
         question.setCreateDate(LocalDateTime.now());
         questionRepository.save(question);
     }

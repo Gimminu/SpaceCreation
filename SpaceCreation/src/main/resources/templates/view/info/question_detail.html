@@ -26,10 +26,10 @@
     </ul>
     <div class="card-footer d-flex justify-content-end">
         <a th:href="@{/question/list}" class="button--winona--friends"><span>리스트로 돌아가기</span></a>
-        <div th:if="${#authentication.getPrincipal()==question.getUser().getEmail()}">
+        <div th:if="${#authentication.getName()==question.getUser().getUsername()}">
             <a th:href="@{|/question/update/${question.id}|}" class="button--winona--friends" data-text="수정"><span>수정</span></a>
         </div>
-        <div th:if="${(#authentication.getPrincipal()==question.getUser().getEmail())||#authentication.getAuthorities()==question.getUser().getUserRole()}">
+        <div th:if="${(#authentication.getName()==question.getUser().getUsername())||#authentication.getAuthorities()==question.getUser().getUserRole()}">
             <a th:href="@{|/question/delete/${question.id}|}" class="button--winona--friends" data-text="삭제"><span>삭제</span></a>
         </div>
     </div>
