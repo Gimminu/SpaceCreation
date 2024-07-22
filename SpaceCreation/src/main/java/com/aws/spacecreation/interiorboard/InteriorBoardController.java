@@ -1,8 +1,8 @@
 package com.aws.spacecreation.interiorboard;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,19 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 @RequestMapping("/interiorboard")
 @Controller
 public class InteriorBoardController {
-    @Autowired
-    private InteriorBoardService interiorBoardService;
+	@Autowired
+	private InteriorBoardService interiorBoardService;
 
-    @GetMapping("/list") //게시물 리스트
-    public String list(Model model) {
-        List<InteriorBoard> boards = interiorBoardService.readlist();
+	@GetMapping("/list") //게시물 리스트
+    public String list(@RequestParam(required = false, defaultValue = "",value="keyword") String kw,
+            @RequestParam(required = false, defaultValue = "0", value = "page") int pageNo,
+            @RequestParam(required = false, defaultValue = "id", value = "orderby") String ordered,
+            Pageable pageable,
+            Model model) {
+        Page<InteriorBoard> boards = interiorBoardService.readlist(pageable, pageNo, ordered, kw);
         model.addAttribute("boards", boards);
         return "view/interiorboard/interiorboardlist";
     }
@@ -33,10 +33,10 @@ public class InteriorBoardController {
         return "view/interiorboard/interiorboarddetail";
     }*/
 
-    @GetMapping("/interiorboardform")
-    public String create(Model model) { //게시물 등록
-        return "view/interiorboard/interiorboardform";
-    }
+	@GetMapping("/interiorboardform")
+	public String create(Model model) { // 게시물 등록
+		return "view/interiorboard/interiorboardform";
+	}
 
     @PostMapping("/interiorboardform")  //게시물 등록
     public String create(InteriorBoard interiorBoard, @RequestParam("image") MultipartFile file1) {

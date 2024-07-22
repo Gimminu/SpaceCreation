@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+import static com.aws.spacecreation.user.UserRole.USER;
+
 @Service@RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
@@ -16,6 +18,7 @@ public class UserService {
         user.setUsername(username);
         user.setEmail(email);
         user.setPassword(passwordEncoder.encode(password));
+        user.setRole(USER);
         this.userRepository.save(user);
     }
 
