@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko" layout:decorate="~{layout/layout}">
-<div layout:fragment="content" class="container">
-    <link rel="stylesheet" href="/css/questionstyle.css">
-    <div class="card">
-        <div class="card-body">
-            <h1 th:text="${question.subject}" class="mb-3"></h1>
-            <p th:text="${question.content}"></p>
-            <form th:action="@{|/answer/create/${question.id}|}" method="post" class="answer-form">
-                <textarea name="content" id="content" rows="5" class="form-control"></textarea>
-                <input type="submit" value="답변등록" class="button--winona"><span></span></input>
-            </form>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>질문 상세보기</title>
+    <link rel="stylesheet" href="style.css">
+    
+  
+</head>
+
+<body>
+    <div layout:fragment="content" class="container">
+        <div class="card">
+            <div class="card-body">
+                <h1 th:text="${question.subject}" class="mb-3"></h1>
+                <p th:text="${question.content}"></p>
+                <form th:action="@{|/answer/create/${question.id}|}" method="post" class="answer-form">
+                    <textarea name="content" id="content" rows="5" class="form-control"></textarea>
+                    <input type="submit" value="답변등록" class="button--winona"><span></span></input>
+                </form>
+            </div>
         </div>
-    </div>
-    <h5 th:text="|${#lists.size(question.answerList)}개의 답변이 있습니다.|"></h5>
-    <ul>
-        <!-- 답변 리스트 반복 -->
-        <li th:each="answer : ${question.answerList}">
-            <span th:text="${answer.content}"></span>
-            <!-- 답변 삭제 폼 -->
-            <form th:action="@{|/answer/delete/${answer.id}|}" method="post">
-                <input type="hidden" name="_method" value="delete"/>
-                <button type="submit" class="btn btn-sm btn-danger">X</button>
-            </form>
-        </li>
-    </ul>
-    <div class="card-footer d-flex justify-content-end">
-        <a th:href="@{/question/list}" class="button--winona--friends"><span>리스트로 돌아가기</span></a>
-        <div th:if="${#authentication.getName()==question.getUser().getUsername()}">
-            <a th:href="@{|/question/update/${question.id}|}" class="button--winona--friends" data-text="수정"><span>수정</span></a>
-        </div>
-        <div th:if="${(#authentication.getName()==question.getUser().getUsername())||#authentication.getAuthorities()==question.getUser().getUserRole()}">
+        <h5 th:text="|${#lists.size(question.answerList)}개의 답변이 있습니다.|"></h5>
+        <ul>
+            <!-- 답변 리스트 반복 -->
+            <li th:each="answer : ${question.answerList}">
+                <span th:text="${answer.content}"></span>
+                <!-- 답변 삭제 폼 -->
+                <form th:action="@{|/answer/delete/${answer.id}|}" method="post">
+                    <input type="hidden" name="_method" value="delete" />
+                    <button type="submit" class="btn btn-sm btn-danger">X</button>
+                </form>
+            </li>
+        </ul>
+        <div class="card-footer d-flex justify-content-end">
+            <a th:href="@{/question/list}" class="button--winona--friends"><span>리스트로 돌아가기</span></a>
             <a th:href="@{|/question/delete/${question.id}|}" class="button--winona--friends" data-text="삭제"><span>삭제</span></a>
         </div>
     </div>
-</div>
+</body>
 
 </html>

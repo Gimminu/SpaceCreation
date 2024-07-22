@@ -1,4 +1,4 @@
-package com.aws.spacecreation.question;
+package com.aws.spacecreation.review;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

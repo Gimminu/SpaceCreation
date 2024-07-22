@@ -1,7 +1,9 @@
-package com.aws.spacecreation.question;
+package com.aws.spacecreation.review;
 
 
-import com.aws.spacecreation.user.UserSecuritySerivce;
+import java.io.IOException;
+import java.util.List;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @RequiredArgsConstructor
 @Controller
@@ -23,8 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class QuestionController {
 	private final QuestionRepository questionRepository;
 	private final QuestionService questionService;
-    private final UserSecuritySerivce userSecuritySerivce;
-
+	
 	@Value("${cloud.aws.s3.endpoint}")
 	private String downpath;
 	
@@ -63,28 +65,16 @@ public class QuestionController {
         return "redirect:/question/list";
     }
     
-    @PostMapping("/delete/{id}")
+    @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id) {
         questionService.delete(id);
         return "redirect:/question/list";
     }
 
-    @GetMapping("/update/{id}")
-    public String update(@PathVariable("id")Integer id, Model model){
-        Question question = questionService.getQuestion(id);
-        if(userSecuritySerivce.getauthen().equals(question.getUser())) {
-            model.addAttribute("question", question);
-            return "view/info/question_update";
-        }else{
-            throw new SecurityException("게시물의 작성자만 수정할 수 있습니다.");
-        }
-    }
-
-    @PostMapping("/update/{id}")
-    public String update(@PathVariable("id")Integer id, Question question){
-        questionService.update(id, question);
+    @PostMapping("/delete/{id}")
+    public String deleteQuestion(@PathVariable("id") Integer id) {
+        questionService.deleteQuestion(id);
         return "redirect:/question/list";
     }
-
-
+    
 }

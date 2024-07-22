@@ -1,4 +1,4 @@
-package com.aws.spacecreation.question;
+package com.aws.spacecreation.review;
 
 import java.util.Properties;
 

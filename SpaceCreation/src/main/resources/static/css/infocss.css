@@ -10,7 +10,7 @@
     height: auto;
 }
 
-.container-list {
+.container {
     background: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -34,7 +34,7 @@
 }
 
 .table thead {
-    background-color: #1A1C20;
+    background-color: #F9813A;
     color: #FCF1F1;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .card-header {
-    background-color: #1A1C20;
+    background-color: #F9813A;
     color: #FCF1F1;
     padding: 10px 20px;
     border-radius: 8px 8px 0 0;
@@ -67,29 +67,29 @@
 
 .card-body {
     padding: 20px;
-    color: #1A1C20;
+    color: #F9813A;
 }
 
 .card-body h1 {
     margin-bottom: 20px;
-    color: #1A1C20;
+    color: #F9813A;
 }
 
 .card-body p {
     margin-bottom: 20px;
-    color: #1A1C20;
+    color: #F9813A;
 }
 
 .card-body h5 {
     margin-top: 40px;
     margin-bottom: 20px;
-    color: #1A1C20;
+    color: #F9813A;
 }
 
 .card-body ul {
     list-style-type: disc;
     padding-left: 20px;
-    color: #1A1C20;
+    color: #F9813A;
 }
 
 .answer-form {
@@ -132,8 +132,8 @@
     text-decoration: none;
     cursor: pointer;
     background-color: transparent;
-    border: 2px solid #1A1C20;
-    color: #1A1C20;
+    border: 2px solid #F9813A;
+    color: #F9813A;
     font-size: 16px;
     font-weight: bold;
     padding: 5px 5px;
@@ -166,7 +166,7 @@
 }
 
 .button--winona:hover {
-    border-color: #1A1C20;
+    border-color: #F9813A;
     background-color: rgba(249, 129, 58, 0.1);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
@@ -192,7 +192,7 @@
 
 .btn-delete {
     margin-right: 10px;
-    background-color: #1A1C20;
+    background-color: #F9813A;
     border: none;
     color: #FCF1F1;
     padding: 10px 20px;
@@ -207,7 +207,7 @@
 .btn-back {
     margin-top: 20px;
     display: inline-block;
-    background-color: #1A1C20;
+    background-color: #F9813A;
     border: none;
     color: #FCF1F1;
     padding: 10px 20px;
@@ -220,7 +220,7 @@
 }
 
 .btn-submit {
-    background-color: #1A1C20;
+    background-color: #F9813A;
     border: none;
     color: #FCF1F1;
     padding: 10px 20px;
@@ -245,7 +245,7 @@
 }
 
 .page-link:hover, .page-item.active .page-link{
-    background-color: #1A1C20;
+    background-color: #F9813A;
     color: #FCF1F1;
 }
 .page-item.disabled .page-link{
