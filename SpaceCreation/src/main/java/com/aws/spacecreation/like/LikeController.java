@@ -5,8 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.aws.spacecreation.review.Review;
-import com.aws.spacecreation.review.ReviewService;
+import com.aws.spacecreation.question.Review;
+import com.aws.spacecreation.question.ReviewService;
 
 import lombok.RequiredArgsConstructor;
 

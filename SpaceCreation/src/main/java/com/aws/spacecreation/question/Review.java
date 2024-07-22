@@ -1,19 +1,12 @@
-package com.aws.spacecreation.review;
-
-import java.time.LocalDateTime;
-import java.util.List;
+package com.aws.spacecreation.question;
 
 import com.aws.spacecreation.like.Likes;
 import com.aws.spacecreation.reviewreply.ReviewReply;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity

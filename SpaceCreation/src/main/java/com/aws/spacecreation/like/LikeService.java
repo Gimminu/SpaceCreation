@@ -3,8 +3,8 @@ package com.aws.spacecreation.like;
 import com.aws.spacecreation.user.UserSecuritySerivce;
 import org.springframework.stereotype.Service;
 
-import com.aws.spacecreation.review.Review;
-import com.aws.spacecreation.review.ReviewRepository;
+import com.aws.spacecreation.question.Review;
+import com.aws.spacecreation.question.ReviewRepository;
 import com.aws.spacecreation.user.SiteUser;
 
 import lombok.RequiredArgsConstructor;

@@ -28,7 +28,6 @@ public class UserController {
     @GetMapping("/signup")
     public String signup(Model model) {
         model.addAttribute("userCreateForm", new UserCreateForm());
-        model.addAttribute("kakaoApi",kakaoApi);
         return "view/accounts/signup_form";
     }
 

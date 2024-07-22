@@ -1,16 +1,10 @@
 package com.aws.spacecreation.reviewreply;
 
-import java.time.LocalDateTime;
-
-import com.aws.spacecreation.review.Review;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import com.aws.spacecreation.question.Review;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.time.LocalDateTime;
 
 @Data
 @Entity
