@@ -68,7 +68,7 @@ public class SecurityConfig {
                     .getUserInfoEndpoint().getUserNameAttributeName();
             OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
             SiteUser user = attributes.toEntity();
-            SimpleGrantedAuthority authority = new SimpleGrantedAuthority(user.getRole().name());
+            SimpleGrantedAuthority authority = new SimpleGrantedAuthority(user.getUserRole().name());
             return new DefaultOAuth2User(
                     Collections.singleton(authority),
                     attributes.getAttributes(),

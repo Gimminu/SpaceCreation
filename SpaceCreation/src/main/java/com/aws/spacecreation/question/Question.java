@@ -32,7 +32,8 @@ public class Question {
 	
 	
 	private LocalDateTime createDate;
-	
+	private LocalDateTime updateDate;
+
 	private String image1;
     private String image2;
     private String image3;
