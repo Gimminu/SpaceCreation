@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 import org.springframework.stereotype.Service;
 
-import com.aws.spacecreation.review.Question;
+import com.aws.spacecreation.question.Question;
 
 import lombok.RequiredArgsConstructor;
 
