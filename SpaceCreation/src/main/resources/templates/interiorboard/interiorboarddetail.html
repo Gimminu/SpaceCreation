@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인테리어 게시판 - 상세 페이지</title>
+
+    <!-- 피닉스 -->
+    <link href="../../vendors/prism/prism-okaidia.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="../../vendors/simplebar/simplebar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="../../assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
+    <link href="../../assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+    <link href="../../assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
+    <link href="../../assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+    <!-- 피닉스 -->
+
+    <!-- css -->
+    <style>
+        @font-face {
+            font-family: 'GowunBatang-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffd5cd;
+        }
+
+        header {
+            background-color: #EFEFEF;
+            color: #ccc;
+            padding: 10px 0;
+            text-align: center;
+            font-family: 'GowunBatang-Regular', sans-serif;
+        }
+
+        .detail-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header-section .title {
+            font-size: 1.5em;
+            font-family: 'GowunBatang-Regular', sans-serif;
+        }
+
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info-section div {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .button-container a {
+            text-decoration: none;
+        }
+
+        .button-container button {
+            padding: 5px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .edit-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .delete-button {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .content-section {
+            margin-top: 20px;
+            padding: 20px 0;
+        }
+
+        .content-section img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .text-container h2 {
+            font-family: 'GowunBatang-Regular', sans-serif;
+            font-size: 2em;
+            margin: 0;
+        }
+
+        .text-container p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .like-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 2em;
+            color: #ccc;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .like-button.liked {
+            color: #e74c3c;
+            transform: scale(1.2);
+        }
+
+        .comment-section {
+            margin-top: 30px;
+        }
+
+        .comment-section h2 {
+            font-family: 'GowunBatang-Regular', sans-serif;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .comment-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .comment-section li {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .comment-section .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .comment-section .comment-content {
+            font-size: 1.1em;
+            white-space: pre-line;
+            margin-top: 5px;
+        }
+
+        .comment-section .comment-author {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .comment-section .comment-date {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .comment-form {
+            margin-top: 20px;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .comment-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .comment-form button:hover {
+            background-color: #45a049;
+        }
+
+        .comment-delete-form {
+            display: inline;
+        }
+
+        .comment-delete-form button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .comment-delete-form button:hover {
+            background-color: #e53935;
+        }
+    </style>
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        function toggleLike(element) {
+            const isLiked = element.classList.toggle('liked');
+            const likeButtons = document.querySelectorAll('.like-button');
+            likeButtons.forEach(button => {
+                button.classList.toggle('liked', isLiked);
+            });
+
+            // 좋아요 수 업데이트
+            const likeCountElement = document.getElementById('likeCount');
+            let likeCount = parseInt(likeCountElement.innerText);
+            if (isLiked) {
+                likeCount += 1;
+            } else {
+                likeCount -= 1;
+            }
+            likeCountElement.innerText = likeCount;
+
+            // AJAX 호출 등을 통해 서버에 좋아요 상태를 전달
+            const boardId = /*[[${board.id}]]*/ '[[${board.id}]]';
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "/toggleLike", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("boardId=" + boardId);
+        }
+        /*]]>*/
+    </script>
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <header>
+            <h1>게시물 상세 페이지</h1>
+        </header>
+        <div class="detail-container">
+            <div class="header-section">
+                <div class="title" th:text="${board.subject}">제목</div>
+                <div class="button-container">
+                    <a th:href="@{/interiorboardedit/{id}(id=${board.id})}">
+                        <button class="edit-button">수정</button>
+                    </a>
+                    <a th:href="@{/interiorboarddelete/{id}(id=${board.id})}" onclick="return confirm('정말로 이 게시물을 삭제하시겠습니까?')">
+                        <button class="delete-button">삭제</button>
+                    </a>
+                </div>
+            </div>
+            <div class="info-section">
+                <div>작성자: 홍길동</div>
+                <div>작성일: <span th:text="${#temporals.format(board.createDate, 'yyyy-MM-dd HH:mm')}"></span></div>
+                <div>
+                    <button class="like-button" onclick="toggleLike(this)" th:classappend="${isLiked} ? 'liked' : ''">&#x2661;</button>
+                    좋아요: <span id="likeCount" th:text="${likeCount}"></span>
+                </div>
+                <div>조회수: <span th:text="${board.viewCount}"></span></div>
+                <div>댓글수: <span th:text="${#lists.size(comments)}"></span></div>
+            </div>
+            <div class="content-section">
+                <div class="text-container">
+                    <p th:utext="${board.content}">본문내용</p>
+                </div>
+            </div>
+            <div class="comment-section">
+                <hr> 
+                <h2>댓글</h2>
+                <hr> <!-- 선 추가 -->
+                <ul>
+                    <li th:each="comment : ${comments}">
+                        <div class="comment-header">
+                            <div>
+                                <span class="comment-author" th:text="${comment.user.username}">작성자</span>
+                            </div>
+                            <span class="comment-date" th:text="${#temporals.format(comment.createDate, 'yyyy-MM-dd HH:mm')}"></span>
+                        </div>
+                        <p class="comment-content" th:utext="${#strings.replace(comment.content, '\n', '<br/>')}">댓글 내용</p>
+                        <div th:if="${#authentication.principal.username == comment.user.username}">
+                         <div th:if="${#authentication.principal.username == comment.user.username}">
+						    <form th:action="@{/deleteComment}" method="post" class="comment-delete-form">
+						        <input type="hidden" name="commentId" th:value="${comment.id}">
+						        <input type="hidden" name="boardId" th:value="${board.id}">
+						        <button type="submit" onclick="return confirm('정말로 이 댓글을 삭제하시겠습니까?')">삭제</button>
+						    </form>
+						</div>
+
+
+                        </div>
+                    </li>
+                </ul>
+                <div class="comment-form">
+                    <form th:action="@{/addComment}" method="post">
+                        <input type="hidden" name="boardId" th:value="${board.id}" />
+                        <textarea name="content" placeholder="댓글을 입력하세요"></textarea>
+                        <button type="submit">댓글 달기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

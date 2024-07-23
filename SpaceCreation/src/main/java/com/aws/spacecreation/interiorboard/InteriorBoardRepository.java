@@ -9,6 +9,8 @@ public interface InteriorBoardRepository  extends JpaRepository<InteriorBoard, I
 /*
     List<Question> findBySubjectLike(String kw);
 */
-
+	  List<InteriorBoard> findAllByOrderByCreateDateDesc();
+	    List<InteriorBoard> findAllByOrderByViewCountDesc();
+	    List<InteriorBoard> findAllByOrderByLikesDesc();
 
 }

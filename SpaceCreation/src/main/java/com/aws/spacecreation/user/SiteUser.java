@@ -3,7 +3,8 @@ package com.aws.spacecreation.user;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity@Data
+@Entity
+@Data
 public class SiteUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

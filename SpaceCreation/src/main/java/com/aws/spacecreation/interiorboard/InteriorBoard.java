@@ -1,9 +1,12 @@
 package com.aws.spacecreation.interiorboard;
 
-
-
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+
+import com.aws.spacecreation.comment.Comment;
+import com.aws.spacecreation.like.BoardLike;
+import com.aws.spacecreation.user.SiteUser;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -13,17 +16,21 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class InteriorBoard {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(length = 200)
+    @Column(length = 20) //제목은 20자로 제한
     private String subject;
 
     @Column(columnDefinition = "TEXT")
@@ -31,16 +38,32 @@ public class InteriorBoard {
 
     private LocalDateTime createDate;
 
-    private String image1;
+    @Column
+    private List<String> imageUrls; // 다중 파일 URL을 저장
 
-    //  private String addr;
+    private Integer viewCount = 0; // 조회수를 저장하는 필드, 기본값 0
 
-    //private String cate;
-
-/*    @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
-    private List<Answer> answerList;
+    @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<BoardLike> likes = new ArrayList<>();
 
     @ManyToOne
-    private SiteUser user;*/
+    private SiteUser user;
 
+    @OneToMany(mappedBy = "interiorBoard", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Comment> comments;
+
+    @Override
+    public String toString() {
+        return "InteriorBoard{" +
+                "id=" + id +
+                ", subject='" + subject + '\'' +
+                ", content='" + content + '\'' +
+                ", createDate=" + createDate +
+                ", imageUrls=" + imageUrls +
+                ", viewCount=" + viewCount +
+                ", user=" + (user != null ? user.getUsername() : "null") +
+                ", comments=" + comments.size() +
+                ", likes=" + likes.size() +
+                '}';
+    }
 }

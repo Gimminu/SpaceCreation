@@ -6,6 +6,12 @@
 </head>
 <body>
 <a href = "/interiorboardlist">인테리어 게시판</a>
+
+
+<a th:href="@{/user/login}" sec:authorize="isAnonymous()" >로그인</a>
+<a th:href="@{/user/signup}">회원가입</a>
+<a th:href="@{/user/logout}" sec:authorize="isAuthenticated()">로그아웃</a>
+<a th:href="@{/user/update}" sec:authorize="isAuthenticated()">프로필 수정</a>
 </body>
 </html>
 

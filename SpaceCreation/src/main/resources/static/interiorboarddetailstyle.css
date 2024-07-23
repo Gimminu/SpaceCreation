@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'GowunBatang-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffd5cd;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image-container img {
+  width: 20%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text-container h2 {
+  font-family: 'GowunBatang-Regular', sans-serif;
+  font-size: 2em;
+  margin: 0;
+}
+
+.text-container p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.like-icon {
+  cursor: pointer;
+  font-size: 35px;
+  color: #888;
+  transition: font-size 0.3s;
+}
+
+.like-icon.liked {
+  color: #da5f5f;
+  font-size: 40px; /* 크기 증가 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .detail-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .text-container h2 {
+    font-size: 1.8em;
+  }
+
+  .text-container p {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 992px) {
+  .detail-container {
+    max-width: 95%;
+    padding: 10px;
+  }
+
+  .text-container h2 {
+    font-size: 1.6em;
+  }
+
+  .text-container p {
+    font-size: 1em;
+  }
+
+  .like-icon {
+    font-size: 30px;
+  }
+
+  .like-icon.liked {
+    font-size: 35px; /* 크기 증가 */
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-container {
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  .text-container h2 {
+    font-size: 1.4em;
+  }
+
+  .text-container p {
+    font-size: 0.9em;
+  }
+
+  .like-icon {
+    font-size: 25px;
+  }
+
+  .like-icon.liked {
+    font-size: 30px; /* 크기 증가 */
+  }
+}
+
+@media (max-width: 576px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .detail-container {
+    padding: 5px;
+  }
+
+  .text-container h2 {
+    font-size: 1.2em;
+  }
+
+  .text-container p {
+    font-size: 0.8em;
+  }
+
+  .like-icon {
+    font-size: 20px;
+  }
+
+  .like-icon.liked {
+    font-size: 25px; /* 크기 증가 */
+  }
+}
+
+.like-icon {
+  cursor: pointer;
+  font-size: 35px;
+  color: #888;
+  transition: font-size 0.3s;
+}
+
+.like-icon.liked {
+  color: #da5f5f;
+  font-size: 40px; /* 크기 증가 */
+}
