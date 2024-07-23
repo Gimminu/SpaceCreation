@@ -17,17 +17,49 @@ public class InteriorBoardController {
 	@Autowired
 	private InteriorBoardService interiorBoardService;
 
-	@GetMapping("/list") //게시물 리스트
-    public String list(@RequestParam(required = false, defaultValue = "",value="keyword") String kw,
-            @RequestParam(required = false, defaultValue = "0", value = "page") int pageNo,
-            @RequestParam(required = false, defaultValue = "id", value = "orderby") String ordered,
-            Pageable pageable,
-            Model model) {
-        Page<InteriorBoard> boards = interiorBoardService.readlist(pageable, pageNo, ordered, kw);
-        model.addAttribute("boards", boards);
-        return "view/interiorboard/interiorboardlist";
-    }
-	
+	@GetMapping("/list") // 게시물 리스트
+	public String list(@RequestParam(required = false, defaultValue = "", value = "keyword") String kw,
+			@RequestParam(required = false, defaultValue = "0", value = "page") int pageNo,
+			@RequestParam(required = false, defaultValue = "id", value = "orderby") String ordered, Pageable pageable,
+			Model model) {
+		Page<InteriorBoard> boards = interiorBoardService.readlist(pageable, pageNo, ordered, kw);
+		String order_vw="id";
+
+		switch (ordered) {
+		case "viewed":
+			order_vw = "조회순";
+			break;
+		case "likes":
+			order_vw = "인기순";
+			break;
+		case "id":
+			order_vw = "최신순";
+			break;
+		}
+		model.addAttribute("boards", boards);
+		model.addAttribute("keyword", kw);
+		model.addAttribute("orderby", ordered);
+		model.addAttribute("ordered", order_vw);
+
+		
+
+		return "view/interiorboard/interiorboardlist";
+	}
+
+	@PostMapping("/list")
+	public String list_kw(@RequestParam(required = false, defaultValue = "", value = "keyword") String kw,
+			@RequestParam(required = false, defaultValue = "0", value = "page") int pageNo,
+			@RequestParam(required = false, defaultValue = "id", value = "orderby") String ordered, Pageable pageable,
+			Model model) {
+		Page<InteriorBoard> boards = interiorBoardService.readlist(pageable, pageNo, ordered, kw);
+		model.addAttribute("boards", boards);
+		model.addAttribute("keyword", kw);
+		model.addAttribute("orderby", ordered);
+
+		return "view/interiorboard/interiorboardlist";
+
+	}
+
 	/*
 	 * @GetMapping("/interiorboarddetail") //게시물 상세 public String detail() { return
 	 * "view/interiorboard/interiorboarddetail"; }
@@ -43,6 +75,5 @@ public class InteriorBoardController {
 		interiorBoardService.create(interiorBoard, file1);
 		return "redirect:/interiorboard/list";
 	}
-	
 
 }

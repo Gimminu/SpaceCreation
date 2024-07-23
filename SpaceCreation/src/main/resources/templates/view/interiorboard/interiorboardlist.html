@@ -25,18 +25,20 @@
     <h1>인테리어 게시판</h1>
     <div class="filter-buttons">
       <div class="filter-button">
-        최신순 <span class="dropdown-indicator">&#9662;</span>
-        <div class="filter-dropdown">     <아직 로직 미처리>
-          <td><a th:href="@{/interiorboard/list(orderby=viewed)}">조회순</a></td>
-          <td><a th:href="@{/interiorboard/list(orderby=likes)}">인기순</a></td>
-          <td><a th:href="@{/interiorboard/list(orderby=id)}">최신순</a></td>
+        [[${ordered}]]<span class="dropdown-indicator">&#9662;</span>
+        <div class="filter-dropdown">
+          <td><a th:href="@{/interiorboard/list(keyword=${keyword} ,orderby=viewed)}">조회순</a></td>
+          <td><a th:href="@{/interiorboard/list(keyword=${keyword} ,orderby=likes)}">인기순</a></td>
+          <td><a th:href="@{/interiorboard/list(keyword=${keyword} ,orderby=id)}">최신순</a></td>
         </div>
       </div>
       <!-- 검색 바 추가 -->
-      <div class="search-bar">
-      <form action="@{/interiorboard/list(,orderby=${orderby})}"
-        <input type="text" id="searchInput" placeholder="검색어를 입력하세요" onkeyup="filterProjects()">
+      <form th:action="@{/interiorboard/list(orderby=${orderby})}" role="search">
+      <div class="search-bar">      
+        <input type="text" id="searchInput" name="keyword" placeholder="검색어를 입력하세요" onkeyup="filterProjects()">
       </div>
+      </form>
+      
       <a href="/interiorboard/interiorboardform" class="register-button">게시물 등록</a>
     </div>
   </section>
@@ -81,7 +83,9 @@
     
     
     //검색
-    function filterProjects() {
+    
+      	
+    	
       let input = document.getElementById('searchInput');
       let filter = input.value.toLowerCase();
       let projectList = document.getElementById('projectList');
