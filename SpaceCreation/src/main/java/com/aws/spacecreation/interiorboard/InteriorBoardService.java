@@ -2,6 +2,7 @@ package com.aws.spacecreation.interiorboard;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -50,7 +51,10 @@ public class InteriorBoardService {
             throw new RuntimeException("Failed to upload file", e);
         }
     }
-    
+    public List<InteriorBoard> getAllInteriorBoards() {
+        List<InteriorBoard> interiorBoards = this.interiorBoardRepository.findAll();
+        return interiorBoards;
+    }
     
 
 

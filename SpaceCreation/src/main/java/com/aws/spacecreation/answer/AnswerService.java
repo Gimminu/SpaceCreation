@@ -2,8 +2,9 @@ package com.aws.spacecreation.answer;
 
 import java.time.LocalDateTime;
 
-import com.aws.spacecreation.review.Question;
 import org.springframework.stereotype.Service;
+
+import com.aws.spacecreation.review.Question;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,6 +23,11 @@ public class AnswerService {
 		this.answerRepository.save(answer);
 		
 	}
-	
+	public Answer getAnswer(Integer id) {
+		return answerRepository.getReferenceById(id);
+	}
+	public void delete(Integer id) {
+		answerRepository.deleteById(id);
+	}
 	
 }
