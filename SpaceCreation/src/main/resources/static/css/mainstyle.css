@@ -1,0 +1,222 @@
+:root {
+    /** 기본 제공 색상 **/
+    --dark-gray: #1A1C20;
+    --light-beige: #FCF1F1;
+    --vivid-orange: #F9813A;
+    /** 회색 계열 색상 추가 **/
+    --medium-gray: #606060;
+    --soft-gray: #A9A9A9;
+    --very-light-gray: #E5E5E5;
+    /** 베이지 계열 색상 추가 **/
+    --medium-beige: #F5E8E8;
+    --dark-beige: #E0C4C4;
+    --warm-beige: #FFF5F0;
+    /** 오랜지 계열 색상 추가 **/
+    --burnt-orange: #CC6A21;
+    --peach-orange: #FFAD60;
+    --pale-orange: ;
+}
+
+@font-face {
+    font-family: 'WavvePADO-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'WavvePADO-Regular';
+}
+
+body {
+    background-color: var(--light-beige);
+}
+.body-content{
+    padding-top: 5rem;
+}
+
+.container-fluid {
+    padding: 0;
+}
+.page-header {
+    background: linear-gradient(rgba(53, 53, 53, 0.7), rgba(53, 53, 53, 0.7)), url("/images/aboutusbackground.jpg") center center no-repeat;
+    background-size: cover;
+}
+.breadcrumb ul{
+    margin-right:10px;
+}
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-gray);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.feature-number {
+    font-size: 2rem;
+    color: var(--dark-gray);
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    color: var(--dark-gray);
+    margin-top: 10px;
+}
+
+.photo-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.photo-image {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+.text-section {
+    width: 50%;
+    padding: 20px;
+    background-color: var(--light-beige);
+}
+
+.text-content {
+    font-size: 16px;
+    color: var(--medium-gray);
+}
+
+.team-member {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--warm-beige);
+}
+
+.team-name {
+    font-size: 18px;
+    color: var(--dark-gray);
+}
+
+.team-role {
+    font-size: 14px;
+    color: var(--soft-gray);
+}
+
+.team-social-links {
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    background-color: var(--light-pink);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 5px;
+    color: var(--dark-gray);
+}
+
+.bi {
+    font-size: 40px;
+}
+
+.display-1.text-light {
+    color: var(--dark-gray);
+}
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: block;
+        text-align: center;
+    }
+
+    .logo {
+        margin-left: 10px;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 5px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .logo {
+        margin: 0 auto 10px;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px;
+    }
+}
+
+.btn-custom-orange {
+    background-color: var(--vivid-orange);
+    color: var(--light-beige);
+}
+
+.custom-color-ligth-beige {
+    background-color: var(--light-beige);
+}
+
+.text-position-center {
+    text-align: center;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+}
+.team-info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+footer {
+    background-color: var(--dark-gray);
+    color: var(--light-beige);
+    margin: 0px;
+    position: relative;
+(absolute - > relative) transform: translatY(- 100 %);
+}
+
+#wrap {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 60px;
+}

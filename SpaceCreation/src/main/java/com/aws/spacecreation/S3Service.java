@@ -51,4 +51,24 @@ public class S3Service {
         amazonS3.putObject(new PutObjectRequest(bucketName, filename, multipartFile.getInputStream(), metadata));
         return filename; // 생성된 고유 파일 이름을 반환(UUID추가된 파일)
     }
+
+	 public String uploadFile(MultipartFile multipartFile, String fileName) throws IOException {
+	        // Create a temporary file in the local system
+	        File file = new File(System.getProperty("java.io.tmpdir") + "/" + fileName);
+
+	        try (FileOutputStream fos = new FileOutputStream(file)) {
+	            fos.write(multipartFile.getBytes());
+	        }
+
+	        // Upload to AWS S3
+	        amazonS3.putObject(new PutObjectRequest(bucketName, fileName, file));
+
+	        // Delete the temporary file
+	        file.delete();
+
+	        // Return the file URL
+	        return amazonS3.getUrl(bucketName, fileName).toString();
+	    }
+
+
 }

@@ -1,17 +1,11 @@
 package com.aws.spacecreation.answer;
 
+import com.aws.spacecreation.question.Question;
+import com.aws.spacecreation.question.QuestionService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import com.aws.spacecreation.review.Question;
-import com.aws.spacecreation.review.QuestionService;
-
-import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @Controller
@@ -30,19 +24,19 @@ public class AnswerController {
 		answerService.create(question, content);
 		return "redirect:/question/detail/"+id;
 	}
-	
-	
+
+
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable("id") Integer id) {
 	    answerService.delete(id);
 	    return "redirect:/question/detail/{id}";
 	}
-	
+
 	@PostMapping("/delete/{id}")
     public String deleteAnswer(@PathVariable("id")Integer id) {
 		Answer answer = this.answerService.getAnswer(id);
     	answerService.delete(id);
     	return String.format("redirect:/question/detail/%s",answer.getQuestion().getId());
     }
-		
+
 }
