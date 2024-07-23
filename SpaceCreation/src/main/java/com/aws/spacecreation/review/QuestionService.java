@@ -11,20 +11,19 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.aws.spacecreation.DataNotFoundException;
+import com.aws.spacecreation.interiorboard.DataNotFoundException;
+import com.aws.spacecreation.S3Service;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Service
 @Transactional
 public class QuestionService {
 
-    @Autowired
-    private EmailService emailService;
-
-    @Autowired
-    private QuestionRepository questionRepository;
-
-    @Autowired
-    private JavaMailSender mailSender;
+    private final EmailService emailService;
+    private final QuestionRepository questionRepository;
+    private final JavaMailSender mailSender;
 
     @Transactional(readOnly = true)
     public Page<Question> getAllQuestions(Pageable pageable) {
@@ -35,8 +34,8 @@ public class QuestionService {
     public Page<Question> getAllQuestionsSortedByViews(Pageable pageable) {
         return questionRepository.findAllByOrderByViewsDesc(pageable);
     }
-    
-    
+
+
     @Transactional(readOnly = true)
     public List<Question> getAllQuestions() {
         return questionRepository.findAll();
@@ -47,7 +46,7 @@ public class QuestionService {
         Optional<Question> optionalQuestion = questionRepository.findById(id);
         if (optionalQuestion.isPresent()) {
             Question question = optionalQuestion.get();
-            increaseViews(question); 
+            increaseViews(question);
             return question;
         } else {
             throw new DataNotFoundException("Question not found with id: " + id);
@@ -70,7 +69,7 @@ public class QuestionService {
     private void increaseViews(Question question) {
         int views = question.getViews();
         question.setViews(views + 1);
-        questionRepository.save(question); 
+        questionRepository.save(question);
     }
 
     @Transactional

@@ -1,6 +1,11 @@
 package com.aws.spacecreation.review;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+import java.io.IOException;
+import java.util.List;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -13,16 +18,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+@RequiredArgsConstructor
 @Controller
 @RequestMapping("/question")
 public class QuestionController {
-
-    @Autowired
-    private QuestionService questionService;
-
+	private final QuestionRepository questionRepository;
+	private final QuestionService questionService;
+	
+	@Value("${cloud.aws.s3.endpoint}")
+	private String downpath;
+	
     @GetMapping("/list")
-    public String list(Model model, 
+    public String list(Model model,
                        @RequestParam(defaultValue = "0", name = "page") int page,
                        @RequestParam(defaultValue = "views", name = "sort") String sort,
                        @RequestParam(defaultValue = "desc", name = "direction") String direction) {
@@ -33,28 +42,29 @@ public class QuestionController {
         model.addAttribute("questionPage", questionPage);
         model.addAttribute("sort", sort); // 추가: 정렬 기준
         model.addAttribute("direction", direction); // 추가: 정렬 방향
-        return "question_list";
+        return "view/info/question_list";
     }
-
+    
+    //@GetMapping(value = "/question/detail/{id}")
     @GetMapping("/detail/{id}")
     public String detail(Model model, @PathVariable("id") Integer id) {
         Question question = questionService.getQuestion(id);
         model.addAttribute("question", question);
-        return "question_detail";
+        return "view/info/question_detail";
     }
-
+    
     @GetMapping("/create")
     public String questionCreate(Model model) {
         model.addAttribute("question", new Question());
-        return "question_form";
+        return "view/info/question_form";
     }
-
+    
     @PostMapping("/create")
     public String questionCreate(@ModelAttribute Question question) {
         questionService.create(question);
         return "redirect:/question/list";
     }
-
+    
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id) {
         questionService.delete(id);
@@ -66,4 +76,5 @@ public class QuestionController {
         questionService.deleteQuestion(id);
         return "redirect:/question/list";
     }
+    
 }
