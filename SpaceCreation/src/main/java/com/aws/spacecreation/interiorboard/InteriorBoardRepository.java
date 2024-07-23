@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface InteriorBoardRepository  extends JpaRepository<InteriorBoard, Integer> {
 	
-	Page<InteriorBoard> findBySubjectLike(Pageable pageable,String kw);
+	Page<InteriorBoard> findBySubjectLikeAndPosterLike(Pageable pageable,String kw, String poster);
 /*
     List<Question> findBySubjectLike(String kw);
 */

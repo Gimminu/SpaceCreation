@@ -13,6 +13,7 @@ public class SiteUser {
     private String username;
 
     private String password;
+    private String nickname;
 
     
     @Column(unique = true)

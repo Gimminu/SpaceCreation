@@ -40,6 +40,8 @@
       </form>
       
       <a href="/interiorboard/interiorboardform" class="register-button">게시물 등록</a>
+      <a th:href="@{/interiorboard/list(orderby=${orderby})}" class="register-button">전체 글 보기</a>
+      <a th:href="@{/interiorboard/list/my(keyword=${keyword} ,orderby=${orderby}, poster=${poster})}" class="register-button">내 글 보기</a>
     </div>
   </section>
   <div class="container-medium">
@@ -57,17 +59,17 @@
     <div th:if="${!boards.isEmpty()}">
     <ul class="pagination justify-content-center">
         <li class="page-item" th:classappend="${!boards.hasPrevious} ? 'disabled'">
-            <a class="page-link" th:href="@{|?page=${boards.number-1} keyword=${keyword} orderby=${orderby}|}">
+            <a class="page-link" th:href="@{|?page=${boards.number-1}&keyword=${keyword}&orderby=${orderby}&poster=${poster}|}">
                 <span>이전</span>
             </a>
         </li>
         <li th:each="page: ${#numbers.sequence(1, boards.totalPages)}"
             th:classappend="${page == boards.number + 1} ? 'active'" 
             class="page-item">
-            <a th:text="${page}" class="page-link" th:href="@{|?page=${page-1}&keyword=${keyword}&orderby=${orderby}|}"></a>
+            <a th:text="${page}" class="page-link" th:href="@{|?page=${page-1}&keyword=${keyword}&orderby=${orderby}&poster=${poster}|}"></a>
         </li>
         <li class="page-item" th:classappend="${!boards.hasNext} ? 'disabled'">
-            <a class="page-link" th:href="@{|?page=${boards.number+1} keyword=${keyword} orderby=${orderby}|}">
+            <a class="page-link" th:href="@{|?page=${boards.number+1}&keyword=${keyword}&orderby=${orderby}&poster=${poster}|}">
                 <span>다음</span>
             </a>
         </li>

@@ -58,9 +58,9 @@ public class InteriorBoardService {
         interiorBoardRepository.deleteById(id);
     }
 
-    public Page<InteriorBoard> readlist(Pageable pageable, Integer pageNo, String ordered, String kw) {
+    public Page<InteriorBoard> readlist(Pageable pageable, Integer pageNo, String ordered, String kw, String poster) {
         pageable = PageRequest.of(pageNo, 1, Sort.by(Sort.Direction.DESC, ordered));
-        Page<InteriorBoard> page = interiorBoardRepository.findBySubjectLike(pageable,"%" + kw + "%");
+        Page<InteriorBoard> page = interiorBoardRepository.findBySubjectLikeAndPosterLike(pageable,"%" + kw + "%","%" + poster + "%");
         return page;
     }
     
