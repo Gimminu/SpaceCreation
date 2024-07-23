@@ -59,7 +59,7 @@ public class InteriorBoardService {
     }
 
     public Page<InteriorBoard> readlist(Pageable pageable, Integer pageNo, String ordered, String kw) {
-        pageable = PageRequest.of(pageNo, 12, Sort.by(Sort.Direction.DESC, ordered));
+        pageable = PageRequest.of(pageNo, 1, Sort.by(Sort.Direction.DESC, ordered));
         Page<InteriorBoard> page = interiorBoardRepository.findBySubjectLike(pageable,"%" + kw + "%");
         return page;
     }
