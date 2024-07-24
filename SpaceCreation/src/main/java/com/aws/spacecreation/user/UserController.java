@@ -69,14 +69,9 @@ public class UserController {
             return "view/accounts/signup_form";
         }
 
-        SiteUser newUser = new SiteUser();
-        newUser.setUsername(userCreateForm.getUsername());
-        newUser.setNickname(userCreateForm.getNickname());
-        newUser.setEmail(userCreateForm.getEmail());
-        newUser.setPassword(userCreateForm.getPassword1());
 
         try {
-            userService.createOrUpdateUser(newUser);
+            userService.createOrUpdateUser(userCreateForm);
         }catch(DataIntegrityViolationException e) {
             e.printStackTrace();
             bindingResult.reject("signupFailed", "이미 등록된 사용자입니다.");
@@ -102,14 +97,8 @@ public class UserController {
             return "view/accounts/profile_management";
         }
 
-        SiteUser updateUser = new SiteUser();
-        updateUser.setUsername(userCreateForm.getUsername());
-        updateUser.setNickname(userCreateForm.getNickname());
-        updateUser.setEmail(userCreateForm.getEmail());
-        updateUser.setPassword(userCreateForm.getPassword1());
-
         try {
-            userService.createOrUpdateUser(updateUser);
+            userService.createOrUpdateUser(userCreateForm);
         } catch (Exception e) {
             bindingResult.rejectValue("username", "updateFailed", "사용자 정보 업데이트에 실패했습니다.");
             return "view/accounts/profile_management";
