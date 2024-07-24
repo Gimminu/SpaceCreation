@@ -208,8 +208,8 @@ body {
 }
 
 footer {
-    background-color: var(--dark-gray);
-    color: var(--light-beige);
+    background-color: var(--dark-gray) ;
+    color: var(--dark-beige);
     margin: 0px;
     position: relative;
 (absolute - > relative) transform: translatY(- 100 %);
