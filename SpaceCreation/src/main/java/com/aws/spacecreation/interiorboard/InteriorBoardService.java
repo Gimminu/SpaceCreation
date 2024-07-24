@@ -58,9 +58,29 @@ public class InteriorBoardService {
         interiorBoardRepository.deleteById(id);
     }
 
-    public Page<InteriorBoard> readlist(Pageable pageable, Integer pageNo, String ordered, String kw, String poster) {
-        pageable = PageRequest.of(pageNo, 1, Sort.by(Sort.Direction.DESC, ordered));
-        Page<InteriorBoard> page = interiorBoardRepository.findBySubjectLikeAndPosterLike(pageable,"%" + kw + "%","%" + poster + "%");
+    public Page<InteriorBoard> readlist(Pageable pageable, Integer pageNo, String ordered,String mode, String kw, String poster) {
+    	 pageable = PageRequest.of(pageNo, 1, Sort.by(Sort.Direction.DESC, ordered));
+    	 Page<InteriorBoard> page;
+    	switch(mode) {
+    	case "1":
+    		page = interiorBoardRepository.findBySubjectLikeOrContentLikeAndPosterLike(pageable,"%" + kw + "%","%" + kw + "%","%" + poster + "%");
+    		break;
+    	case "2":
+    		page = interiorBoardRepository.findBySubjectLikeAndPosterLike(pageable,"%" + kw + "%","%" + poster + "%");
+    		break;
+    	case "3":
+    		page = interiorBoardRepository.findByContentLikeAndPosterLike(pageable,"%" + kw + "%","%" + poster + "%");
+    		break;
+    	case "4":
+    		page = interiorBoardRepository.findByPosterLike(pageable,"%" + kw + "%");
+    		break;
+    	default:
+            page = interiorBoardRepository.findAll(pageable);  // 기본값 설정
+            break;
+    	}
+    	
+    	
+       
         return page;
     }
     

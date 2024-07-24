@@ -1,6 +1,5 @@
 package com.aws.spacecreation.interiorboard;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
@@ -20,18 +19,19 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/interiorboard")
 @Controller
 public class InteriorBoardController {
-
+	
 	private final InteriorBoardService interiorBoardService;
-
+	
 	private final UserSecuritySerivce usersecurityService;
 
 	@GetMapping("/list") // 게시물 리스트
-	public String list(@RequestParam(required = false, defaultValue = "", value = "keyword") String kw,
+	public String list(@RequestParam(required = false, defaultValue = "1",value="mode") String mode,
+			@RequestParam(required = false, defaultValue = "", value = "keyword") String kw,
 			@RequestParam(required = false, defaultValue = "0", value = "page") int pageNo,
 			@RequestParam(required = false, defaultValue = "id", value = "orderby") String ordered,
 			@RequestParam(required = false, defaultValue = "", value = "poster") String poster, Pageable pageable,
 			Model model) {
-		Page<InteriorBoard> boards = interiorBoardService.readlist(pageable, pageNo, ordered, kw,poster);
+		Page<InteriorBoard> boards = interiorBoardService.readlist(pageable, pageNo, ordered,mode, kw,poster);
 		String order_vw="id";
 
 		switch (ordered) {
@@ -45,30 +45,31 @@ public class InteriorBoardController {
 			order_vw = "최신순";
 			break;
 		}
-
-
+		
+		
 		model.addAttribute("boards", boards);
 		model.addAttribute("keyword", kw);
 		model.addAttribute("orderby", ordered);
 		model.addAttribute("ordered", order_vw);
 		model.addAttribute("poster", poster);
-
-
+		
+		
 
 		return "view/interiorboard/interiorboardlist";
 	}
-
+	
 	@GetMapping("/list/my")
-	public String list_my(@RequestParam(required = false, defaultValue = "", value = "keyword") String kw,
-			@RequestParam(required = false, defaultValue = "0", value = "page") int pageNo,
+	public String list_my(@RequestParam(required = false, defaultValue = "1" ,value="mode") String mode,
+			@RequestParam(required = false, defaultValue = "", value = "keyword") String kw,
+			@RequestParam(required = false, defaultValue = "0", value = "page") Integer pageNo,
 			@RequestParam(required = false, defaultValue = "id", value = "orderby") String ordered,
 			@RequestParam(required = false, defaultValue = "", value = "poster") String poster, Pageable pageable,
 			Model model) {
-
+		
 		SiteUser username = usersecurityService.getauthen();
 		String nickname = username.getNickname();
 		model.addAttribute("poster", nickname);
-		Page<InteriorBoard> boards = interiorBoardService.readlist(pageable, pageNo, ordered, kw,nickname);
+		Page<InteriorBoard> boards = interiorBoardService.readlist(pageable, pageNo, ordered,mode, kw, nickname);
 		String order_vw="id";
 
 		switch (ordered) {
@@ -82,29 +83,31 @@ public class InteriorBoardController {
 			order_vw = "최신순";
 			break;
 		}
-
+		
 		model.addAttribute("boards", boards);
 		model.addAttribute("keyword", kw);
 		model.addAttribute("orderby", ordered);
 		model.addAttribute("ordered", order_vw);
-
-
-
+		
+		
+		
 
 		return "view/interiorboard/interiorboardlist";
 	}
 
 	@PostMapping("/list")
-	public String list_kw(@RequestParam(required = false, defaultValue = "", value = "keyword") String kw,
+	public String list_kw(@RequestParam(required = false, defaultValue = "1",value="mode") String mode,
+			@RequestParam(required = false, defaultValue = "", value = "keyword") String kw,
 			@RequestParam(required = false, defaultValue = "0", value = "page") int pageNo,
 			@RequestParam(required = false, defaultValue = "id", value = "orderby") String ordered,
 			@RequestParam(required = false, defaultValue = "poster", value = "poster") String poster,Pageable pageable,
 			Model model) {
-		Page<InteriorBoard> boards = interiorBoardService.readlist(pageable, pageNo, ordered, kw, poster);
+		Page<InteriorBoard> boards = interiorBoardService.readlist(pageable, pageNo, ordered, mode, kw, poster);
 		model.addAttribute("boards", boards);
 		model.addAttribute("keyword", kw);
 		model.addAttribute("orderby", ordered);
 		model.addAttribute("poster", poster);
+		model.addAttribute("mode", mode);
 
 		return "view/interiorboard/interiorboardlist";
 
