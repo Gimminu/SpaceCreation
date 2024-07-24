@@ -1,37 +1,35 @@
 package com.aws.spacecreation.like;
 
-import com.aws.spacecreation.user.UserSecuritySerivce;
-import org.springframework.stereotype.Service;
-
-import com.aws.spacecreation.question.Review;
-import com.aws.spacecreation.question.ReviewRepository;
+import com.aws.spacecreation.interiorboard.InteriorBoard;
 import com.aws.spacecreation.user.SiteUser;
-
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
 public class LikeService {
-	
-	private final LikeRepository likeRepository;
-	private final UserSecuritySerivce userSecuritySerivce;
-	private final ReviewRepository reviewRepository;
-	
-	public void like(Review review) {
-		SiteUser username = userSecuritySerivce.getauthen();
-		Likes like = new Likes();
-		like.setUsername(username.getUsername());
-		like.setReview(review);
-		likeRepository.save(like);
-		review.setLikes(review.getLikes()+1);
-		this.reviewRepository.save(review);
-	}
-	
-	public void delete(Review review) {
-		
-		SiteUser username = userSecuritySerivce.getauthen();
-		likeRepository.findByReviewAndUsername(review, username.getUsername());
-		review.setLikes(review.getLikes()-1);
-		this.reviewRepository.save(review);
-	}
+
+    private final LikeRepository likeRepository;
+
+    @Transactional
+    public void toggleLike(InteriorBoard board, SiteUser user) {
+        if (likeRepository.existsByBoardAndUser(board, user)) { //존재하면
+            likeRepository.deleteByBoardAndUser(board, user);  //삭제
+            System.out.println("좋아요 취소");
+        } else { //없으면 생성
+            BoardLike like = new BoardLike();
+            like.setBoard(board);
+            like.setUser(user);
+            likeRepository.save(like);
+            System.out.println("좋아요");
+        }
+    }
+    public boolean isLikedByUser(InteriorBoard board, SiteUser user) {
+        return likeRepository.existsByBoardAndUser(board, user);
+    }
+
+    public int getLikeCount(InteriorBoard board) {
+        return likeRepository.countByBoard(board);
+    }
 }

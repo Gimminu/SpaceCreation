@@ -72,7 +72,7 @@ public class QuestionController {
     @GetMapping("/update/{id}")
     public String update(@PathVariable("id")Integer id, Model model){
         Question question = questionService.getQuestion(id);
-        if(userSecuritySerivce.getauthen().equals(question.getUser())) {
+        if(userSecuritySerivce.getAuthen().equals(question.getUser())) {
             model.addAttribute("question", question);
             return "view/info/question_update";
         }else{

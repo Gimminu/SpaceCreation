@@ -1,10 +1,12 @@
 package com.aws.spacecreation.user;
 
-import com.aws.spacecreation.user.kakao.KaKaoApi;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,13 +24,11 @@ public class UserController {
 
     private final UserService userService;
     private final UserSecuritySerivce userSecuritySerivce;
-    private final KaKaoApi kakaoApi;
 
     //회원가입
     @GetMapping("/signup")
     public String signup(Model model) {
         model.addAttribute("userCreateForm", new UserCreateForm());
-        model.addAttribute("kakaoApi", kakaoApi);
         return "view/accounts/signup_form";
     }
 
@@ -38,15 +38,21 @@ public class UserController {
         return "view/accounts/login_form";
     }
 
-
-    //회원 정보 수정
     @GetMapping("/update")
-    public String update(Model model)
-    {
-        SiteUser siteUser = userSecuritySerivce.getauthen();
+    public String update(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof OAuth2AuthenticationToken)) {
+            throw new IllegalStateException("접속자 타입 오류");
+        }
+
+        OAuth2AuthenticationToken oauthToken = (OAuth2AuthenticationToken) authentication;
+        String email = oauthToken.getPrincipal().getAttributes().get("email").toString();
+        SiteUser siteUser = userService.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("사용자가 존재하지 않습니다."));
+
         UserCreateForm userCreateForm = new UserCreateForm();
         userCreateForm.setUsername(siteUser.getUsername());
         userCreateForm.setEmail(siteUser.getEmail());
+        userCreateForm.setNickname(siteUser.getNickname());
         model.addAttribute("userCreateForm", userCreateForm);
         return "view/accounts/profile_management";
     }
@@ -63,9 +69,14 @@ public class UserController {
             return "view/accounts/signup_form";
         }
 
+        SiteUser newUser = new SiteUser();
+        newUser.setUsername(userCreateForm.getUsername());
+        newUser.setNickname(userCreateForm.getNickname());
+        newUser.setEmail(userCreateForm.getEmail());
+        newUser.setPassword(userCreateForm.getPassword1());
+
         try {
-            userService.create(userCreateForm.getUsername(),
-                    userCreateForm.getEmail(), userCreateForm.getPassword1());
+            userService.createOrUpdateUser(newUser);
         }catch(DataIntegrityViolationException e) {
             e.printStackTrace();
             bindingResult.reject("signupFailed", "이미 등록된 사용자입니다.");
@@ -75,7 +86,7 @@ public class UserController {
             bindingResult.reject("signupFailed", e.getMessage());
             return "view/accounts/signup_form";
         }
-        return "redirect:/";
+        return "redirect:/user/login";
     }
 
     //회원 정보 수정
@@ -91,8 +102,14 @@ public class UserController {
             return "view/accounts/profile_management";
         }
 
+        SiteUser updateUser = new SiteUser();
+        updateUser.setUsername(userCreateForm.getUsername());
+        updateUser.setNickname(userCreateForm.getNickname());
+        updateUser.setEmail(userCreateForm.getEmail());
+        updateUser.setPassword(userCreateForm.getPassword1());
+
         try {
-            userService.update(userCreateForm.getUsername(), userCreateForm.getEmail(), userCreateForm.getPassword1());
+            userService.createOrUpdateUser(updateUser);
         } catch (Exception e) {
             bindingResult.rejectValue("username", "updateFailed", "사용자 정보 업데이트에 실패했습니다.");
             return "view/accounts/profile_management";
@@ -105,12 +122,13 @@ public class UserController {
     @GetMapping("/withdraw")
     public String withdraw() {
         try {
-            userService.withdraw(userSecuritySerivce.getauthen());
+            userService.withdraw(userSecuritySerivce.getAuthen());
         } catch (Exception e) {
             return e.getMessage();
         }
         return "redirect:/user/logout";
     }
+
     //로그인 상태 확인
     @GetMapping("/api/check-authentication")
     public Map<String, Boolean> checkAuthentication(Authentication authentication) {

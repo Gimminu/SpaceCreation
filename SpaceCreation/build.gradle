@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.aws'
-version = '0.0.1-SNAPSHOT'
+version = '0.1'
 
 java {
     toolchain {
@@ -35,6 +35,7 @@ dependencies {
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-authorization-server'
     testImplementation 'org.springframework.security:spring-security-test'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -48,6 +49,8 @@ dependencies {
     implementation 'com.google.code.gson:gson'
 
     implementation group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.12.529'
+
+    implementation 'org.json:json:20210307'
 }
 
 

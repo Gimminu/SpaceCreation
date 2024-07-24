@@ -7,21 +7,20 @@
 <title>인테리어 게시판</title>
 
 <!-- css -->
-<link rel="stylesheet" href="/css/interiorboardliststyle.css">
+<link rel="stylesheet" href="interiorboardliststyle.css">
 <!-- css -->
 
 
 <!-- 피닉스 -->
-<link href="/css/prism-okaidia.css" rel="stylesheet">
+<link href="/css/phoneix/prism-okaidia.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
-<link href="/css/simplebar.min.css" rel="stylesheet">
+<link href="/css/phoneix/simplebar.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-<link href="/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
-<link href="/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
-<link href="/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
-<link href="/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+<link href="/css/phoneix/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
+<link href="/css/phoneix/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+<link href="/css/phoneix/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
+<link href="/css/phoneix/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
 <!-- 피닉스 -->
-
 
 </head>
 <div layout:fragment="content" class="container my-3">
@@ -38,14 +37,15 @@
     <div class="filter-buttons">
       <div class="filter-button">
         최신순 <span class="dropdown-indicator">&#9662;</span>
-        <div class="filter-dropdown">     <아직 로직 미처리>
-          <a href="#">조회순</a>
-          <a href="#">인기순</a>
-          <a href="#">인기순</a>
+        <div class="filter-dropdown">
+          <td><a th:href="@{/interiorboard/list(orderby=viewed)}">조회순</a></td>
+          <td><a th:href="@{/interiorboard/list(orderby=likes)}">인기순</a></td>
+          <td><a th:href="@{/interiorboard/list(orderby=id)}">최신순</a></td>
         </div>
       </div>
       <!-- 검색 바 추가 -->
       <div class="search-bar">
+      <form action="@{/interiorboard/list(,orderby=${orderby})}"
         <input type="text" id="searchInput" placeholder="검색어를 입력하세요" onkeyup="filterProjects()">
       </div>
       <a href="/interiorboard/interiorboardform" class="register-button">게시물 등록</a>
@@ -54,7 +54,7 @@
   <div class="container-medium">
     <main class="project-list" id="projectList">
       <div th:each="board : ${boards}" class="project-item">
-        <img th:src="${board.image1}" alt="프로젝트 이미지">
+        <img th:src="${board.imageUrls}" alt="프로젝트 이미지">
         <div class="text-container">
           <div class="like-container">
             <span class="like-icon" onclick="toggleLike(this)">&#9829;</span>
@@ -63,7 +63,27 @@
         </div>
       </div>
     </main>
+    <div th:if="${!boards.isEmpty()}">
+    <ul class="pagination justify-content-center">
+        <li class="page-item" th:classappend="${!boards.hasPrevious} ? 'disabled'">
+            <a class="page-link" th:href="@{|?page=${boards.number-1}|}">
+                <span>이전</span>
+            </a>
+        </li>
+        <li th:each="page: ${#numbers.sequence(1, boards.totalPages)}"
+            th:classappend="${page == boards.number + 1} ? 'active'"
+            class="page-item">
+            <a th:text="${page}" class="page-link" th:href="@{|?page=${page-1}|}"></a>
+        </li>
+        <li class="page-item" th:classappend="${!boards.hasNext} ? 'disabled'">
+            <a class="page-link" th:href="@{|?page=${boards.number+1}|}">
+                <span>다음</span>
+            </a>
+        </li>
+    </ul>
+</div>
   </div>
+
   <script>
     function toggleLike(element) {
       element.classList.toggle('liked');

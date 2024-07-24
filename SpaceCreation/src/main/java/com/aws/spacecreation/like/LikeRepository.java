@@ -1,11 +1,15 @@
 package com.aws.spacecreation.like;
 
-import java.util.Optional;
-
+import com.aws.spacecreation.interiorboard.InteriorBoard;
+import com.aws.spacecreation.user.SiteUser;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
-import com.aws.spacecreation.question.Review;
+public interface LikeRepository extends JpaRepository<BoardLike, Long> {
+    @Query("SELECT COUNT(l) FROM BoardLike l WHERE l.board = ?1")
+    int countByBoard(InteriorBoard board);
 
-public interface LikeRepository extends JpaRepository<Likes, Integer> {
-	Optional<Likes> findByReviewAndUsername(Review review, String username);
+    boolean existsByBoardAndUser(InteriorBoard board, SiteUser user);
+
+    void deleteByBoardAndUser(InteriorBoard board, SiteUser user);
 }

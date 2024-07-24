@@ -29,8 +29,22 @@
                     <div class="mb-3">
                         <input type="submit" class="btn btn-block text-uppercase" value= "로그인" style="background-color: #F9813A">
                     </div>
-                    <!-- 로그인 구현 -->
 
+                    <hr class="my-4">
+                    <div class="social-login">
+                        <a th:href="@{/oauth2/authorization/google}">
+                            <img th:src="@{/images/icon/google.png}" alt="Google Login" style = "height : 3rem">
+                        </a>
+                        <a th:href="@{/oauth2/authorization/facebook}">
+                            <img th:src="@{/images/icon/facebook.png}" alt="Facebook Login" style = "height : 3rem">
+                        </a>
+                        <a th:href="@{/oauth2/authorization/kakao}">
+                            <img th:src="@{/images/icon/kakotalk.png}" alt="Kakao Login" style = "height : 3rem">
+                        </a>
+                        <a th:href="@{/oauth2/authorization/naver}">
+                            <img th:src="@{/images/icon/naver.png}" alt="Naver Login" style = "height : 3rem">
+                        </a>
+                    </div>
                     <hr class="my-4">
 
                     <div class="text-center mb-2">

@@ -35,25 +35,25 @@ public class UserSecuritySerivce implements UserDetailsService {
         return new User(siteUser.getUsername(), siteUser.getPassword(), authorities);
     }
 
-    public SiteUser getauthen() {
+//    public SiteUser getAuthen(){
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+//        String username = userDetails.getUsername();
+//        Optional<SiteUser> siteUser = userRepository.findByUsername(username);
+//        return siteUser.get();
+//    }
+
+
+
+    public SiteUser getAuthen() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication == null) {
-            throw new UsernameNotFoundException("계정 정보 없음");
+        if (authentication == null || !(authentication.getPrincipal() instanceof UserDetails)) {
+            return null;
         }
-        Object principal = authentication.getPrincipal();
-        String username;
-        if (principal instanceof UserDetails) {
-            username = ((UserDetails) principal).getUsername();
-        } else if (principal instanceof String) {
-            username = (String) principal;
-        } else {
-            throw new IllegalStateException("접속자 타입 오류");
-        }
-        Optional<SiteUser> oc = userRepository.findByUsername(username);
-        if (!oc.isPresent()) {
-            throw new UsernameNotFoundException("해당 유저명 인덱싱 불가 : " + username);
-        }
-        return oc.get();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        String username = userDetails.getUsername();
+        Optional<SiteUser> siteUser = userRepository.findByUsername(username);
+        return siteUser.orElse(null);   //없으면 null로 반환해줘야함 그래야 로그인안해도 게시물 볼 수 있음
     }
 
 }

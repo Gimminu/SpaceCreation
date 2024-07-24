@@ -1,7 +1,89 @@
 <!DOCTYPE html>
-<html lang="ko" layout:decorate="~{layout/layout}">
-<div layout:fragment="content" class="container my-3">
+<html layout:decorate="~{/layout/layout}">
+<head>
     <link rel="stylesheet" href="/css/questionstyle.css">
+    <style>
+        /* 기존 버튼 스타일 유지 */
+        .button--winona {
+            padding: 10px 20px;
+            border-radius: 5px; /* 사각형 모양으로 변경 */
+            border: 2px solid #1A1C20;
+            color: #1A1C20;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            background-color: transparent;
+        }
+
+        .button--winona:hover {
+            border-color: #1A1C20;
+            background-color: rgba(249, 129, 58, 0.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 가로 길이 조정을 위한 추가 스타일 */
+        .container-list, .card-header {
+            max-width: 100%;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px; /* 버튼 간격 조정 */
+        }
+
+        .pagination {
+            margin: 20px 0;
+        }
+
+        .table-orange {
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            margin: 20px auto;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* 버튼 컨테이너 스타일 */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .admin-login-btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 2px solid #ff5733;
+            color: #ff5733;
+            background-color: transparent;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .admin-login-btn:hover {
+            background-color: rgba(255, 87, 51, 0.1);
+            border-color: #ff5733;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+<div layout:fragment="content" class="container my-3">
     <div class="card-header">
         <h5 class="my-3">Q&A 게시판</h5>
         <div>
@@ -12,6 +94,8 @@
                class="btn btn-outline-warning">↓</a>
         </div>
     </div>
+
+    <!-- 기존 테이블 코드 -->
     <div class="container container-list my-3">
         <table class="table">
             <thead class="table-orange">
@@ -37,34 +121,39 @@
             </tr>
             </tbody>
         </table>
-        <div>
-            <nav aria-label="Page navigation">
-                <ul class="pagination d-flex justify-content-center">
-                    <li class="page-item" th:classappend="${questionPage.hasPrevious()} ? '' : 'disabled'">
-                        <a class="page-link"
-                           th:href="@{/question/list(page=${questionPage.number - 1}, sort=${sort}, direction=${direction})}"
-                           aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item" th:each="i : ${#numbers.sequence(1, questionPage.totalPages)}"
-                        th:classappend="${i == questionPage.number + 1} ? 'active'">
-                        <a class="page-link"
-                           th:href="@{/question/list(page=${i - 1}, sort=${sort}, direction=${direction})}"
-                           th:text="${i}">1</a>
-                    </li>
-                    <li class="page-item" th:classappend="${questionPage.hasNext()} ? '' : 'disabled'">
-                        <a class="page-link"
-                           th:href="@{/question/list(page=${questionPage.number + 1}, sort=${sort}, direction=${direction})}"
-                           aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
 
-        <a th:href="@{/question/create}" class="button--winona">질문 등록하기</a>
+        <!-- 기존 페이지네이션 코드 -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination d-flex justify-content-center">
+                <li class="page-item" th:classappend="${questionPage.hasPrevious()} ? '' : 'disabled'">
+                    <a class="page-link"
+                       th:href="@{/question/list(page=${questionPage.number - 1}, sort=${sort}, direction=${direction})}"
+                       aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item" th:each="i : ${#numbers.sequence(1, questionPage.totalPages)}"
+                    th:classappend="${i == questionPage.number + 1} ? 'active'">
+                    <a class="page-link"
+                       th:href="@{/question/list(page=${i - 1}, sort=${sort}, direction=${direction})}"
+                       th:text="${i}">1</a>
+                </li>
+                <li class="page-item" th:classappend="${questionPage.hasNext()} ? '' : 'disabled'">
+                    <a class="page-link"
+                       th:href="@{/question/list(page=${questionPage.number + 1}, sort=${sort}, direction=${direction})}"
+                       aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- 버튼 컨테이너 -->
+        <div class="button-container">
+            <a th:href="@{/question/create}" class="button--winona">질문 등록하기</a>
+            <a href="/admin/login" class="admin-login-btn">관리자 로그인</a>
+        </div>
     </div>
 </div>
+</body>
 </html>

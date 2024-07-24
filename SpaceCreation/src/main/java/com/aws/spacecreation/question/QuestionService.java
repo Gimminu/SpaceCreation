@@ -58,14 +58,14 @@ public class QuestionService {
     @Transactional
     public void create(Question question) {
         emailService.sendEmailFromDaum(question);
-        question.setUser(userSecuritySerivce.getauthen());
+        question.setUser(userSecuritySerivce.getAuthen());
         question.setCreateDate(LocalDateTime.now());
         questionRepository.save(question);
     }
 
     @Transactional
     public void delete(Integer id) {
-        SiteUser siteuser = userSecuritySerivce.getauthen();
+        SiteUser siteuser = userSecuritySerivce.getAuthen();
         if(siteuser.equals(questionRepository.findById(id).get().getUser())||siteuser.getUserRole().equals(UserRole.ADMIN)){
             questionRepository.deleteById(id);
         }

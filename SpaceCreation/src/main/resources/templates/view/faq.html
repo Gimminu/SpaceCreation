@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html layout:decorate="~{/layout/layout}">
+<div layout:fragment="content" class="container-fluid">
+    <div class="container" >
+        <h1 class="my-5">FAQ(자주 묻는 질문)</h1>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item" th:each="topQuestion : ${topQuestions}">
+                <h2 class="accordion-header" th:id="${'heading' + topQuestion.id}">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            th:data-bs-target="${'#collapse' + topQuestion.id}" aria-expanded="true"
+                            th:aria-controls="${'collapse' + topQuestion.id}"
+                            style="background-color: #FFAD60; color:white">
+                        <th:block th:text="${topQuestion.subject}">Accordion Item</th:block>
+                    </button>
+                </h2>
+                <div th:id="${'collapse' + topQuestion.id}" class="accordion-collapse collapse show"
+                     th:aria-labelledby="${'heading' + topQuestion.id}" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ul>
+                            <li th:each="answer : ${topQuestion.answerList}">
+                                <strong><th:block th:text="${answer.content}">This is an answer.</th:block></strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <Button class="my-5" onclick="location.href='/question/create' " style="text-decoration-line: none; color: white;
+        background-color:#F9813A; border-radius: 10px; border-color: white; display: flex; font-size: 1.5rem">질문하러 가기</Button>
+        </div>
+    </div>
+</div>
+</html>

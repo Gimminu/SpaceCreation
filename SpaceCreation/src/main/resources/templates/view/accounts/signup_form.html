@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Signup</title>
@@ -17,9 +18,13 @@
                     JOIN US
                 </h1>
                 <form class="form-box px-3" th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+                    <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
                     <div th:fragment="formErrorsFragment" class="alert alert-danger"
                          role="alert" th:if="${#fields.hasAnyErrors()}">
                         <div th:each="err : ${#fields.allErrors()}" th:text="${err}" />
+                    </div>
+                    <div class="form-input">
+                        <input type="text" th:field="*{nickname}" placeholder="Nickname" tabindex="10" required>
                     </div>
                     <div class="form-input">
                         <input type="text" th:field="*{username}" placeholder="ID" tabindex="10" required>
@@ -36,20 +41,23 @@
 
                     <div class="mb-3">
                         <input type="submit" class="btn btn-block text-uppercase" style="background-color: #F9813A" value="회원가입">
-                        </input>
                     </div>
-                    <!-- 구글 로그인 -->
-                    <!-- 페이스북 로그인 -->
-                    <!-- 카카오 로그인 -->
-                    <div class="text-center">
-                        <a href="https://kauth.kakao.com/oauth/authorize"
-                           th:href="@{https://kauth.kakao.com/oauth/authorize(client_id=${kakaoApi.getKakaoApiKey()}, redirect_uri=${kakaoApi.getKakaoRedirectUrl()}, response_type='code')}">
-                            <img src="/images/kakao_login_medium_wide.png">
+                    <hr class="my-4">
+                    <div class="social-login">
+                        <a th:href="@{/oauth2/authorization/google}">
+                            <img th:src="@{/images/icon/google.png}" alt="Google Login" style = "height : 3rem">
+                        </a>
+                        <a th:href="@{/oauth2/authorization/facebook}">
+                            <img th:src="@{/images/icon/facebook.png}" alt="Facebook Login" style = "height : 3rem">
+                        </a>
+                        <a th:href="@{/oauth2/authorization/kakao}">
+                            <img th:src="@{/images/icon/kakotalk.png}" alt="Kakao Login" style = "height : 3rem">
+                        </a>
+                        <a th:href="@{/oauth2/authorization/naver}">
+                            <img th:src="@{/images/icon/naver.png}" alt="Naver Login" style = "height : 3rem">
                         </a>
                     </div>
-                    <!-- 네이버 로그인 -->
                     <hr class="my-4">
-
                     <div class="text-center mb-2">
                         이미 계정이 있으신가요?
                         <a href="/user/login" class="register-link" style="color:#F9813A;">
