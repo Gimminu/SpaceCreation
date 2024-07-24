@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html layout:decorate="~{layout/layout}">
+<html layout:decorate="layout/layout">
 
 <!-- 피닉스 -->
-<link href="/vendors/prism/prism-okaidia.css" rel="stylesheet">
+<link href="/css/prism-okaidia.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
-<link href="/vendors/simplebar/simplebar.min.css" rel="stylesheet">
+<link href="/css/simplebar.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-<link href="/assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
-<link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
-<link href="/assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
-<link href="/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+<link href="/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
+<link href="/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+<link href="/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
+<link href="/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
 <!-- 피닉스 -->
+
+
 </head>
 <div layout:fragment="content">
   <header>
@@ -25,19 +27,23 @@
     <h1>인테리어 게시판</h1>
     <div class="filter-buttons">
       <div class="filter-button">
-        최신순 <span class="dropdown-indicator">&#9662;</span>
-        <div class="filter-dropdown">     <아직 로직 미처리>
-          <td><a th:href="@{/interiorboard/list(orderby=viewed)}">조회순</a></td>
-          <td><a th:href="@{/interiorboard/list(orderby=likes)}">인기순</a></td>
-          <td><a th:href="@{/interiorboard/list(orderby=id)}">최신순</a></td>
+        [[${ordered}]]<span class="dropdown-indicator">&#9662;</span>
+        <div class="filter-dropdown">
+          <td><a th:href="@{/interiorboard/list(keyword=${keyword} ,orderby=viewed)}">조회순</a></td>
+          <td><a th:href="@{/interiorboard/list(keyword=${keyword} ,orderby=likes)}">인기순</a></td>
+          <td><a th:href="@{/interiorboard/list(keyword=${keyword} ,orderby=id)}">최신순</a></td>
         </div>
       </div>
       <!-- 검색 바 추가 -->
+      <form th:action="@{/interiorboard/list(orderby=${orderby})}" role="search">
       <div class="search-bar">
-      <form action="@{/interiorboard/list(,orderby=${orderby})}"
-        <input type="text" id="searchInput" placeholder="검색어를 입력하세요" onkeyup="filterProjects()">
+        <input type="text" id="searchInput" name="keyword" placeholder="검색어를 입력하세요" onkeyup="filterProjects()">
       </div>
+      </form>
+
       <a href="/interiorboard/interiorboardform" class="register-button">게시물 등록</a>
+      <a th:href="@{/interiorboard/list(orderby=${orderby})}" class="register-button">전체 글 보기</a>
+      <a th:href="@{/interiorboard/list/my(keyword=${keyword} ,orderby=${orderby}, poster=${poster})}" class="register-button">내 글 보기</a>
     </div>
   </section>
   <div class="container-medium">
@@ -55,24 +61,24 @@
     <div th:if="${!boards.isEmpty()}">
     <ul class="pagination justify-content-center">
         <li class="page-item" th:classappend="${!boards.hasPrevious} ? 'disabled'">
-            <a class="page-link" th:href="@{|?page=${boards.number-1}|}">
+            <a class="page-link" th:href="@{|?page=${boards.number-1}&keyword=${keyword}&orderby=${orderby}&poster=${poster}|}">
                 <span>이전</span>
             </a>
         </li>
         <li th:each="page: ${#numbers.sequence(1, boards.totalPages)}"
-            th:classappend="${page == boards.number + 1} ? 'active'" 
+            th:classappend="${page == boards.number + 1} ? 'active'"
             class="page-item">
-            <a th:text="${page}" class="page-link" th:href="@{|?page=${page-1}|}"></a>
+            <a th:text="${page}" class="page-link" th:href="@{|?page=${page-1}&keyword=${keyword}&orderby=${orderby}&poster=${poster}|}"></a>
         </li>
         <li class="page-item" th:classappend="${!boards.hasNext} ? 'disabled'">
-            <a class="page-link" th:href="@{|?page=${boards.number+1}|}">
+            <a class="page-link" th:href="@{|?page=${boards.number+1}&keyword=${keyword}&orderby=${orderby}&poster=${poster}|}">
                 <span>다음</span>
             </a>
         </li>
     </ul>
 </div>
   </div>
-  
+
   <script>
     function toggleLike(element) {
       element.classList.toggle('liked');
