@@ -83,28 +83,26 @@
     </style>
 </head>
 <body>
-    <div layout:fragment="content" class="container my-3">
+    <div layout:fragment="content" class="container">
         <div class="card-header">
             <h5 class="my-3">Q&A 게시판</h5>
-            <div>
-                조회수 순 정렬
-                <a th:href="@{/question/list(page=${questionPage.number}, sort=views, direction=asc)}"
-                   class="btn btn-outline-warning">↑</a>
-                <a th:href="@{/question/list(page=${questionPage.number}, sort=views, direction=desc)}"
-                   class="btn btn-outline-warning">↓</a>
-            </div>
         </div>
 
         <!-- 기존 테이블 코드 -->
-        <div class="container container-list my-3">
+        <div class="container container-list">
             <table class="table">
                 <thead class="table-orange">
                 <tr>
                     <th>번호</th>
-                    <th>제목</th>
-                    <th>작성일시</th>
-                    <th>조회수</th>
-                    <th></th>
+                    <th>
+                        <a th:href="@{/question/list(page=${questionPage.number}, sort='subject', direction=${sort=='subject' and direction=='asc' ? 'desc' : 'asc'})}">제목</a>
+                    </th>
+                    <th>
+                        <a th:href="@{/question/list(page=${questionPage.number}, sort='createDate', direction=${sort=='createDate' and direction=='asc' ? 'desc' : 'asc'})}">작성일시</a>
+                    </th>
+                    <th>
+                        <a th:href="@{/question/list(page=${questionPage.number}, sort='views', direction=${sort=='views' and direction=='asc' ? 'desc' : 'asc'})}">조회수</a>
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -113,12 +111,15 @@
                     <td><a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a></td>
                     <td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd')}"></td>
                     <td th:text="${question.views}"></td>
-                    <td>
-                        <form th:action="@{|/question/delete/${question.id}|}" method="post">
-                            <button type="submit" class="btn btn-sm btn-danger">X</button>
-                        </form>
-                    </td>
                 </tr>
+                <th:block th:if="${questionPage.content.size() < 10}">
+                    <tr th:each="i : ${#numbers.sequence(questionPage.content.size(), 9)}">
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </th:block>
                 </tbody>
             </table>
 
@@ -150,8 +151,7 @@
 
         <!-- 버튼 컨테이너 -->
         <div class="button-container">
-            <a th:href="@{/question/create}" class="button--winona">질문 등록하기</a>
-            <a href="/admin/login" class="admin-login-btn">관리자 로그인</a>
+            <a sec:authorize="isAuthenticated" th:href="@{/question/create}" class="button--winona">질문 등록하기</a>
         </div>
     </div>
 </div>

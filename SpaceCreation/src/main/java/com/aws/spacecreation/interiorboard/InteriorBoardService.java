@@ -5,30 +5,24 @@ import com.aws.spacecreation.like.LikeRepository;
 import com.aws.spacecreation.like.LikeService;
 import com.aws.spacecreation.user.SiteUser;
 import com.aws.spacecreation.user.UserRepository;
+import com.aws.spacecreation.user.UserSecuritySerivce;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Service @RequiredArgsConstructor
 public class InteriorBoardService {
-
-    @Autowired
-    private InteriorBoardRepository interiorBoardRepository;
-
-    @Autowired
-    private S3Service s3Service;
-
-    @Autowired
-    private LikeService likeService;
-
-    @Autowired
-    private LikeRepository likeRepository;
-
-    @Autowired
-    private UserRepository userRepository;
+    private final InteriorBoardRepository interiorBoardRepository;
+    private final S3Service s3Service;
+    private final LikeService likeService;
+    private final LikeRepository likeRepository;
+    private final UserRepository userRepository;
+    private final UserSecuritySerivce  userSecurityService;
 
     public InteriorBoard getInteriorBoard(Integer id) {
         Optional<InteriorBoard> interiorBoard = this.interiorBoardRepository.findById(id);
@@ -41,7 +35,9 @@ public class InteriorBoardService {
 
     public void create(InteriorBoard interiorBoard) {
         interiorBoard.setCreateDate(LocalDateTime.now()); // 등록 시간을 현재 시간으로 설정
-        interiorBoard.setViewCount(0); // 초기 조회수 설정
+        interiorBoard.setViewCount(0);
+        interiorBoard.setPoster(userSecurityService.getAuthen().getNickname());
+        interiorBoard.setUser(userSecurityService.getAuthen());
         interiorBoardRepository.save(interiorBoard);
     }
     public List<InteriorBoard> getAllInteriorBoards() {

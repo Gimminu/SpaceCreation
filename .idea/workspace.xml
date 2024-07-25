@@ -5,61 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e29fc5a5-4cbc-445e-ab98-6ad83f418ca0" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_stephenc_jcip_jcip_annotations_1_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_nimbusds_content_type_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_nimbusds_lang_tag_1_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_nimbusds_nimbus_jose_jwt_9_39_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_nimbusds_oauth2_oidc_sdk_9_43_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_angus_jakarta_mail_2_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_json_json_20210307.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_mail_3_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_oauth2_authorization_server_3_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_oauth2_client_3_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_oauth2_authorization_server_1_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_oauth2_client_6_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_oauth2_core_6_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_oauth2_jose_6_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_oauth2_resource_server_6_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_context_support_6_1_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/auth/UserProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/nav_main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f69fbeab-c8fe-4fab-9af2-2587dd295dbf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f69fbeab-c8fe-4fab-9af2-2587dd295dbf.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/SpaceCreation.SpaceCreation.test.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/logs/myapp.log" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/logs/myapp.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/comment/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/comment/CommentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/like/Likes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserCreateForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserCreateForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/auth/OAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/auth/OAuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/auth/OAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/auth/OAuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboardreply/InteriorBoardReply.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboardreply/InteriorBoardReplyController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboardreply/InteriorBoardReplyRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboardreply/InteriorBoardReplyService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/SiteUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/SiteUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/interiorboardform.css" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/interiorboardform.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/boarddetailstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/boarddetailstyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/interiorboardliststyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/interiorboardliststyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/mainstyle-layout.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/mainstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/mainstyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/interiorboard/interiorboarddetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboarddetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/interiorboard/interiorboardedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardedit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/interiorboard/interiorboardform.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/interiorboard/interiorboardlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/phoneix/theme-rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/phoneix/theme-rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/phoneix/theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/phoneix/theme.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/questionstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/questionstyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/accounts/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/accounts/signup_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/faq.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/question_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/question_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/question_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/question_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/question_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/question_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/question_update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboarddetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboarddetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardedit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardform.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardform.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardlist.html" afterDir="false" />
     </list>
@@ -76,12 +51,26 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/SpaceCreation">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="SpaceCreation" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SpaceCreation" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SpaceCreation" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -94,6 +83,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -190,6 +180,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.SpaceCreation [build].executor": "Run",
     "Gradle.SpaceCreation 빌드.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -227,12 +219,34 @@
       <recent name="com.aws.spacecreation.user.auth" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.SpaceCreationApplication">
+    <configuration name="SpaceCreation [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/SpaceCreation" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="SpaceCreationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="SpaceCreation.SpaceCreation.main" />
+      <module name="SpaceCreation.SpaceCreation.main~1" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.aws.spacecreation.SpaceCreationApplication" />
       <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
         <option name="credential" />
@@ -243,6 +257,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.SpaceCreation [build]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -271,7 +290,7 @@
       <workItem from="1721362632861" duration="10000" />
       <workItem from="1721362863588" duration="551000" />
       <workItem from="1721800233575" duration="2925000" />
-      <workItem from="1721803774455" duration="16456000" />
+      <workItem from="1721803774455" duration="33553000" />
     </task>
     <servers />
   </component>

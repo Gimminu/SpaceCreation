@@ -7,7 +7,6 @@ import com.aws.spacecreation.like.LikeService;
 import com.aws.spacecreation.user.SiteUser;
 import com.aws.spacecreation.user.UserRepository;
 import com.aws.spacecreation.user.UserSecuritySerivce;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,26 +20,18 @@ import java.util.List;
 @RequestMapping("/interiorboard")
 @Controller
 public class InteriorBoardController {
-
     @Autowired
     private InteriorBoardService interiorBoardService;
-
     @Autowired
     private LikeService likeService;
-
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private S3Service s3Service;
-
     @Autowired
     private UserSecuritySerivce userSecurityService;
-
     @Autowired
     private CommentService commentService;
-
-
     // 특정 인테리어 게시판의 상세 보기
     @GetMapping("/interiorboarddetail/{id}")
     public String detail(@PathVariable("id") Integer boardId, Model model) {
@@ -74,18 +65,14 @@ public class InteriorBoardController {
     @ResponseBody // 바꾸지마세요
     public String toggleLike(@RequestParam("boardId") Integer boardId) {
         SiteUser siteUser = userSecurityService.getAuthen(); // 유저정보 받아서
-
         if (siteUser == null || siteUser.getId() == null) {
             System.out.println("User is not logged in.");
 
             return "failed";
         }
-
         Long userId = siteUser.getId();
-
         // 현재 로그인한 유저랑 보드 아이디(확인용)
         System.out.println("toggleLike called with userId: " + userId + " and boardId: " + boardId);
-
         try {
             interiorBoardService.toggleLike(userId, boardId);
             System.out.println("Like status toggled successfully."); // 확인용
@@ -93,7 +80,6 @@ public class InteriorBoardController {
             System.out.println("Error toggling like status: " + e.getMessage()); // 확인용
             return "error";
         }
-
         return "success";
     }
 
@@ -109,7 +95,7 @@ public class InteriorBoardController {
     public String create(InteriorBoard interiorBoard, @RequestParam("imageURL") List<String> imageURLs) {
         interiorBoard.setImageUrls(imageURLs);
         interiorBoardService.create(interiorBoard);
-        return "redirect:/interiorboard/interiorboardlist";
+        return "redirect:/interiorboard/list";
     }
 
 
@@ -120,19 +106,15 @@ public class InteriorBoardController {
         model.addAttribute("board", board);
         return "view/interiorboard/interiorboardedit";
     }
-
     // 게시물 수정
     @PostMapping("/interiorboardedit/{id}")
     public String update(@PathVariable("id") Integer boardId, @ModelAttribute InteriorBoard board, @RequestParam("imageURL") List<String> imageURLs) {
         board.setImageUrls(imageURLs);
         interiorBoardService.updatePost(boardId, board);
-        return "redirect:/interiorboard/interiorboardlist";
+        return "redirect:/interiorboard/list";
     }
-
-
     // 이미지 업로드 및 URL 반환
     @PostMapping("/uploadImage")
-    @ResponseBody
     public ResponseEntity<String> uploadImage(@RequestParam("file") MultipartFile file) {
         try {
             String url = s3Service.uploadFile(file);
@@ -146,7 +128,7 @@ public class InteriorBoardController {
     @GetMapping("/interiorboarddelete/{id}")
     public String delete(@PathVariable("id") Integer id) {
         interiorBoardService.deleteInteriorBoard(id);
-        return "redirect:/interiorboard/interiorboardlist";
+        return "redirect:/interiorboard/list";
     }
 
     @GetMapping("/list")

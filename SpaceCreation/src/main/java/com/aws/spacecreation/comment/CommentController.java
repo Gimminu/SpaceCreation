@@ -32,7 +32,7 @@ public class CommentController {
 	    Long userId = siteUser.getId();
 	    commentService.addComment(boardId, userId, content);
 
-	    return "redirect:/interiorboarddetail/" + boardId;
+	    return "redirect:/interiorboard/interiorboarddetail/" + boardId;
 	}
 	
 	

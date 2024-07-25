@@ -87,6 +87,7 @@ body {
     <div class="form-container">
         <h2>게시물 수정</h2>
         <form id="postForm" th:action="@{/interiorboard/interiorboardedit/{id}(id=${board.id})}" method="post" enctype="multipart/form-data">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
             <div class="form-group">
                 <label for="subject">제목</label>
                 <input type="text" id="subject" name="subject" th:value="${board.subject}" required>
@@ -131,6 +132,8 @@ body {
             function uploadSummernoteImageFile(file, editor) {
                 let data = new FormData();
                 data.append("file", file);
+                var csrfToken = $('#postForm input[name="_csrf"]').val();
+                data.append("_csrf", csrfToken);
                 $.ajax({
                     url: "/uploadImage",
                     type: "POST",
@@ -160,6 +163,9 @@ body {
 
                 var formData = new FormData(this);
 
+                var csrfToken = $('#postForm input[name="_csrf"]').val();
+                formData.append("_csrf", csrfToken);
+
                 $.ajax({
                     url: $(this).attr('action'),
                     type: 'POST',
@@ -168,7 +174,7 @@ body {
                     processData: false,
                     success: function(response) {
                         alert('게시물이 성공적으로 수정되었습니다.');
-                        window.location.href = '/interiorboardlist';
+                        window.location.href = '/interiorboard/list';
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         alert('게시물 수정에 실패했습니다.');

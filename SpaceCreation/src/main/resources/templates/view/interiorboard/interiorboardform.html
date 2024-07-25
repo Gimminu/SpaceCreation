@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html layout:decorate="~{layout/layout}">
-<div layout:fragment="content">
+<html lang = "ko" layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 등록</title>
     <link rel="stylesheet" href="/css/interiorboardform.css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+</head>
 
+<body>
+<div layout:fragment="content">
     <div class="form-container">
         <h2>게시물 등록</h2>
         <form id="postForm" action="/interiorboard/interiorboardform" method="post" enctype="multipart/form-data">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
             <div class="form-group">
                 <label for="subject">제목</label>
                 <input type="text" id="subject" name="subject" required>
             </div>
             <div>
                 <label for="content" class="custom-font">내용</label>
-                <textarea id="summernote" name="content" required></textarea>
+                <label for="summernote"></label><textarea id="summernote" name="content" required></textarea>
             </div>
             <div class="form-group">
                 <button type="submit">등록</button>
@@ -20,12 +29,14 @@
             <input type="hidden" id="imageURL" name="imageURL">
         </form>
     </div>
+
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
                 height: 300,
                 lang: 'ko-KR',
                 focus: true,
+                enctype:"multipart/form-data",
                 toolbar: [
                     ['fontname', ['fontname']],
                     ['fontsize', ['fontsize']],
@@ -49,8 +60,10 @@
             function uploadSummernoteImageFile(file, editor) {
                 let data = new FormData();
                 data.append("file", file);
+                var csrfToken = $('#postForm input[name="_csrf"]').val();
+                data.append("_csrf", csrfToken);
                 $.ajax({
-                    url: "/uploadImage",
+                    url: "/interiorboard/uploadImage",
                     type: "POST",
                     data: data,
                     contentType: false,
@@ -59,24 +72,28 @@
                         const jsonResponse = JSON.parse(response);
                         if (jsonResponse.url) {
                             $(editor).summernote('insertImage', jsonResponse.url);
-                            $('#imageURL').val(jsonResponse.url); // 업로드된 이미지 URL을 hidden 필드에 저장
+                            $('#imageURL').val(jsonResponse.url);
                         } else {
                             alert("이미지 URL을 가져오지 못했습니다. 다시 시도해주세요.");
                         }
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
-                        console.error("Upload failed: ", textStatus, errorThrown);
-                        alert("이미지 업로드에 실패했습니다. 다시 시도해주세요.");
+                        console.error("Upload failed: ", textStatus, errorThrown, jqXHR.responseText);
+                        alert("이미지 업로드에 실패했습니다. 서버 응답: " + jqXHR.responseText);
                     }
                 });
             }
 
             $('#postForm').on('submit', function(e) {
                 e.preventDefault();
+
                 var content = $('#summernote').summernote('code');
                 $('#summernote').val(content);
 
                 var formData = new FormData(this);
+
+                var csrfToken = $('#postForm input[name="_csrf"]').val();
+                formData.append("_csrf", csrfToken);
 
                 $.ajax({
                     url: $(this).attr('action'),
@@ -86,15 +103,16 @@
                     processData: false,
                     success: function(response) {
                         alert('게시물이 성공적으로 등록되었습니다.');
-                        window.location.href = '/interiorboardlist';
+                        window.location.href = '/interiorboard/list';
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         alert('게시물 등록에 실패했습니다.');
-                        console.error(textStatus, errorThrown);
+                        console.error('Error: ' + textStatus + ' ' + errorThrown);
                     }
                 });
             });
         });
     </script>
 </div>
+</body>
 </html>
