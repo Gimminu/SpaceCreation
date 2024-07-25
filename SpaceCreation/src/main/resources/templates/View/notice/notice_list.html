@@ -160,10 +160,10 @@
             <table class="tb">
                 <colgroup>
                     <col style="width:10%;"/>
-                    <col style="width:70%;"/>
-                    <col style="width:10%;"/>
+                    <col style="width:68%;"/>
                     <col style="width:15%;"/>
-                    <col style="width:10%;"/> 
+                    <col style="width:10%;"/>
+                    <col style="width:7%;"/> 
                 </colgroup>
                 <thead>
                     <tr>
@@ -177,7 +177,7 @@
                     <tr th:each="posts : ${posts}">
                         <td th:text="${posts.id}"></td>
                         <td><a th:href="@{|/notice/detail/${posts.id}|}" th:text="${posts.subject}"></a></td>
-                        <td th:text="${#temporals.format(posts.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+                        <td th:text="${#temporals.format(posts.createDate, 'yyyy-MM-dd')}"></td>
                         <td th:text="${posts.view}"></td>
                     </tr>
                 </tbody>
