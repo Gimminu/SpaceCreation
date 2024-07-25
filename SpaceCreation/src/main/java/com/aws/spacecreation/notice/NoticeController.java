@@ -46,7 +46,7 @@ public class NoticeController {
 		model.addAttribute("keyword", kw);
 		model.addAttribute("orderby", ordered);
 		model.addAttribute("ordered", order_vw);
-		return"view/notice/notice_list";
+		return"View/notice/notice_list";
 	}
 	
 	@PostMapping("/list")
@@ -62,7 +62,7 @@ public class NoticeController {
 		model.addAttribute("orderby", ordered);
 		model.addAttribute("mode", mode);
 
-		return "view/notice/notice_list";
+		return "View/notice/notice_list";
 
 	}
 	
@@ -71,7 +71,7 @@ public class NoticeController {
 		
 		
 		
-		return "view/notice/notice_create";
+		return "View/notice/notice_create";
 	}
 	@PostMapping("/create")
 	public String notice_create(@ModelAttribute Notice notice,
@@ -91,7 +91,7 @@ public class NoticeController {
 		model.addAttribute("notice", notice);
 		
 		
-		return "view/notice/notice_detail";
+		return "View/notice/notice_detail";
 	}
 	
 	@GetMapping("/update/{id}")
@@ -99,7 +99,7 @@ public class NoticeController {
 		
 		model.addAttribute("Notice", noticeService.getNotice(id));
 
-		return "view/notice/notice_update";
+		return "View/notice/notice_update";
 	}
 	
 	@PostMapping("/update")

@@ -41,7 +41,7 @@ public class QuestionController {
         model.addAttribute("questionPage", questionPage);
         model.addAttribute("sort", sort); // 추가: 정렬 기준
         model.addAttribute("direction", direction); // 추가: 정렬 방향
-        return "view/info/question_list";
+        return "View/info/question_list";
     }
     
     //@GetMapping(value = "/question/detail/{id}")
@@ -49,13 +49,13 @@ public class QuestionController {
     public String detail(Model model, @PathVariable("id") Integer id) {
         Question question = questionService.getQuestion(id);
         model.addAttribute("question", question);
-        return "view/info/question_detail";
+        return "View/info/question_detail";
     }
     
     @GetMapping("/create")
     public String questionCreate(Model model) {
         model.addAttribute("question", new Question());
-        return "view/info/question_form";
+        return "View/info/question_form";
     }
     
     @PostMapping("/create")
@@ -75,7 +75,7 @@ public class QuestionController {
         Question question = questionService.getQuestion(id);
         if(userSecuritySerivce.getAuthen().equals(question.getUser())) {
             model.addAttribute("question", question);
-            return "view/info/question_update";
+            return "View/info/question_update";
         }else{
             throw new SecurityException("게시물의 작성자만 수정할 수 있습니다.");
         }

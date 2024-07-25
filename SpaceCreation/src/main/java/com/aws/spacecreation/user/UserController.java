@@ -29,13 +29,13 @@ public class UserController {
     @GetMapping("/signup")
     public String signup(Model model) {
         model.addAttribute("userCreateForm", new UserCreateForm());
-        return "view/accounts/signup_form";
+        return "View/accounts/signup_form";
     }
 
     //로그인
     @GetMapping("/login")
     public String login(){
-        return "view/accounts/login_form";
+        return "View/accounts/login_form";
     }
 
     @GetMapping("/update")
@@ -59,29 +59,29 @@ public class UserController {
         userCreateForm.setEmail(siteUser.getEmail());
         userCreateForm.setNickname(siteUser.getNickname());
         model.addAttribute("userCreateForm", userCreateForm);
-        return "view/accounts/profile_management";
+        return "View/accounts/profile_management";
     }
 
     //회원가입
     @PostMapping("/signup")
     public String signup(@Valid UserCreateForm userCreateForm, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
-            return "view/accounts/signup_form";
+            return "View/accounts/signup_form";
         }
         if(!userCreateForm.getPassword1().equals(userCreateForm.getPassword2())){
             bindingResult.rejectValue("password2", "passwordIncorrect", "2개의 패스워드가 일치하지 않습니다");
-            return "view/accounts/signup_form";
+            return "View/accounts/signup_form";
         }
         try {
             userService.create(userCreateForm);
         }catch(DataIntegrityViolationException e) {
             e.printStackTrace();
             bindingResult.reject("signupFailed", "이미 등록된 사용자입니다.");
-            return "view/accounts/signup_form";
+            return "View/accounts/signup_form";
         }catch(Exception e) {
             e.printStackTrace();
             bindingResult.reject("signupFailed", e.getMessage());
-            return "view/accounts/signup_form";
+            return "View/accounts/signup_form";
         }
         return "redirect:/user/login";
     }
@@ -90,7 +90,7 @@ public class UserController {
     @PostMapping("/update")
     public String update(@Valid UserCreateForm userCreateForm, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-            return "view/accounts/profile_management";
+            return "View/accounts/profile_management";
         }
 
         if (!userCreateForm.getPassword1().equals(userCreateForm.getPassword2())) {

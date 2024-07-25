@@ -58,7 +58,7 @@ public class InteriorBoardController {
         List<Comment> comments = commentService.getCommentsByBoardId(boardId);  // 댓글
         model.addAttribute("comments", comments);
 
-        return "view/interiorboard/interiorboarddetail";
+        return "View/interiorboard/interiorboarddetail";
     }
 
     // 인테리어 게시판의 좋아요 상태 토글
@@ -88,7 +88,7 @@ public class InteriorBoardController {
     // 새 인테리어 게시판 생성 폼 표시
     @GetMapping("/interiorboardform")
     public String createForm() {
-        return "view/interiorboard/interiorboardform";
+        return "View/interiorboard/interiorboardform";
     }
 
     // 새 인테리어 게시판 생성
@@ -105,7 +105,7 @@ public class InteriorBoardController {
     public String showEditForm(@PathVariable("id") Integer boardId, Model model) {
         InteriorBoard board = interiorBoardService.read(boardId);
         model.addAttribute("board", board);
-        return "view/interiorboard/interiorboardedit";
+        return "View/interiorboard/interiorboardedit";
     }
     // 게시물 수정
     @PostMapping("/interiorboardedit/{id}")
@@ -142,7 +142,7 @@ public class InteriorBoardController {
         Page<InteriorBoard> boardPage = interiorBoardService.getBoards(page, size, sort);
         model.addAttribute("boardPage", boardPage);
         model.addAttribute("sort", sort);
-        return "view/interiorboard/interiorboardlist";
+        return "View/interiorboard/interiorboardlist";
     }
 
 
