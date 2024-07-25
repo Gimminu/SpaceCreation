@@ -113,19 +113,20 @@
         <div class="btn_set2">
             <a href="/board/readlist">목록으로</a>
              </div>
-        <h1>Title : [[${board.btitle}]]
+        <h1>Title : [[${posts.btitle}]]
         </h1>
+        <br><p>Date : [[${posts.createDate}]]</p> 
          
         </div>
          <hr>
-        <p>Id : [[${board.bid}]]</p>
-        <p>Content : [[${board.bcontent}]]</p>
-        <p>Date : [[${board.bdate}]]</p>  
+        <p>Id : [[${posts.id}]]</p>
+        <p>[[${posts.content}]]</p>
+         
         
         <hr>
         <div class="btn_set">
-            <a th:href="@{|/board/update/${board.bid}|}">수정</a>
-            <a th:href="@{|/board/delete/${board.bid}|}">삭제</a>
+            <a th:href="@{|/notice/update/${board.bid}|}">수정</a>
+            <a th:href="@{|/notice/delete/${board.bid}|}">삭제</a>
     </div>
       </div>
 </body>

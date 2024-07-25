@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/basic">
+
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMNU9w5Vw5D0/cNfL7sL6n9zz/sAeqThAbJdJMe" crossorigin="anonymous">
 
@@ -186,24 +186,24 @@
                     <tr>
                         <th scope="col">번호</th>
                         <th scope="col">제목</th>
-                        <th scope="col">작성자</th>
                         <th scope="col">등록일</th>
                         <th scope="col">조회수</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:if="${not #lists.isEmpty(posts)}" th:each="row, status : ${posts}">
-                        <td class="tl"><a th:href="@{/post/view.do(id=${row.id})}" th:text="${row.title}"></a></td>
-                        <td th:text="${row.writer}"></td>
-                        <td th:text="${#temporals.format(row.createdDate, 'yyyy-MM-dd HH:mm')}"></td>
-                        <td th:text="${row.viewCnt}"></td>
-                    </tr>
+                    <tr th:each="posts : ${posts}">
+					<td th:text="${posts.id}"></td>
+					<td><a th:href="@{|/notice/detail/${posts.id}|}"th:text="${posts.subject}"></a></td>
+					<td
+						th:text="${#temporals.format(posts.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+						<td th:text="${posts.view}"></td>
+				</tr>
                 </tbody>
             </table>
             
             
             <p class="btn_set tr">
-                <a th:href="@{/post/write.do}" class="btns btn_st3 btn_mid">글쓰기</a>
+                <a th:href="@{/notice/create}" class="btns btn_st3 btn_mid">글쓰기</a>
             </p>
         </section>
     </div>

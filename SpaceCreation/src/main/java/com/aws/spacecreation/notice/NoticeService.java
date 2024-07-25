@@ -48,7 +48,7 @@ public class NoticeService {
 		pc = pc.replaceAll("(?i)<br\\s*/?>", "\n");
 		pc = pc.replaceAll("(?i)<[^>]*>", "");
 		notice.setPlaincontent(pc);
-				
+		noticeRepository.save(notice);	
 		
 		
 		
@@ -58,10 +58,14 @@ public class NoticeService {
 	public Notice getNotice(Integer id) {
 		Optional<Notice> notice = this.noticeRepository.findById(id);
 		if (notice.isPresent()) {
-			return notice.get();
+			InteriorBoard interiorBoard1 = interiorBoard.get();
+			interiorBoard1.setViewed(interiorBoard1.getViewed()+1);
+			this.interiorBoardRepository.save(interiorBoard1);
+            return interiorBoard1;
 		} else {
 			throw new DataNotFoundException("notice not found");
 		}
+		
 	}
 	
 	public void delete(Integer id) {

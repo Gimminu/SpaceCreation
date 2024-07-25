@@ -44,7 +44,7 @@ public class NoticeController {
 		model.addAttribute("keyword", kw);
 		model.addAttribute("orderby", ordered);
 		model.addAttribute("ordered", order_vw);
-		return"view/notice/notice";
+		return"view/notice/notice_list";
 	}
 	
 	@PostMapping("/list")
@@ -59,7 +59,7 @@ public class NoticeController {
 		model.addAttribute("orderby", ordered);
 		model.addAttribute("mode", mode);
 
-		return "view/interiorboard/interiorboardlist";
+		return "view/notice/notice_list";
 
 	}
 	
@@ -68,26 +68,28 @@ public class NoticeController {
 		
 		
 		
-		return "view/notice/create";
+		return "view/notice/notice_create";
 	}
 	@PostMapping("/create")
 	public String notice_create(@ModelAttribute Notice notice,
 			@RequestParam("file") MultipartFile file) {
 		
+		notice.setView(0);
 		noticeService.create(notice,  file);
 		
 		
-		return"redirect:/notice";
+		return"redirect:/notice/list";
 	}
 	
-	@GetMapping("/detail")
+	@GetMapping("/detail/{id}")
 	public String notice_detail(Model model, @PathVariable("id") Integer id) {
 		Notice notice = this.noticeService.getNotice(id);
+		
 		model.addAttribute("notice", notice);
 		
 		
 		
-		return "view/notice/update";
+		return "view/notice/notice_detail";
 	}
 	
 	
@@ -105,7 +107,7 @@ public class NoticeController {
 		
 		
 		
-		return "view/notice/update";
+		return "view/notice/notice_update";
 	}
 	
 	
