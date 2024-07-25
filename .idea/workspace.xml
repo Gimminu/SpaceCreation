@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e29fc5a5-4cbc-445e-ab98-6ad83f418ca0" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/interiorboard/InteriorBoardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/question/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/question/QuestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/interiorboardliststyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/interiorboardliststyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/question_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/question_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboarddetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboarddetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardlist.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,15 +108,15 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="practice" />
-                    <option name="lastUsedInstant" value="1721888661" />
+                    <option name="lastUsedInstant" value="1721889367" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="practice-kimhyeonjin" />
+                    <option name="lastUsedInstant" value="1721889362" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="practice_minyeonghyeon" />
                     <option name="lastUsedInstant" value="1721888658" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="practice-kimhyeonjin" />
-                    <option name="lastUsedInstant" value="1721888654" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="practice-gimminu" />
@@ -267,7 +269,7 @@
       <workItem from="1721362632861" duration="10000" />
       <workItem from="1721362863588" duration="551000" />
       <workItem from="1721800233575" duration="2925000" />
-      <workItem from="1721803774455" duration="34367000" />
+      <workItem from="1721803774455" duration="36966000" />
     </task>
     <servers />
   </component>

@@ -20,6 +20,9 @@
         footer h1, h3, h4 {
             color: rgb(255,255,255);
         }
+        .pagination{
+            font-family: 'WavvePADO-Regular';
+        }
     </style>
 </head>
 <body>
@@ -30,9 +33,9 @@
             <div class="filter-button">
                 <span id="filterText">[[${sort}]]</span> <span class="dropdown-indicator">&#9662;</span>
                 <div class="filter-dropdown">
-                    <a th:href="@{/interiorboardlist(sort='최신순', page=${page})}" onclick="updateFilterText('최신순')">최신순</a>
-                    <a th:href="@{/interiorboardlist(sort='조회순', page=${page})}" onclick="updateFilterText('조회순')">조회순</a>
-                    <a th:href="@{/interiorboardlist(sort='인기순', page=${page})}" onclick="updateFilterText('인기순')">인기순</a>
+                    <a th:href="@{/interiorboard/list(sort='최신순', page=${page})}" onclick="updateFilterText('최신순')">최신순</a>
+                    <a th:href="@{/interiorboard/list(sort='조회순', page=${page})}" onclick="updateFilterText('조회순')">조회순</a>
+                    <a th:href="@{/interiorboard/list(sort='인기순', page=${page})}" onclick="updateFilterText('인기순')">인기순</a>
                 </div>
             </div>
             <!-- 검색 바 추가 -->
@@ -45,7 +48,7 @@
     <div class="container-medium">
         <main class="project-list" id="projectList">
             <a th:each="board : ${boardPage.getContent()}"
-               th:href="@{/interiorboarddetail/{id}(id=${board.id})}"
+               th:href="@{/interiorboard/interiorboarddetail/{id}(id=${board.id})}"
                class="project-item">
                 <img th:src="${#lists.isEmpty(board.imageUrls) ? '/images/logo2.png' : board.imageUrls[0]}"
                      alt="프로젝트 이미지">
@@ -59,16 +62,16 @@
         </main>
     </div>
     <!-- 페이징 버튼 -->
-    <div class="pagination">
+    <div class="pagination flex-center">
         <ul>
             <li th:if="${boardPage.hasPrevious()}">
-                <a th:href="@{/interiorboardlist(sort=${sort}, page=${boardPage.number - 1})}">이전</a>
+                <a th:href="@{/interiorboard/list(sort=${sort}, page=${boardPage.number - 1})}">이전</a>
             </li>
             <li th:each="i : ${#numbers.sequence(1, boardPage.totalPages)}">
-                <a th:href="@{/interiorboardlist(sort=${sort}, page=${i - 1})}" th:text="${i}" th:class="${boardPage.number == i - 1} ? 'active' : ''"></a>
+                <a th:href="@{/interiorboard/list(sort=${sort}, page=${i - 1})}" th:text="${i}" th:class="${boardPage.number == i - 1} ? 'active' : ''"></a>
             </li>
             <li th:if="${boardPage.hasNext()}">
-                <a th:href="@{/interiorboardlist(sort=${sort}, page=${boardPage.number + 1})}">다음</a>
+                <a th:href="@{/interiorboard/list(sort=${sort}, page=${boardPage.number + 1})}">다음</a>
             </li>
         </ul>
     </div>
