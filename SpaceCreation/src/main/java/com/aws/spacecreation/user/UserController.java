@@ -86,7 +86,7 @@ public class UserController {
         return "redirect:/user/login";
     }
 
-  /*  //회원 정보 수정
+    //회원 정보 수정
     @PostMapping("/update")
     public String update(@Valid UserCreateForm userCreateForm, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
@@ -99,9 +99,7 @@ public class UserController {
             return "signup_form";
         }
 
-        userService.create(userCreateForm.getUsername(),
-                userCreateForm.getEmail(), userCreateForm.getPassword1());
-
+        userService.create(userCreateForm);
         return "redirect:/";
-    }*/
+    }
 }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout/layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항 수정</title>
+    <style>
+        .content.notice-edit {
+            width: 80%;
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin: 20px auto;
+        }
+
+        .content.notice-edit h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .content.notice-edit p {
+            margin: 15px 0;
+        }
+
+        .content.notice-edit input[type="text"], .content.notice-edit textarea, .content.notice-edit input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .content.notice-edit textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .content.notice-edit input[type="submit"] {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ff5733;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .content.notice-edit input[type="submit"]:hover {
+            background-color: #e14e2d;
+        }
+
+        .btn_set.notice-edit {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .btn_set.notice-edit a {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #1A1C20;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn_set.notice-edit a:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="content notice-edit">
+        <h1>공지사항 수정</h1>
+        <form action="/notice/update" method="post" enctype="multipart/form-data">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+            <input type="hidden" name="id" th:value="${notice.id}">
+            <input type="hidden" name="createdate" th:value="${notice.createdate}">
+            <p>제목 : <input type="text" name="subject" th:value="${notice.subject}"></p>
+            <p>내용 : <textarea name="content" th:value="${notice.content}"></textarea></p>
+            <p>사진 : <input type="file" name="file" accept="image/*"></p>
+            <p><input type="submit" value="제출"></p>
+        </form>
+        <p class="btn_set notice-edit">
+            <a href="/notice/list">목록으로</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>

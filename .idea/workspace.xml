@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e29fc5a5-4cbc-445e-ab98-6ad83f418ca0" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/notice/Notice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/notice/NoticeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/notice/NoticeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/notice/NoticeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/notice.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/View/notice/notice_create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/View/notice/notice_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/View/notice/notice_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/notice/notice_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/question/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/question/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/interiorboardliststyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/interiorboardliststyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/layout/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/question_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/info/question_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/comment/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/comment/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/comment/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/comment/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/accounts/profile_management.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/accounts/profile_management.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboarddetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboarddetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardlist.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +66,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -108,15 +117,15 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="practice" />
-                    <option name="lastUsedInstant" value="1721889367" />
+                    <option name="lastUsedInstant" value="1721891937" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="practice_minyeonghyeon" />
+                    <option name="lastUsedInstant" value="1721891896" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="practice-kimhyeonjin" />
                     <option name="lastUsedInstant" value="1721889362" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="practice_minyeonghyeon" />
-                    <option name="lastUsedInstant" value="1721888658" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="practice-gimminu" />
@@ -269,7 +278,7 @@
       <workItem from="1721362632861" duration="10000" />
       <workItem from="1721362863588" duration="551000" />
       <workItem from="1721800233575" duration="2925000" />
-      <workItem from="1721803774455" duration="36966000" />
+      <workItem from="1721803774455" duration="40418000" />
     </task>
     <servers />
   </component>

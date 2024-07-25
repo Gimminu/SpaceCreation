@@ -256,7 +256,6 @@
                 button.classList.toggle('liked', isLiked);
             });
 
-            var csrfToken = document.querySelector('input[name="_csrf"]').value;
             const likeCountElement = document.getElementById('likeCount');
             let likeCount = parseInt(likeCountElement.innerText);
             if (isLiked) {
@@ -284,7 +283,7 @@
                 alert("Request failed. Please try again.");
             };
 
-            xhr.send("boardId=" + boardId + "&_csrf=" + csrfToken);
+            xhr.send("boardId=" + boardId);
         }
     </script>
 </head>
@@ -339,7 +338,6 @@
                     <p class="comment-content" th:utext="${#strings.replace(comment.content, '\n', '<br/>')}">댓글 내용</p>
                     <div th:if="${#authentication.name == comment.user.username||#authentication.getAuthorities().toArray()[0]?.getAuthority() == 'ROLE_ADMIN'}">
                         <form th:action="@{/comment/deleteComment}" method="post" class="comment-delete-form">
-                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
                             <input type="hidden" name="commentId" th:value="${comment.id}">
                             <input type="hidden" name="boardId" th:value="${board.id}">
                             <button type="submit" onclick="return confirm('정말로 이 댓글을 삭제하시겠습니까?')">삭제</button>
@@ -349,7 +347,6 @@
             </ul>
             <div class="comment-form">
                 <form th:action="@{/comment/addComment}" method="post">
-                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
                     <input type="hidden" name="boardId" th:value="${board.id}"/>
                     <textarea name="content" placeholder="댓글을 입력하세요"></textarea>
                     <button type="submit">댓글 달기</button>

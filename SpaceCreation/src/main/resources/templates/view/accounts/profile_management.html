@@ -19,6 +19,7 @@
             Profile
           </h1>
           <form class="form-box px-3" th:action="@{/user/update}" th:object="${userCreateForm}" method="post">
+            <input type="hidden" th:field="*{nickname}" required>
             <div th:fragment="formErrorsFragment" class="alert alert-danger"
                  role="alert" th:if="${#fields.hasAnyErrors()}">
               <div th:each="err : ${#fields.allErrors()}" th:text="${err}"></div>

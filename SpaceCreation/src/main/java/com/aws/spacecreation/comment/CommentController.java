@@ -1,5 +1,6 @@
 package com.aws.spacecreation.comment;
 
+import com.aws.spacecreation.user.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,16 +39,7 @@ public class CommentController {
 	
 	 @PostMapping("/deleteComment")
 	    public String deleteComment(@RequestParam("commentId") Long commentId, @RequestParam("boardId") Integer boardId) {
-	        SiteUser currentUser = userSecurityService.getAuthen();
-	        if (currentUser == null) {
-	            return "redirect:/user/login";
-	        }
-	        boolean isDeleted = commentService.deleteComment(commentId, currentUser.getId());
-	        if (isDeleted) {
-	            return "redirect:/interiorboard/interiorboarddetail/" + boardId;
-	        }
-	        
+	    	commentService.deleteComment(commentId);
 	        return "redirect:/interiorboard/interiorboarddetail/" + boardId;
 	    }
-
 }
