@@ -22630,3 +22630,1082 @@ java.lang.StackOverflowError: null
 2024-07-24T14:27:57.149+09:00  INFO 39980 --- [SpaceCreation] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-07-24T14:27:57.149+09:00  INFO 39980 --- [SpaceCreation] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Shutdown initiated...
 2024-07-24T14:27:57.286+09:00  INFO 39980 --- [SpaceCreation] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Shutdown completed.
+2024-07-24T21:23:30.448+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] c.a.s.SpaceCreationApplication           : Starting SpaceCreationApplication using Java 17.0.7 with PID 21248 (C:\eclips\dev\workspace\SpaceCreation\SpaceCreation\SpaceCreation\bin\main started by User in C:\eclips\dev\workspace\SpaceCreation\SpaceCreation\SpaceCreation)
+2024-07-24T21:23:30.453+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] c.a.s.SpaceCreationApplication           : The following 1 profile is active: "private"
+2024-07-24T21:23:30.910+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-07-24T21:23:30.911+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-07-24T21:23:31.905+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-24T21:23:31.907+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-07-24T21:23:31.949+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.aws.spacecreation.answer.AnswerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-24T21:23:31.951+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.aws.spacecreation.comment.CommentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-24T21:23:31.953+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.aws.spacecreation.interiorboardreply.InteriorBoardReplyRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-24T21:23:31.956+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.aws.spacecreation.interiorboard.InteriorBoardRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-24T21:23:31.959+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.aws.spacecreation.like.LikeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-24T21:23:31.961+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.aws.spacecreation.question.QuestionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-24T21:23:31.963+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.aws.spacecreation.user.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-07-24T21:23:31.964+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 0 JDBC repository interfaces.
+2024-07-24T21:23:31.979+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-07-24T21:23:31.982+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-24T21:23:32.031+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 7 JPA repository interfaces.
+2024-07-24T21:23:32.738+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-07-24T21:23:32.751+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-07-24T21:23:32.752+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-07-24T21:23:32.815+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-07-24T21:23:32.815+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1904 ms
+2024-07-24T21:23:33.007+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-24T21:23:33.083+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-24T21:23:33.126+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-24T21:23:33.479+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-24T21:23:33.512+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-24T21:23:34.000+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@53620ac8
+2024-07-24T21:23:34.004+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-24T21:23:35.472+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-24T21:23:36.046+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-24T21:23:36.976+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-24T21:23:37.509+09:00  WARN 21248 --- [SpaceCreation] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-24T21:23:37.536+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userSecuritySerivce
+2024-07-24T21:23:37.864+09:00 DEBUG 21248 --- [SpaceCreation] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, CsrfFilter, LogoutFilter, OAuth2AuthorizationRequestRedirectFilter, OAuth2LoginAuthenticationFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-07-24T21:23:38.697+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-07-24T21:23:38.743+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-07-24T21:23:38.759+09:00  INFO 21248 --- [SpaceCreation] [restartedMain] c.a.s.SpaceCreationApplication           : Started SpaceCreationApplication in 8.882 seconds (process running for 9.93)
+2024-07-24T21:23:40.465+09:00  INFO 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-24T21:23:40.465+09:00  INFO 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-07-24T21:23:40.469+09:00  INFO 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-07-24T21:23:40.498+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /
+2024-07-24T21:23:40.513+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /
+2024-07-24T21:23:41.673+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.807+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/animate/animate.min.css
+2024-07-24T21:23:41.807+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:23:41.808+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/animate/animate.min.css
+2024-07-24T21:23:41.808+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:23:41.812+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle.css
+2024-07-24T21:23:41.812+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:23:41.812+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /images/logo-removebg.png
+2024-07-24T21:23:41.813+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle.css
+2024-07-24T21:23:41.813+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:23:41.813+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /images/logo-removebg.png
+2024-07-24T21:23:41.814+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle-layout.css
+2024-07-24T21:23:41.814+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle-layout.css
+2024-07-24T21:23:41.831+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.831+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.832+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.831+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.831+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.831+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.837+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/wow/wow.min.js
+2024-07-24T21:23:41.837+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /images/interior-1.png
+2024-07-24T21:23:41.838+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:23:41.838+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /images/interior-1.png
+2024-07-24T21:23:41.838+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:23:41.838+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/wow/wow.min.js
+2024-07-24T21:23:41.837+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /images/FAQ.png
+2024-07-24T21:23:41.837+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/counterup/counterup.min.js
+2024-07-24T21:23:41.840+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /images/FAQ.png
+2024-07-24T21:23:41.838+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/easing/easing.min.js
+2024-07-24T21:23:41.841+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/easing/easing.min.js
+2024-07-24T21:23:41.840+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/counterup/counterup.min.js
+2024-07-24T21:23:41.845+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.845+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.848+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.848+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.852+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.852+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:23:41.852+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:23:41.854+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:23:41.854+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:23:41.854+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:23:41.854+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:23:41.854+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.858+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.858+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /images/hero-background.png
+2024-07-24T21:23:41.859+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /images/hero-background.png
+2024-07-24T21:23:41.860+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.862+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.875+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.971+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/loading.gif
+2024-07-24T21:23:41.971+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/close.png
+2024-07-24T21:23:41.971+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/close.png
+2024-07-24T21:23:41.971+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/prev.png
+2024-07-24T21:23:41.971+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/next.png
+2024-07-24T21:23:41.971+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/loading.gif
+2024-07-24T21:23:41.971+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/next.png
+2024-07-24T21:23:41.971+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/prev.png
+2024-07-24T21:23:41.976+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.986+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.986+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:41.986+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.080+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /faq
+2024-07-24T21:23:43.080+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /faq
+2024-07-24T21:23:43.163+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.256+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/animate/animate.min.css
+2024-07-24T21:23:43.257+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/animate/animate.min.css
+2024-07-24T21:23:43.257+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle-layout.css
+2024-07-24T21:23:43.258+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle-layout.css
+2024-07-24T21:23:43.257+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:23:43.259+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:23:43.259+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle.css
+2024-07-24T21:23:43.260+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle.css
+2024-07-24T21:23:43.261+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /images/logo-removebg.png
+2024-07-24T21:23:43.262+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /images/logo-removebg.png
+2024-07-24T21:23:43.263+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.264+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.265+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:23:43.265+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:23:43.266+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.261+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.269+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.271+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/counterup/counterup.min.js
+2024-07-24T21:23:43.271+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/wow/wow.min.js
+2024-07-24T21:23:43.271+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/easing/easing.min.js
+2024-07-24T21:23:43.271+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:23:43.272+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/counterup/counterup.min.js
+2024-07-24T21:23:43.272+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:23:43.274+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.272+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/wow/wow.min.js
+2024-07-24T21:23:43.272+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/easing/easing.min.js
+2024-07-24T21:23:43.276+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.276+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.276+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.278+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:23:43.279+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:23:43.280+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.281+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:23:43.281+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:23:43.282+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:23:43.282+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.282+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:23:43.285+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.286+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.335+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/close.png
+2024-07-24T21:23:43.336+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/prev.png
+2024-07-24T21:23:43.336+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/close.png
+2024-07-24T21:23:43.337+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/loading.gif
+2024-07-24T21:23:43.338+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/loading.gif
+2024-07-24T21:23:43.335+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/next.png
+2024-07-24T21:23:43.336+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/prev.png
+2024-07-24T21:23:43.339+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/next.png
+2024-07-24T21:23:43.341+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.342+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.339+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:43.346+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.085+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /question/list
+2024-07-24T21:23:44.085+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /question/list
+2024-07-24T21:23:44.286+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.343+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/animate/animate.min.css
+2024-07-24T21:23:44.343+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/animate/animate.min.css
+2024-07-24T21:23:44.343+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:23:44.344+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:23:44.346+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.348+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /question/css/mainstyle-layout.css
+2024-07-24T21:23:44.348+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:23:44.346+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.348+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /images/logo-removebg.png
+2024-07-24T21:23:44.348+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /question/css/mainstyle.css
+2024-07-24T21:23:44.350+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /images/logo-removebg.png
+2024-07-24T21:23:44.351+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /question/css/mainstyle.css
+2024-07-24T21:23:44.351+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:23:44.352+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /question/css/mainstyle-layout.css
+2024-07-24T21:23:44.354+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.356+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.357+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/wow/wow.min.js
+2024-07-24T21:23:44.357+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/wow/wow.min.js
+2024-07-24T21:23:44.357+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /css/questionstyle.css
+2024-07-24T21:23:44.358+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /css/questionstyle.css
+2024-07-24T21:23:44.359+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.359+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.360+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/easing/easing.min.js
+2024-07-24T21:23:44.360+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:23:44.360+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:23:44.360+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/easing/easing.min.js
+2024-07-24T21:23:44.361+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.362+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.365+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/counterup/counterup.min.js
+2024-07-24T21:23:44.365+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:23:44.365+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.366+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:23:44.366+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/counterup/counterup.min.js
+2024-07-24T21:23:44.370+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.371+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.372+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.374+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:23:44.375+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:23:44.374+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:23:44.375+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-07-24T21:23:44.375+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:23:44.376+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /error
+2024-07-24T21:23:44.376+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-07-24T21:23:44.376+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /error
+2024-07-24T21:23:44.380+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.380+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.455+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.460+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.530+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/close.png
+2024-07-24T21:23:44.530+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/next.png
+2024-07-24T21:23:44.530+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/prev.png
+2024-07-24T21:23:44.531+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/prev.png
+2024-07-24T21:23:44.530+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/loading.gif
+2024-07-24T21:23:44.531+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/close.png
+2024-07-24T21:23:44.531+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/loading.gif
+2024-07-24T21:23:44.531+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/next.png
+2024-07-24T21:23:44.538+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.538+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.543+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /question/images/logo2.png
+2024-07-24T21:23:44.543+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.545+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /question/images/logo2.png
+2024-07-24T21:23:44.545+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.549+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:44.552+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-07-24T21:23:44.553+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /error
+2024-07-24T21:23:44.558+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.569+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /faq
+2024-07-24T21:23:45.569+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /faq
+2024-07-24T21:23:45.626+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.703+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/animate/animate.min.css
+2024-07-24T21:23:45.703+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/animate/animate.min.css
+2024-07-24T21:23:45.707+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:23:45.707+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle.css
+2024-07-24T21:23:45.707+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:23:45.707+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle.css
+2024-07-24T21:23:45.707+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle-layout.css
+2024-07-24T21:23:45.708+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle-layout.css
+2024-07-24T21:23:45.708+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.709+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/wow/wow.min.js
+2024-07-24T21:23:45.710+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/wow/wow.min.js
+2024-07-24T21:23:45.713+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:23:45.714+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:23:45.714+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/easing/easing.min.js
+2024-07-24T21:23:45.715+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/easing/easing.min.js
+2024-07-24T21:23:45.715+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.718+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.718+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.719+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.719+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.720+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.725+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:23:45.725+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:23:45.725+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:23:45.725+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/counterup/counterup.min.js
+2024-07-24T21:23:45.726+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:23:45.726+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/counterup/counterup.min.js
+2024-07-24T21:23:45.726+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:23:45.727+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:23:45.727+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:23:45.727+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:23:45.729+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.729+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.731+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.731+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.732+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.766+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/prev.png
+2024-07-24T21:23:45.766+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/next.png
+2024-07-24T21:23:45.766+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/prev.png
+2024-07-24T21:23:45.768+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/next.png
+2024-07-24T21:23:45.768+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/close.png
+2024-07-24T21:23:45.768+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/loading.gif
+2024-07-24T21:23:45.768+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/close.png
+2024-07-24T21:23:45.768+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/loading.gif
+2024-07-24T21:23:45.771+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.774+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.774+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:23:45.774+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:09.958+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /
+2024-07-24T21:26:09.959+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /
+2024-07-24T21:26:10.042+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.069+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/animate/animate.min.css
+2024-07-24T21:26:10.070+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/animate/animate.min.css
+2024-07-24T21:26:10.070+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:26:10.070+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:26:10.073+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.075+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle-layout.css
+2024-07-24T21:26:10.073+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.075+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle-layout.css
+2024-07-24T21:26:10.076+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle.css
+2024-07-24T21:26:10.076+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /images/logo-removebg.png
+2024-07-24T21:26:10.077+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle.css
+2024-07-24T21:26:10.077+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /images/logo-removebg.png
+2024-07-24T21:26:10.078+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:26:10.078+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:26:10.079+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.080+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.081+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.081+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.082+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /images/interior-1.png
+2024-07-24T21:26:10.082+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /images/interior-1.png
+2024-07-24T21:26:10.084+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /images/FAQ.png
+2024-07-24T21:26:10.084+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /images/FAQ.png
+2024-07-24T21:26:10.088+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.088+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.088+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/wow/wow.min.js
+2024-07-24T21:26:10.089+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/wow/wow.min.js
+2024-07-24T21:26:10.089+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/counterup/counterup.min.js
+2024-07-24T21:26:10.089+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/counterup/counterup.min.js
+2024-07-24T21:26:10.089+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/easing/easing.min.js
+2024-07-24T21:26:10.089+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/easing/easing.min.js
+2024-07-24T21:26:10.092+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:26:10.092+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:26:10.095+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:26:10.095+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:26:10.096+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.097+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:26:10.097+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.098+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:26:10.098+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.101+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.102+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.102+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.104+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:26:10.104+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:26:10.106+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.110+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /images/hero-background.png
+2024-07-24T21:26:10.111+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /images/hero-background.png
+2024-07-24T21:26:10.122+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.235+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/prev.png
+2024-07-24T21:26:10.236+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/loading.gif
+2024-07-24T21:26:10.237+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/loading.gif
+2024-07-24T21:26:10.237+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/next.png
+2024-07-24T21:26:10.237+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/next.png
+2024-07-24T21:26:10.236+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/prev.png
+2024-07-24T21:26:10.236+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/close.png
+2024-07-24T21:26:10.238+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/close.png
+2024-07-24T21:26:10.242+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.242+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.243+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.244+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.829+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /question/list
+2024-07-24T21:26:10.830+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /question/list
+2024-07-24T21:26:10.923+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.948+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/animate/animate.min.css
+2024-07-24T21:26:10.948+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:26:10.948+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/animate/animate.min.css
+2024-07-24T21:26:10.948+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:26:10.948+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:26:10.948+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /question/css/mainstyle-layout.css
+2024-07-24T21:26:10.949+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /images/logo-removebg.png
+2024-07-24T21:26:10.949+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /question/css/mainstyle-layout.css
+2024-07-24T21:26:10.949+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /images/logo-removebg.png
+2024-07-24T21:26:10.949+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:26:10.949+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /question/css/mainstyle.css
+2024-07-24T21:26:10.949+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /question/css/mainstyle.css
+2024-07-24T21:26:10.952+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.954+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.954+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.956+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.957+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /css/questionstyle.css
+2024-07-24T21:26:10.957+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /css/questionstyle.css
+2024-07-24T21:26:10.961+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/wow/wow.min.js
+2024-07-24T21:26:10.961+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/easing/easing.min.js
+2024-07-24T21:26:10.961+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/wow/wow.min.js
+2024-07-24T21:26:10.961+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:26:10.962+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/easing/easing.min.js
+2024-07-24T21:26:10.962+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:26:10.974+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.974+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.974+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.974+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.974+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-07-24T21:26:10.974+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-07-24T21:26:10.974+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.974+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.974+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /error
+2024-07-24T21:26:10.974+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /error
+2024-07-24T21:26:10.979+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.979+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.981+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:26:10.981+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/counterup/counterup.min.js
+2024-07-24T21:26:10.981+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:26:10.981+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:26:10.981+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:26:10.981+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:26:10.981+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/counterup/counterup.min.js
+2024-07-24T21:26:10.981+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:26:10.984+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.985+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.984+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:10.985+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:11.022+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/prev.png
+2024-07-24T21:26:11.022+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/prev.png
+2024-07-24T21:26:11.023+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/loading.gif
+2024-07-24T21:26:11.023+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/close.png
+2024-07-24T21:26:11.023+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/next.png
+2024-07-24T21:26:11.023+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/loading.gif
+2024-07-24T21:26:11.023+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/next.png
+2024-07-24T21:26:11.023+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/close.png
+2024-07-24T21:26:11.028+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:11.028+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:11.028+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:26:11.030+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.327+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /
+2024-07-24T21:28:33.328+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /
+2024-07-24T21:28:33.511+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.536+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/animate/animate.min.css
+2024-07-24T21:28:33.536+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/animate/animate.min.css
+2024-07-24T21:28:33.536+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle.css
+2024-07-24T21:28:33.536+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle.css
+2024-07-24T21:28:33.537+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle-layout.css
+2024-07-24T21:28:33.537+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle-layout.css
+2024-07-24T21:28:33.536+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:28:33.536+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:28:33.538+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:28:33.538+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:28:33.539+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /images/logo-removebg.png
+2024-07-24T21:28:33.539+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /images/logo-removebg.png
+2024-07-24T21:28:33.541+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.541+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.542+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.542+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.541+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.542+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.548+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /images/interior-1.png
+2024-07-24T21:28:33.549+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /images/FAQ.png
+2024-07-24T21:28:33.549+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /images/interior-1.png
+2024-07-24T21:28:33.549+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /images/FAQ.png
+2024-07-24T21:28:33.550+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/wow/wow.min.js
+2024-07-24T21:28:33.550+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/wow/wow.min.js
+2024-07-24T21:28:33.553+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/easing/easing.min.js
+2024-07-24T21:28:33.553+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/easing/easing.min.js
+2024-07-24T21:28:33.554+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.554+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.555+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:28:33.555+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:28:33.555+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/counterup/counterup.min.js
+2024-07-24T21:28:33.557+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/counterup/counterup.min.js
+2024-07-24T21:28:33.558+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.561+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.562+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:28:33.562+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:28:33.563+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.564+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.562+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:28:33.565+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:28:33.567+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.568+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:28:33.568+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:28:33.570+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.572+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.576+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /images/hero-background.png
+2024-07-24T21:28:33.577+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /images/hero-background.png
+2024-07-24T21:28:33.588+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.704+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/close.png
+2024-07-24T21:28:33.704+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/next.png
+2024-07-24T21:28:33.704+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/prev.png
+2024-07-24T21:28:33.704+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/close.png
+2024-07-24T21:28:33.704+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/next.png
+2024-07-24T21:28:33.705+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/loading.gif
+2024-07-24T21:28:33.705+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/loading.gif
+2024-07-24T21:28:33.704+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/prev.png
+2024-07-24T21:28:33.709+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.709+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.711+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:33.712+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.575+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /faq
+2024-07-24T21:28:34.575+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /faq
+2024-07-24T21:28:34.620+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.688+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/animate/animate.min.css
+2024-07-24T21:28:34.688+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/animate/animate.min.css
+2024-07-24T21:28:34.688+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle.css
+2024-07-24T21:28:34.688+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:28:34.688+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle.css
+2024-07-24T21:28:34.688+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:28:34.688+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:28:34.688+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:28:34.695+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.695+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.696+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle-layout.css
+2024-07-24T21:28:34.696+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle-layout.css
+2024-07-24T21:28:34.698+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /images/logo-removebg.png
+2024-07-24T21:28:34.698+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /images/logo-removebg.png
+2024-07-24T21:28:34.700+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.702+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.703+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.704+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.705+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/wow/wow.min.js
+2024-07-24T21:28:34.706+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:28:34.705+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/easing/easing.min.js
+2024-07-24T21:28:34.706+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/easing/easing.min.js
+2024-07-24T21:28:34.706+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:28:34.706+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/counterup/counterup.min.js
+2024-07-24T21:28:34.706+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/counterup/counterup.min.js
+2024-07-24T21:28:34.706+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/wow/wow.min.js
+2024-07-24T21:28:34.707+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:28:34.707+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:28:34.708+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.708+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.708+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.709+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.709+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.709+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:28:34.710+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:28:34.713+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.713+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:28:34.713+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:28:34.717+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.751+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/next.png
+2024-07-24T21:28:34.751+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/close.png
+2024-07-24T21:28:34.751+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/next.png
+2024-07-24T21:28:34.751+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/close.png
+2024-07-24T21:28:34.752+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/prev.png
+2024-07-24T21:28:34.752+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/loading.gif
+2024-07-24T21:28:34.753+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/prev.png
+2024-07-24T21:28:34.753+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/loading.gif
+2024-07-24T21:28:34.755+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.755+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.756+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:34.756+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.256+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /question/list
+2024-07-24T21:28:35.256+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /question/list
+2024-07-24T21:28:35.359+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.379+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/animate/animate.min.css
+2024-07-24T21:28:35.380+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/animate/animate.min.css
+2024-07-24T21:28:35.384+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.385+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:28:35.385+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:28:35.385+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /question/css/mainstyle-layout.css
+2024-07-24T21:28:35.385+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /question/css/mainstyle.css
+2024-07-24T21:28:35.385+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /question/css/mainstyle-layout.css
+2024-07-24T21:28:35.385+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /question/css/mainstyle.css
+2024-07-24T21:28:35.385+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:28:35.386+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:28:35.386+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /images/logo-removebg.png
+2024-07-24T21:28:35.386+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /images/logo-removebg.png
+2024-07-24T21:28:35.386+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /css/questionstyle.css
+2024-07-24T21:28:35.386+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /css/questionstyle.css
+2024-07-24T21:28:35.388+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.388+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.389+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-07-24T21:28:35.389+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.390+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.390+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /error
+2024-07-24T21:28:35.391+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.392+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.393+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-07-24T21:28:35.393+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /error
+2024-07-24T21:28:35.394+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/wow/wow.min.js
+2024-07-24T21:28:35.394+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.394+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/wow/wow.min.js
+2024-07-24T21:28:35.395+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:28:35.395+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:28:35.395+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/easing/easing.min.js
+2024-07-24T21:28:35.395+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/easing/easing.min.js
+2024-07-24T21:28:35.396+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/counterup/counterup.min.js
+2024-07-24T21:28:35.396+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/counterup/counterup.min.js
+2024-07-24T21:28:35.397+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.397+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.397+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.398+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:28:35.398+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:28:35.398+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.398+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.401+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.401+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:28:35.401+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:28:35.402+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:28:35.402+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:28:35.405+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.405+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.447+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/prev.png
+2024-07-24T21:28:35.447+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/next.png
+2024-07-24T21:28:35.447+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/loading.gif
+2024-07-24T21:28:35.447+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/prev.png
+2024-07-24T21:28:35.447+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/next.png
+2024-07-24T21:28:35.447+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/close.png
+2024-07-24T21:28:35.448+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/loading.gif
+2024-07-24T21:28:35.450+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/close.png
+2024-07-24T21:28:35.453+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.454+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.454+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:35.455+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.459+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /faq
+2024-07-24T21:28:36.459+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /faq
+2024-07-24T21:28:36.505+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.590+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/animate/animate.min.css
+2024-07-24T21:28:36.591+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/animate/animate.min.css
+2024-07-24T21:28:36.593+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.594+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:28:36.594+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:28:36.594+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:28:36.594+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle.css
+2024-07-24T21:28:36.594+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle.css
+2024-07-24T21:28:36.594+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle-layout.css
+2024-07-24T21:28:36.595+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle-layout.css
+2024-07-24T21:28:36.595+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/wow/wow.min.js
+2024-07-24T21:28:36.594+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:28:36.595+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/wow/wow.min.js
+2024-07-24T21:28:36.597+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.597+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.597+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.599+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.599+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.605+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/easing/easing.min.js
+2024-07-24T21:28:36.605+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/easing/easing.min.js
+2024-07-24T21:28:36.605+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:28:36.605+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:28:36.605+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:28:36.605+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:28:36.605+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:28:36.605+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/counterup/counterup.min.js
+2024-07-24T21:28:36.606+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:28:36.606+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/counterup/counterup.min.js
+2024-07-24T21:28:36.606+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:28:36.607+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:28:36.608+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.609+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.609+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.610+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.610+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.610+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.634+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/next.png
+2024-07-24T21:28:36.634+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/loading.gif
+2024-07-24T21:28:36.634+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/next.png
+2024-07-24T21:28:36.634+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/prev.png
+2024-07-24T21:28:36.634+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/loading.gif
+2024-07-24T21:28:36.637+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/close.png
+2024-07-24T21:28:36.637+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/prev.png
+2024-07-24T21:28:36.637+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/close.png
+2024-07-24T21:28:36.643+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.646+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.647+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:36.648+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:37.414+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /interiorboard/list
+2024-07-24T21:28:37.415+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /interiorboard/list
+2024-07-24T21:28:37.505+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:37.513+09:00 ERROR 21248 --- [SpaceCreation] [http-nio-8080-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-1] Exception processing template "view/interiorboard/interiorboardlist": An error happened during template parsing (template: "class path resource [templates/view/interiorboard/interiorboardlist.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/view/interiorboard/interiorboardlist.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1431) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1167) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:198) ~[spring-security-oauth2-client-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "!boards.hasPrevious" (template: "view/interiorboard/interiorboardlist" - line 68, col 31)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	... 104 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "!boards.hasPrevious" (template: "view/interiorboard/interiorboardlist" - line 68, col 31)
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.ConditionalExpression.executeConditional(ConditionalExpression.java:209) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:77) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:290) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.GatheringModelProcessable.process(GatheringModelProcessable.java:78) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	... 106 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'hasPrevious' cannot be found on object of type 'java.util.ArrayList' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:229) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:112) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorValueRef.getValue(PropertyOrFieldReference.java:417) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:97) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:222) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.OperatorNot.getValueInternal(OperatorNot.java:47) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.OperatorNot.getValueInternal(OperatorNot.java:36) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:114) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	... 140 common frames omitted
+
+2024-07-24T21:28:37.541+09:00 ERROR 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/view/interiorboard/interiorboardlist.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'hasPrevious' cannot be found on object of type 'java.util.ArrayList' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:229) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:112) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorValueRef.getValue(PropertyOrFieldReference.java:417) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:97) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:222) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.OperatorNot.getValueInternal(OperatorNot.java:47) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.OperatorNot.getValueInternal(OperatorNot.java:36) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:114) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338) ~[spring-expression-6.1.10.jar:6.1.10]
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.ConditionalExpression.executeConditional(ConditionalExpression.java:209) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:77) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:282) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.Model.process(Model.java:290) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.GatheringModelProcessable.process(GatheringModelProcessable.java:78) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1431) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1167) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.25.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:198) ~[spring-security-oauth2-client-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.10.jar:6.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.25.jar:10.1.25]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-07-24T21:28:37.543+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-07-24T21:28:37.544+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /error
+2024-07-24T21:28:37.578+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:37.597+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2024-07-24T21:28:37.598+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2024-07-24T21:28:37.601+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:37.602+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-07-24T21:28:37.603+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /error
+2024-07-24T21:28:37.608+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.478+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /faq
+2024-07-24T21:28:38.478+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /faq
+2024-07-24T21:28:38.526+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.597+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:28:38.597+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/animate/animate.min.css
+2024-07-24T21:28:38.598+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle.css
+2024-07-24T21:28:38.598+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:28:38.599+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle.css
+2024-07-24T21:28:38.599+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T21:28:38.598+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T21:28:38.599+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/animate/animate.min.css
+2024-07-24T21:28:38.600+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /css/mainstyle-layout.css
+2024-07-24T21:28:38.600+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/wow/wow.min.js
+2024-07-24T21:28:38.601+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/wow/wow.min.js
+2024-07-24T21:28:38.603+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.604+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.604+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /css/mainstyle-layout.css
+2024-07-24T21:28:38.604+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.603+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.604+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.608+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.608+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/easing/easing.min.js
+2024-07-24T21:28:38.609+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/counterup/counterup.min.js
+2024-07-24T21:28:38.609+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/easing/easing.min.js
+2024-07-24T21:28:38.609+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/counterup/counterup.min.js
+2024-07-24T21:28:38.609+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:28:38.609+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/waypoints/waypoints.min.js
+2024-07-24T21:28:38.611+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:28:38.611+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:28:38.611+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:28:38.611+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T21:28:38.611+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T21:28:38.611+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T21:28:38.612+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.613+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.615+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.617+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.617+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.619+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.644+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/prev.png
+2024-07-24T21:28:38.644+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/prev.png
+2024-07-24T21:28:38.648+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/loading.gif
+2024-07-24T21:28:38.649+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/loading.gif
+2024-07-24T21:28:38.649+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/next.png
+2024-07-24T21:28:38.649+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/next.png
+2024-07-24T21:28:38.648+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/close.png
+2024-07-24T21:28:38.652+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/close.png
+2024-07-24T21:28:38.653+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.654+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.657+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:28:38.657+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T21:52:07.132+09:00  WARN 21248 --- [SpaceCreation] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m32s755ms40µs100ns).
+2024-07-24T22:18:04.899+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /question/list
+2024-07-24T22:18:04.900+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /question/list
+2024-07-24T22:18:05.191+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.232+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/animate/animate.min.css
+2024-07-24T22:18:05.232+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/animate/animate.min.css
+2024-07-24T22:18:05.236+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /question/css/mainstyle.css
+2024-07-24T22:18:05.236+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T22:18:05.236+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /question/css/mainstyle.css
+2024-07-24T22:18:05.236+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/css/lightbox.min.css
+2024-07-24T22:18:05.236+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /question/css/mainstyle-layout.css
+2024-07-24T22:18:05.236+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /question/css/mainstyle-layout.css
+2024-07-24T22:18:05.236+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T22:18:05.237+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/assets/owl.carousel.min.css
+2024-07-24T22:18:05.242+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.242+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.243+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-07-24T22:18:05.243+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /error
+2024-07-24T22:18:05.243+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /error
+2024-07-24T22:18:05.244+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /error
+2024-07-24T22:18:05.246+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.248+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /css/questionstyle.css
+2024-07-24T22:18:05.249+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.249+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /css/questionstyle.css
+2024-07-24T22:18:05.252+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /images/logo-removebg.png
+2024-07-24T22:18:05.252+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /images/logo-removebg.png
+2024-07-24T22:18:05.254+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.258+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.260+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.266+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /lib/counterup/counterup.min.js
+2024-07-24T22:18:05.266+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /lib/easing/easing.min.js
+2024-07-24T22:18:05.266+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/waypoints/waypoints.min.js
+2024-07-24T22:18:05.267+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/waypoints/waypoints.min.js
+2024-07-24T22:18:05.266+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /lib/wow/wow.min.js
+2024-07-24T22:18:05.267+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /lib/wow/wow.min.js
+2024-07-24T22:18:05.267+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.267+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /lib/easing/easing.min.js
+2024-07-24T22:18:05.267+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /lib/counterup/counterup.min.js
+2024-07-24T22:18:05.269+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.273+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T22:18:05.273+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T22:18:05.273+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /lib/owlcarousel/owl.carousel.min.js
+2024-07-24T22:18:05.273+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /lib/isotope/isotope.pkgd.min.js
+2024-07-24T22:18:05.321+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.324+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T22:18:05.324+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/js/lightbox.min.js
+2024-07-24T22:18:05.324+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.327+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.333+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.353+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.365+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.382+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.394+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/prev.png
+2024-07-24T22:18:05.394+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/next.png
+2024-07-24T22:18:05.394+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/close.png
+2024-07-24T22:18:05.394+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /lib/lightbox/images/loading.gif
+2024-07-24T22:18:05.394+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/next.png
+2024-07-24T22:18:05.394+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/prev.png
+2024-07-24T22:18:05.394+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/loading.gif
+2024-07-24T22:18:05.394+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /lib/lightbox/images/close.png
+2024-07-24T22:18:05.397+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.397+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.397+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T22:18:05.397+09:00 DEBUG 21248 --- [SpaceCreation] [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
