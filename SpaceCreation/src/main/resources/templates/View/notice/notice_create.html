@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 생성</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMNU9w5Vw5D0/cNfL7sL6n9zz/sAeqThAbJdJMe" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFD5CD;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .content {
+            width: 80%;
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin: 20px auto;
+        }
+
+        .content h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .content p {
+            margin: 15px 0;
+        }
+
+        .content input[type="text"], .content textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; 
+        }
+
+        .content textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .content input[type="submit"] {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ff5733;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .content input[type="submit"]:hover {
+            background-color: #e14e2d;
+        }
+
+        .page_tits {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .page_tits h3 {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: underline;
+            text-decoration-color: white;
+        }
+
+        .btn_set {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .btn_set a {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #1A1C20;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn_set a:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="page_tits"></div>
+
+    <div class="content">
+        <h1>게시물 생성</h1>
+        <form action="/board/create" method="post">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            <p>제목 : <input type="text" name="btitle" placeholder="제목을 입력하세요"></p>
+            <p>내용 : <textarea name="bcontent" placeholder="내용을 입력하세요"></textarea></p>
+            <p><input type="submit" value="제출"></p>
+        </form>
+        <p class="btn_set">
+            <a href="/board/readlist">목록으로</a>
+        </p>
+    </div>
+</body>
+</html>
