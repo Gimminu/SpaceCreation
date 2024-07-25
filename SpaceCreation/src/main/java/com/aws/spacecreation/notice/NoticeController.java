@@ -41,7 +41,7 @@ public class NoticeController {
 			break;
 		}
 		
-		
+		model.addAttribute("selectedMode", mode);
 		model.addAttribute("posts", posts);
 		model.addAttribute("keyword", kw);
 		model.addAttribute("orderby", ordered);
@@ -56,6 +56,7 @@ public class NoticeController {
 			@RequestParam(required = false, defaultValue = "id", value = "orderby") String ordered,
 			Pageable pageable,	Model model) {
 		Page<Notice> posts = noticeService.noticelist(pageable, pageNo, ordered, mode, kw);
+		model.addAttribute("selectedMode", mode);
 		model.addAttribute("posts", posts);
 		model.addAttribute("keyword", kw);
 		model.addAttribute("orderby", ordered);
