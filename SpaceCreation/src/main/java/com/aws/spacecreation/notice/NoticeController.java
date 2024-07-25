@@ -5,6 +5,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,13 +19,15 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class NoticeController {
 	
+	private final NoticeService noticeService;
+	
 	@GetMapping("/list")
 	public String notice(@RequestParam(required = false, defaultValue = "1",value="mode") String mode,
 			@RequestParam(required = false, defaultValue = "", value = "keyword") String kw,
 			@RequestParam(required = false, defaultValue = "0", value = "page") int pageNo,
 			@RequestParam(required = false, defaultValue = "id", value = "orderby") String ordered, Pageable pageable,
 			Model model) {
-		Page<Notice> posts = NoticeService.noticelist(pageable, pageNo, ordered,mode, kw);
+		Page<Notice> posts = noticeService.noticelist(pageable, pageNo, ordered,mode, kw);
 		String order_vw="id";
 
 		switch (ordered) {
@@ -43,6 +47,22 @@ public class NoticeController {
 		return"view/notice/notice";
 	}
 	
+	@PostMapping("/list")
+	public String list_kw(@RequestParam(required = false, defaultValue = "1",value="mode") String mode,
+			@RequestParam(required = false, defaultValue = "", value = "keyword") String kw,
+			@RequestParam(required = false, defaultValue = "0", value = "page") int pageNo,
+			@RequestParam(required = false, defaultValue = "id", value = "orderby") String ordered,
+			Pageable pageable,	Model model) {
+		Page<Notice> posts = noticeService.noticelist(pageable, pageNo, ordered, mode, kw);
+		model.addAttribute("posts", posts);
+		model.addAttribute("keyword", kw);
+		model.addAttribute("orderby", ordered);
+		model.addAttribute("mode", mode);
+
+		return "view/interiorboard/interiorboardlist";
+
+	}
+	
 	@GetMapping("/create")
 	public String notice_create() {
 		
@@ -50,16 +70,24 @@ public class NoticeController {
 		
 		return "view/notice/create";
 	}
-	@PostMapping
-	public String notice_create(Model model,
-			@RequestParam("subject") String subject,
-			@RequestParam("content") String content,
+	@PostMapping("/create")
+	public String notice_create(@ModelAttribute Notice notice,
 			@RequestParam("file") MultipartFile file) {
 		
+		noticeService.create(notice,  file);
 		
 		
-		model.addAttribute("posts",posts);
 		return"redirect:/notice";
+	}
+	
+	@GetMapping("/detail")
+	public String notice_detail(Model model, @PathVariable("id") Integer id) {
+		Notice notice = this.noticeService.getNotice(id);
+		model.addAttribute("notice", notice);
+		
+		
+		
+		return "view/notice/update";
 	}
 	
 	
@@ -78,6 +106,16 @@ public class NoticeController {
 		
 		
 		return "view/notice/update";
+	}
+	
+	
+	
+	
+	
+	@GetMapping("/delete/{id}")
+	public String delete(@PathVariable("id") Integer id) {
+		noticeService.delete(id);
+		return "redirect:/notice/list";
 	}
 	
 	

@@ -24,6 +24,9 @@ public class Notice {
     @Column(columnDefinition = "TEXT")
     private String content;
     
+    @Column(columnDefinition = "TEXT")
+    private String plaincontent;
+    
     private Integer view;
     
     private LocalDateTime createDate;
