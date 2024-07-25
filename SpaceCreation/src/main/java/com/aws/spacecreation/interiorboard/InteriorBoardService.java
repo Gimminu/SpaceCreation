@@ -1,10 +1,12 @@
 package com.aws.spacecreation.interiorboard;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.aws.spacecreation.S3Service;
@@ -12,6 +14,9 @@ import com.aws.spacecreation.like.LikeRepository;
 import com.aws.spacecreation.like.LikeService;
 import com.aws.spacecreation.user.SiteUser;
 import com.aws.spacecreation.user.UserRepository;
+
+
+
 
 @Service
 public class InteriorBoardService {
@@ -118,17 +123,17 @@ public class InteriorBoardService {
     }
     
     
-    public List<InteriorBoard> getBoardsSortedByDate() { //최신순
-        return interiorBoardRepository.findAllByOrderByCreateDateDesc();
-    }
-
-    public List<InteriorBoard> getBoardsSortedByViews() { //조회순
-        return interiorBoardRepository.findAllByOrderByViewCountDesc();
-    }
-
-    public List<InteriorBoard> getBoardsSortedByLikes() { //인기순
-        return interiorBoardRepository.findAllByOrderByLikesDesc();
-    }
+//    public List<InteriorBoard> getBoardsSortedByDate() { //최신순
+//        return interiorBoardRepository.findAllByOrderByCreateDateDesc();
+//    }
+//
+//    public List<InteriorBoard> getBoardsSortedByViews() { //조회순
+//        return interiorBoardRepository.findAllByOrderByViewCountDesc();
+//    }
+//
+//    public List<InteriorBoard> getBoardsSortedByLikes() { //인기순
+//        return interiorBoardRepository.findAllByOrderByLikesDesc();
+//    }
     
     //수정
     public void updatePost(Integer id, InteriorBoard updatedBoard) {
@@ -143,5 +148,15 @@ public class InteriorBoardService {
             throw new DataNotFoundException("Board not found");
         }
     }
-
+    public Page<InteriorBoard> getBoards(int page, int size, String sort) {
+        Pageable pageable = PageRequest.of(page, size);
+        switch (sort) {
+            case "조회순":
+                return interiorBoardRepository.findAllByOrderByViewCountDesc(pageable);
+            case "인기순":
+                return interiorBoardRepository.findAllOrderByLikesCountDesc(pageable);
+            default:
+                return interiorBoardRepository.findAllByOrderByCreateDateDesc(pageable);
+        }
+    }
 }
