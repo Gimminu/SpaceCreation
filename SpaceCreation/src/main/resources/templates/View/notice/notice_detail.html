@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>공지사항 생성</title>
+    <title>게시물 상세</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMNU9w5Vw5D0/cNfL7sL6n9zz/sAeqThAbJdJMe" crossorigin="anonymous">
     <style>
         body {
@@ -19,8 +19,8 @@
         }
 
         .content {
-            width: 80%;
-            max-width: 600px;
+            width: 1000px;
+            height: 300px;
             background-color: #ffffff;
             padding: 40px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -38,7 +38,7 @@
             margin: 15px 0;
         }
 
-        .content input[type="text"], .content textarea, .content input[type="file"] {
+        .content input[type="text"], .content textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
@@ -46,10 +46,7 @@
             box-sizing: border-box; 
         }
 
-        .content textarea {
-            height: 150px;
-            resize: vertical;
-        }
+     
 
         .content input[type="submit"] {
             padding: 10px 20px;
@@ -65,21 +62,9 @@
             background-color: #e14e2d;
         }
 
-        .page_tits {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .page_tits h3 {
-            font-size: 24px;
-            font-weight: bold;
-            text-decoration: underline;
-            text-decoration-color: white;
-        }
-
         .btn_set {
             text-align: right;
-            margin-top: 20px;
+            margin-top: 8%;
         }
 
         .btn_set a {
@@ -95,23 +80,53 @@
         .btn_set a:hover {
             background-color: #333;
         }
+        
+        
+        .btn_set2 {
+        text-align: right;
+        margin-top: 0%;
+        margin-left :50%;
+                }
+        
+        .btn_set2 a {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #1A1C20;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn_set2 a:hover {
+            background-color: #333;
+        }
+        
+        
     </style>
 </head>
 <body>
-    <div class="page_tits"></div>
 
-    <div class="content">
-        <h1>공지사항 작성</h1>
-        <form action="/board/create" method="post" enctype="multipart/form-data">
-            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-            <p>제목 : <input type="text" name="btitle" placeholder="제목을 입력하세요"></p>
-            <p>내용 : <textarea name="bcontent" placeholder="내용을 입력하세요"></textarea></p>
-            <p>사진 : <input type="file" name="bphoto" accept="image/*"></p>
-            <p><input type="submit" value="제출"></p>
-        </form>
-        <p class="btn_set">
+            
+    <div class="content">    
+        <div>
+        <div class="btn_set2">
             <a href="/board/readlist">목록으로</a>
-        </p>
+             </div>
+        <h1>Title : [[${board.btitle}]]
+        </h1>
+         
+        </div>
+         <hr>
+        <p>Id : [[${board.bid}]]</p>
+        <p>Content : [[${board.bcontent}]]</p>
+        <p>Date : [[${board.bdate}]]</p>  
+        
+        <hr>
+        <div class="btn_set">
+            <a th:href="@{|/board/update/${board.bid}|}">수정</a>
+            <a th:href="@{|/board/delete/${board.bid}|}">삭제</a>
     </div>
+      </div>
 </body>
 </html>
