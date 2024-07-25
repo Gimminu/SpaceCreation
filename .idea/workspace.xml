@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e29fc5a5-4cbc-445e-ab98-6ad83f418ca0" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/notice/Notice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/notice/NoticeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/notice/NoticeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/notice/NoticeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/static/css/notice.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/View/notice/notice_create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/View/notice/notice_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/View/notice/notice_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/notice/notice_update.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/comment/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/comment/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/comment/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/comment/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/java/com/aws/spacecreation/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/accounts/profile_management.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/accounts/profile_management.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboarddetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboarddetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceCreation/src/main/resources/templates/view/interiorboard/interiorboardlist.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +265,7 @@
       <workItem from="1721362632861" duration="10000" />
       <workItem from="1721362863588" duration="551000" />
       <workItem from="1721800233575" duration="2925000" />
-      <workItem from="1721803774455" duration="40418000" />
+      <workItem from="1721803774455" duration="40944000" />
     </task>
     <servers />
   </component>

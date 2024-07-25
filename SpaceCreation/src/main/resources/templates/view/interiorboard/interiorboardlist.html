@@ -42,7 +42,7 @@
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="검색어를 입력하세요" onkeyup="filterProjects()">
             </div>
-            <a sec:authorize="isAuthenticated"  th:href="@{/interiorboardform}" class="register-button">게시물 등록</a>
+            <a sec:authorize="isAuthenticated"  th:href="@{/interiorboard/interiorboardform}" class="register-button">게시물 등록</a>
         </div>
     </section>
     <div class="container-medium">

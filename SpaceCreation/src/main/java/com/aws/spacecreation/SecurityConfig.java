@@ -38,9 +38,14 @@ public class SecurityConfig {
                         .requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
                         .anyRequest().permitAll())
                 .csrf(csrf -> csrf
-                        .disable())
-                        /*.ignoringRequestMatchers("/read/**", "/interiorboard/interiorboarddetail/**")
-                        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))*/
+                        .ignoringRequestMatchers(
+                                "/read/**",
+                                "/interiorboard/interiorboarddetail/**",
+                                "/interiorboard/toggleLike",
+                                "/comment/**"
+                        )
+                        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                )
                 .formLogin(form -> form
                         .loginPage("/user/login")
                         .defaultSuccessUrl("/", true))
