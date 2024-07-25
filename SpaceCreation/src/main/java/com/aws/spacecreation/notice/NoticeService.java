@@ -1,5 +1,7 @@
 package com.aws.spacecreation.notice;
 
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
@@ -9,6 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.aws.spacecreation.S3Service;
 import com.aws.spacecreation.interiorboard.DataNotFoundException;
 
 import lombok.RequiredArgsConstructor;
@@ -16,11 +19,12 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class NoticeService {
-
+	
+	private final S3Service s3Service;
 	private final NoticeRepository noticeRepository;
 
 	public Page<Notice> noticelist(Pageable pageable, Integer pageNo, String ordered, String mode, String kw) {
-		pageable = PageRequest.of(pageNo, 1, Sort.by(Sort.Direction.DESC, ordered));
+		pageable = PageRequest.of(pageNo, 10, Sort.by(Sort.Direction.DESC, ordered));
 		Page<Notice> page;
 		switch (mode) {
 		case "1":
@@ -42,12 +46,16 @@ public class NoticeService {
 	
 	
 	
-	public void create(Notice notice, MultipartFile file) {
+	public void create(Notice notice, MultipartFile file) throws IOException {
+		
+		
+		notice.setImage1(s3Service.uploadFile(file));
 		
 		String pc = notice.getContent();
 		pc = pc.replaceAll("(?i)<br\\s*/?>", "\n");
 		pc = pc.replaceAll("(?i)<[^>]*>", "");
 		notice.setPlaincontent(pc);
+		notice.setCreateDate(LocalDateTime.now());
 		noticeRepository.save(notice);	
 		
 		
@@ -58,10 +66,10 @@ public class NoticeService {
 	public Notice getNotice(Integer id) {
 		Optional<Notice> notice = this.noticeRepository.findById(id);
 		if (notice.isPresent()) {
-			InteriorBoard interiorBoard1 = interiorBoard.get();
-			interiorBoard1.setViewed(interiorBoard1.getViewed()+1);
-			this.interiorBoardRepository.save(interiorBoard1);
-            return interiorBoard1;
+			Notice notice1 = notice.get();
+			notice1.setView(notice1.getView()+1);
+			this.noticeRepository.save(notice1);
+            return notice1;
 		} else {
 			throw new DataNotFoundException("notice not found");
 		}

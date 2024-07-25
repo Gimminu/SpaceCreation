@@ -27,6 +27,8 @@ public class Notice {
     @Column(columnDefinition = "TEXT")
     private String plaincontent;
     
+    private String image1;
+    
     private Integer view;
     
     private LocalDateTime createDate;

@@ -1,5 +1,7 @@
 package com.aws.spacecreation.notice;
 
+import java.io.IOException;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
@@ -72,7 +74,7 @@ public class NoticeController {
 	}
 	@PostMapping("/create")
 	public String notice_create(@ModelAttribute Notice notice,
-			@RequestParam("file") MultipartFile file) {
+			@RequestParam("file") MultipartFile file) throws IOException {
 		
 		notice.setView(0);
 		noticeService.create(notice,  file);
@@ -88,27 +90,29 @@ public class NoticeController {
 		model.addAttribute("notice", notice);
 		
 		
-		
 		return "view/notice/notice_detail";
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	@GetMapping("/update")
-	public String notice_update() {
+	@GetMapping("/update/{id}")
+	public String update(Model model, @PathVariable ("id") Integer id) {
 		
-		
-		
+		model.addAttribute("Notice", noticeService.getNotice(id));
+
 		return "view/notice/notice_update";
 	}
+	
+	@PostMapping("/update")
+	public String update(@ModelAttribute Notice notice,
+			@RequestParam("file") MultipartFile file) throws IOException {
+		
+		noticeService.create(notice,file);
+		return "redirect:/Notice/list";
+	}
+	
+	
+	
+	
+	
 	
 	
 	
