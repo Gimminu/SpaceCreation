@@ -1,9 +1,4 @@
-@font-face {
-    font-family: 'GowunBatang-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+
 body {
 	background-color: #ffd5cd ;
 }
@@ -22,8 +17,6 @@ body {
 .form-container h2 {
 	text-align: center;
 	margin-bottom: 20px;
-	    font-family: 'GowunBatang-Regular', sans-serif;
-	
 }
 
 .form-group {
@@ -34,8 +27,6 @@ body {
 	display: block;
 	margin-bottom: 5px;
 	font-weight: bold;
-	    font-family: 'GowunBatang-Regular', sans-serif; 
-	
 }
 
 .form-group input[type="text"], .form-group input[type="file"],

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html layout:decorate="~{/layout/layout}">
-<head>
+<html layout:decorate="~{layout/layout}">
+<div layout:fragment="content" class="container-fluid">
     <link rel="stylesheet" href="/css/questionstyle.css">
     <style>
         .button--winona--friends {
@@ -97,9 +97,6 @@
             border-color: #bd2130;
         }
     </style>
-</head>
-<body>
-<div layout:fragment="content" class="container">
     <div class="card">
         <div class="card-body">
             <h1 th:text="${question.subject}" class="mb-3"></h1>
@@ -111,12 +108,10 @@
                     <div class="btn-group">
                         <a th:href="@{/question/list}" class="button--winona--friends btn" data-text="리스트로 돌아가기"><span>리스트로 돌아가기</span></a>
                         <div th:if="${#authentication.getName()==question.getUser().getUsername()}">
-                            <a th:href="@{|/question/update/${question.id}|}" class="button--winona--friends btn"
-                               data-text="수정"><span>수정</span></a>
+                            <a th:href="@{|/question/update/${question.id}|}" class="button--winona--friends btn" data-text="수정"><span>수정</span></a>
                         </div>
                         <div th:if="${(#authentication.getName()==question.getUser().getUsername())||#authentication.getAuthorities()==question.getUser().getUserRole()}">
-                            <a th:href="@{|/question/delete/${question.id}|}" class="button--winona--friends btn"
-                               data-text="삭제"><span>삭제</span></a>
+                            <a th:href="@{|/question/delete/${question.id}|}" class="button--winona--friends btn" data-text="삭제"><span>삭제</span></a>
                         </div>
                     </div>
                 </div>
@@ -136,5 +131,4 @@
         </li>
     </ul>
 </div>
-</body>
 </html>

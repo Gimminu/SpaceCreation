@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html layout:decorate="~{/layout/layout}">
+<html lang="ko" layout:decorate="~{layout/layout}">
 <head>
     <link rel="stylesheet" href="/css/questionstyle.css">
     <style>
@@ -83,44 +83,44 @@
     </style>
 </head>
 <body>
-<div layout:fragment="content" class="container my-3">
-    <div class="card-header">
-        <h5 class="my-3">Q&A 게시판</h5>
-        <div>
-            조회수 순 정렬
-            <a th:href="@{/question/list(page=${questionPage.number}, sort=views, direction=asc)}"
-               class="btn btn-outline-warning">↑</a>
-            <a th:href="@{/question/list(page=${questionPage.number}, sort=views, direction=desc)}"
-               class="btn btn-outline-warning">↓</a>
+    <div layout:fragment="content" class="container my-3">
+        <div class="card-header">
+            <h5 class="my-3">Q&A 게시판</h5>
+            <div>
+                조회수 순 정렬
+                <a th:href="@{/question/list(page=${questionPage.number}, sort=views, direction=asc)}"
+                   class="btn btn-outline-warning">↑</a>
+                <a th:href="@{/question/list(page=${questionPage.number}, sort=views, direction=desc)}"
+                   class="btn btn-outline-warning">↓</a>
+            </div>
         </div>
-    </div>
 
-    <!-- 기존 테이블 코드 -->
-    <div class="container container-list my-3">
-        <table class="table">
-            <thead class="table-orange">
-            <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성일시</th>
-                <th>조회수</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="question, loop : ${questionPage.content}">
-                <td th:text="${questionPage.number * questionPage.size + loop.index + 1}"></td>
-                <td><a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a></td>
-                <td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd')}"></td>
-                <td th:text="${question.views}"></td>
-                <td>
-                    <form th:action="@{|/question/delete/${question.id}|}" method="post">
-                        <button type="submit" class="btn btn-sm btn-danger">X</button>
-                    </form>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <!-- 기존 테이블 코드 -->
+        <div class="container container-list my-3">
+            <table class="table">
+                <thead class="table-orange">
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성일시</th>
+                    <th>조회수</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="question, loop : ${questionPage.content}">
+                    <td th:text="${questionPage.number * questionPage.size + loop.index + 1}"></td>
+                    <td><a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a></td>
+                    <td th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd')}"></td>
+                    <td th:text="${question.views}"></td>
+                    <td>
+                        <form th:action="@{|/question/delete/${question.id}|}" method="post">
+                            <button type="submit" class="btn btn-sm btn-danger">X</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
 
         <!-- 기존 페이지네이션 코드 -->
         <nav aria-label="Page navigation">

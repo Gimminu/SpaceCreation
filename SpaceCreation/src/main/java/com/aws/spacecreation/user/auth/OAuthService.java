@@ -1,6 +1,7 @@
 package com.aws.spacecreation.user.auth;
 
 import com.aws.spacecreation.user.SiteUser;
+import com.aws.spacecreation.user.UserCreateForm;
 import com.aws.spacecreation.user.UserService;
 import lombok.RequiredArgsConstructor;
 import org.json.JSONObject;
@@ -19,6 +20,9 @@ public class OAuthService {
     private final UserService userService;
     private static final Logger logger = LoggerFactory.getLogger(OAuthService.class);
 
+
+/*
+
     public SiteUser registerOrUpdateUser(String registrationId, OAuth2AuthenticationToken authentication) {
         try {
             logger.info("Registering or updating user: registrationId={}, attributes={}", registrationId, authentication.getPrincipal().getAttributes());
@@ -28,9 +32,9 @@ public class OAuthService {
             return existingUser
                     .map(user -> {
                         user.setNickname(attributes.getName());
-                        return userService.createOrUpdateUser(user);
+                        return userService.createOrUpdateUser();
                     })
-                    .orElseGet(() -> userService.createOrUpdateUser(attributes.toEntity()));
+                    .orElseGet(() -> userService.createOrUpdateUser());
         } catch (OAuth2AuthenticationException e) {
             logger.error("OAuth2AuthenticationException during user registration or update", e);
             throw e;
@@ -39,6 +43,7 @@ public class OAuthService {
             throw new RuntimeException("Error during user registration or update: " + e.getMessage(), e);
         }
     }
+*/
 
     public SiteUser processKakaoLogin(String responseBody) {
         JSONObject jsonParser = new JSONObject(responseBody);

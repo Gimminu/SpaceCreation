@@ -1,6 +1,7 @@
 package com.aws.spacecreation.user;
 
 import com.aws.spacecreation.user.auth.OAuthAttributes;
+import com.aws.spacecreation.user.auth.UserProvider;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -17,19 +18,27 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
     private static final Logger log = LoggerFactory.getLogger(UserService.class);
     @Transactional
-    public SiteUser createOrUpdateUser(SiteUser user) {
+    public SiteUser create(UserCreateForm userCreateForm) {
+        Optional<SiteUser> userOptional = userRepository.findByEmail(userCreateForm.getEmail());
+        if(userOptional.isPresent()){
+            SiteUser existingUser = userOptional.get();
+            existingUser.setNickname(userCreateForm.getNickname());
+            existingUser.setPassword(passwordEncoder.encode(userCreateForm.getPassword1()));
+            existingUser.setEmail(userCreateForm.getEmail());
+            return userRepository.save(existingUser);
+        }
+        else{
+            SiteUser user = new SiteUser();
+            user.setNickname(userCreateForm.getNickname());
+            user.setUserRole(UserRole.USER);
+            user.setPassword(passwordEncoder.encode(userCreateForm.getPassword1()));
+            user.setUsername(userCreateForm.getUsername());
+            user.setEmail(userCreateForm.getEmail());
+            user.setProvider(UserProvider.COMMON.getValue());
+            return userRepository.save(user);
+        }
 
-        return userRepository.findByEmail(user.getEmail())
-                .map(existingUser -> {
-                    existingUser.setNickname(user.getNickname());
-                    existingUser.setProvider(user.getProvider());
-                    existingUser.setUserRole(UserRole.USER);
-                    if (user.getPassword() != null && !user.getPassword().isEmpty()) {
-                        existingUser.setPassword(passwordEncoder.encode(user.getPassword()));
-                    }
-                    return userRepository.save(existingUser);
-                })
-                .orElseGet(() -> userRepository.save(user));
+
     }
 
     public Optional<SiteUser> findByEmail(String email) {

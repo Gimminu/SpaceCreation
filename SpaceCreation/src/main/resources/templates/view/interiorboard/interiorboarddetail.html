@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html layout:decorate="~{layout}">
+<html layout:decorate="~{layout/layout}">
 
 <head>
     <meta charset="UTF-8">
@@ -7,27 +7,19 @@
     <title>인테리어 게시판 - 상세 페이지</title>
 
     <!-- 피닉스 -->
-    <link href="../../vendors/prism/prism-okaidia.css" rel="stylesheet">
+    <link href="/css/phoneix/prism-okaidia.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <link href="../../vendors/simplebar/simplebar.min.css" rel="stylesheet">
+    <link href="/css/phoneix/simplebar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link href="../../assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
-    <link href="../../assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
-    <link href="../../assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
-    <link href="../../assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+    <link href="/css/phoneix/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
+    <link href="/css/phoneix/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+    <link href="/css/phoneix/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
+    <link href="/css/phoneix/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
     <!-- 피닉스 -->
 
     <!-- css -->
     <style>
-        @font-face {
-            font-family: 'GowunBatang-Regular';
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #ffd5cd;
@@ -38,7 +30,6 @@
             color: #ccc;
             padding: 10px 0;
             text-align: center;
-            font-family: 'GowunBatang-Regular', sans-serif;
         }
 
         .detail-container {
@@ -63,7 +54,6 @@
 
         .header-section .title {
             font-size: 1.5em;
-            font-family: 'GowunBatang-Regular', sans-serif;
         }
 
         .info-section {
@@ -138,7 +128,6 @@
         }
 
         .text-container h2 {
-            font-family: 'GowunBatang-Regular', sans-serif;
             font-size: 2em;
             margin: 0;
         }
@@ -167,7 +156,6 @@
         }
 
         .comment-section h2 {
-            font-family: 'GowunBatang-Regular', sans-serif;
             font-size: 1.5em;
             margin-bottom: 20px;
         }
@@ -288,10 +276,10 @@
             <div class="header-section">
                 <div class="title" th:text="${board.subject}">제목</div>
                 <div class="button-container">
-                    <a th:href="@{/interiorboardedit/{id}(id=${board.id})}">
+                    <a th:href="@{/interiorboard/interiorboardedit/{id}(id=${board.id})}">
                         <button class="edit-button">수정</button>
                     </a>
-                    <a th:href="@{/interiorboarddelete/{id}(id=${board.id})}" onclick="return confirm('정말로 이 게시물을 삭제하시겠습니까?')">
+                    <a th:href="@{/interiorboard/interiorboarddelete/{id}(id=${board.id})}" onclick="return confirm('정말로 이 게시물을 삭제하시겠습니까?')">
                         <button class="delete-button">삭제</button>
                     </a>
                 </div>
@@ -324,9 +312,9 @@
                             <span class="comment-date" th:text="${#temporals.format(comment.createDate, 'yyyy-MM-dd HH:mm')}"></span>
                         </div>
                         <p class="comment-content" th:utext="${#strings.replace(comment.content, '\n', '<br/>')}">댓글 내용</p>
-                        <div th:if="${#authentication.principal.username == comment.user.username}">
-                         <div th:if="${#authentication.principal.username == comment.user.username}">
-						    <form th:action="@{/deleteComment}" method="post" class="comment-delete-form">
+                        <div th:if="${#authentication.name == comment.user.username}">
+                         <div th:if="${#authentication.name == comment.user.username}">
+						    <form th:action="@{/comment/deleteComment}" method="post" class="comment-delete-form">
 						        <input type="hidden" name="commentId" th:value="${comment.id}">
 						        <input type="hidden" name="boardId" th:value="${board.id}">
 						        <button type="submit" onclick="return confirm('정말로 이 댓글을 삭제하시겠습니까?')">삭제</button>
@@ -338,7 +326,7 @@
                     </li>
                 </ul>
                 <div class="comment-form">
-                    <form th:action="@{/addComment}" method="post">
+                    <form th:action="@{/comment/addComment}" method="post">
                         <input type="hidden" name="boardId" th:value="${board.id}" />
                         <textarea name="content" placeholder="댓글을 입력하세요"></textarea>
                         <button type="submit">댓글 달기</button>

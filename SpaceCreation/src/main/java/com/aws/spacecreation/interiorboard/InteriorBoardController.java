@@ -66,18 +66,17 @@ public class InteriorBoardController {
         List<Comment> comments = commentService.getCommentsByBoardId(boardId);  // 댓글
         model.addAttribute("comments", comments);
 
-        return "interiorboard/interiorboarddetail";
+        return "view/interiorboard/interiorboarddetail";
     }
 
     // 인테리어 게시판의 좋아요 상태 토글
     @PostMapping("/toggleLike")
     @ResponseBody // 바꾸지마세요
-    public String toggleLike(@RequestParam("boardId") Integer boardId, HttpSession session) {
+    public String toggleLike(@RequestParam("boardId") Integer boardId) {
         SiteUser siteUser = userSecurityService.getAuthen(); // 유저정보 받아서
 
         if (siteUser == null || siteUser.getId() == null) {
             System.out.println("User is not logged in.");
-
 
             return "failed";
         }
@@ -110,7 +109,7 @@ public class InteriorBoardController {
     public String create(InteriorBoard interiorBoard, @RequestParam("imageURL") List<String> imageURLs) {
         interiorBoard.setImageUrls(imageURLs);
         interiorBoardService.create(interiorBoard);
-        return "redirect:/interiorboardlist";
+        return "redirect:/interiorboard/interiorboardlist";
     }
 
 
@@ -119,7 +118,7 @@ public class InteriorBoardController {
     public String showEditForm(@PathVariable("id") Integer boardId, Model model) {
         InteriorBoard board = interiorBoardService.read(boardId);
         model.addAttribute("board", board);
-        return "interiorboard/interiorboardedit";
+        return "view/interiorboard/interiorboardedit";
     }
 
     // 게시물 수정
@@ -127,7 +126,7 @@ public class InteriorBoardController {
     public String update(@PathVariable("id") Integer boardId, @ModelAttribute InteriorBoard board, @RequestParam("imageURL") List<String> imageURLs) {
         board.setImageUrls(imageURLs);
         interiorBoardService.updatePost(boardId, board);
-        return "redirect:/interiorboardlist";
+        return "redirect:/interiorboard/interiorboardlist";
     }
 
 
@@ -147,7 +146,7 @@ public class InteriorBoardController {
     @GetMapping("/interiorboarddelete/{id}")
     public String delete(@PathVariable("id") Integer id) {
         interiorBoardService.deleteInteriorBoard(id);
-        return "redirect:/interiorboardlist";
+        return "redirect:/interiorboard/interiorboardlist";
     }
 
     @GetMapping("/list")

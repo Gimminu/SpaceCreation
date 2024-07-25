@@ -1,0 +1,472 @@
+@startuml
+interface com.aws.spacecreation.question.QuestionRepository {
+~ Question findBySubject(String)
+~ Question findBySubjectAndContent(String,String)
+~ Page<Question> findAllByOrderByViewsDesc(Pageable)
+~ List<Question> findTop5ByOrderByViewsDesc()
+}
+
+class com.aws.spacecreation.user.auth.OAuth2UserInfo {
+- String id
+- String password
+- String email
+- String nickname
+- String provider
++ {static} OAuth2UserInfo of(String,Map<String,Object>)
+- {static} OAuth2UserInfo ofGoogle(Map<String,Object>)
+- {static} OAuth2UserInfo ofKakao(Map<String,Object>)
+- {static} OAuth2UserInfo ofNaver(Map<String,Object>)
+- {static} OAuth2UserInfo ofFacebook(Map<String,Object>)
++ SiteUser toEntity()
+}
+
+
+class com.aws.spacecreation.interiorboard.InteriorBoardService {
+- InteriorBoardRepository interiorBoardRepository
+- S3Service s3Service
+- LikeService likeService
+- LikeRepository likeRepository
+- UserRepository userRepository
++ InteriorBoard getInteriorBoard(Integer)
++ void create(InteriorBoard)
++ List<InteriorBoard> getAllInteriorBoards()
++ void deleteInteriorBoard(Integer)
++ List<InteriorBoard> readlist()
++ InteriorBoard read(Integer)
++ Optional<InteriorBoard> findById(Integer)
++ void increaseViews(Integer)
++ boolean isLikedByCurrentUser(Long,InteriorBoard)
++ void toggleLike(Long,Integer)
++ List<InteriorBoard> getBoardsSortedByDate()
++ List<InteriorBoard> getBoardsSortedByViews()
++ List<InteriorBoard> getBoardsSortedByLikes()
++ void updatePost(Integer,InteriorBoard)
+}
+
+
+interface com.aws.spacecreation.interiorboard.InteriorBoardRepository {
+~ List<InteriorBoard> findAllByOrderByCreateDateDesc()
+~ List<InteriorBoard> findAllByOrderByViewCountDesc()
+~ List<InteriorBoard> findAllByOrderByLikesDesc()
+}
+
+class com.aws.spacecreation.user.auth.OAuthAttributes {
+- Map<String,Object> attributes
+- String registrationId
+- String name
+- String email
+- String provider
++ {static} OAuthAttributes of(String,Map<String,Object>)
+- {static} OAuthAttributes ofGoogle(Map<String,Object>)
+- {static} OAuthAttributes ofKakao(Map<String,Object>)
+- {static} OAuthAttributes ofNaver(Map<String,Object>)
+- {static} OAuthAttributes ofFacebook(Map<String,Object>)
++ SiteUser toEntity()
+}
+
+
+class com.aws.spacecreation.interiorboardreply.InteriorBoardReply {
+- Integer id
+- String username
+- String content
+- LocalDateTime createDate
+- InteriorBoard interiorBoard
+}
+
+enum com.aws.spacecreation.user.UserRole {
++  ADMIN
++  USER
+- String value
+}
+
+class com.aws.spacecreation.user.UserCreateForm {
+- String username
+- String nickname
+- String password1
+- String password2
+- String email
+}
+
+class com.aws.spacecreation.user.UserService {
+- UserRepository userRepository
+- PasswordEncoder passwordEncoder
+- {static} Logger log
++ SiteUser createOrUpdateUser(SiteUser)
++ Optional<SiteUser> findByEmail(String)
++ void withdraw(SiteUser)
++ SiteUser findOrCreateUserByEmail(OAuthAttributes)
+}
+
+
+class com.aws.spacecreation.user.UserController {
+- UserService userService
+- UserSecuritySerivce userSecuritySerivce
++ String signup(Model)
++ String login()
++ String update(Model)
++ String signup(UserCreateForm,BindingResult)
++ String update(UserCreateForm,BindingResult)
++ String withdraw()
++ Map<String,Boolean> checkAuthentication(Authentication)
+}
+
+
+class com.aws.spacecreation.S3Service {
+- String bucketName
+- AmazonS3 amazonS3
++ String uploadFile(MultipartFile)
+- File convertMultiPartToFile(MultipartFile)
++ void deleteFile(String)
+}
+
+
+interface com.aws.spacecreation.answer.AnswerRepository {
+}
+class com.aws.spacecreation.like.Likes {
+- Integer id
+- String username
+- InteriorBoard interiorBoard
+}
+
+class com.aws.spacecreation.answer.AnswerController {
+- QuestionService questionService
+- AnswerService answerService
++ String createAnswer(Model,Integer,String)
++ String delete(Integer)
++ String deleteAnswer(Integer)
+}
+
+
+class com.aws.spacecreation.comment.Comment {
+- Long id
+- InteriorBoard interiorBoard
+- SiteUser user
+- String content
+- LocalDateTime createDate
+}
+
+class com.aws.spacecreation.user.auth.OAuthController {
+- OAuthService oAuthService
+- OAuthTokenService oAuthTokenService
+- {static} Logger logger
++ String kakaoLogin(String,HttpSession)
++ String naverLogin(String,HttpSession)
++ String oauth2Login(String,OAuth2AuthenticationToken,HttpSession)
+- void setSessionAndAuthentication(SiteUser,HttpSession)
+}
+
+
+interface com.aws.spacecreation.comment.CommentRepository {
+~ List<Comment> findByInteriorBoardId(Integer)
+}
+
+interface com.aws.spacecreation.user.UserRepository {
+~ Optional<SiteUser> findByUsername(String)
+~ Optional<SiteUser> findByEmail(String)
+}
+
+class com.aws.spacecreation.interiorboardreply.InteriorBoardReplyController {
+- InteriorBoardService interiorBoardService
+- InteriorBoardReplyService interiorBoardreplyService
++ String create(Model,Integer,String)
+}
+
+
+class com.aws.spacecreation.answer.AnswerService {
+- AnswerRepository answerRepository
++ void create(Question,String)
++ Answer getAnswer(Integer)
++ void delete(Integer)
+}
+
+
+class com.aws.spacecreation.user.auth.CustomUserDetails {
+- SiteUser user
+- Map<String,Object> attributes
++ List<GrantedAuthority> getAuthorities()
++ String getPassword()
++ String getUsername()
++ boolean isAccountNonExpired()
++ boolean isAccountNonLocked()
++ boolean isCredentialsNonExpired()
++ boolean isEnabled()
++ Map<String,Object> getAttributes()
++ String getName()
+}
+
+
+class com.aws.spacecreation.question.QuestionService {
+- EmailService emailService
+- QuestionRepository questionRepository
+- JavaMailSender mailSender
+- UserSecuritySerivce userSecuritySerivce
+- UserService userService
++ Page<Question> getAllQuestions(Pageable)
++ Page<Question> getAllQuestionsSortedByViews(Pageable)
++ List<Question> getAllQuestions()
++ Question getQuestion(Integer)
++ void create(Question)
++ void delete(Integer)
+- void increaseViews(Question)
++ void update(Integer,Question)
+}
+
+
+class com.aws.spacecreation.interiorboard.DataNotFoundException {
+- {static} long serialVersionUID
+}
+
+class com.aws.spacecreation.question.QuestionController {
+- QuestionRepository questionRepository
+- QuestionService questionService
+- UserSecuritySerivce userSecuritySerivce
+- String downpath
++ String list(Model,int,String,String)
++ String detail(Model,Integer)
++ String questionCreate(Model)
++ String questionCreate(Question)
++ String delete(Integer)
++ String update(Integer,Model)
++ String update(Integer,Question)
+}
+
+
+class com.aws.spacecreation.SpaceCreationApplicationTests {
+~ void contextLoads()
+}
+
+class com.aws.spacecreation.user.auth.OAuthTokenService {
+- String kakaoClientId
+- String kakaoClientSecret
+- String kakaoRedirectUri
+- String naverClientId
+- String naverClientSecret
+- String naverRedirectUri
++ ResponseEntity<String> requestKakaoToken(String)
++ ResponseEntity<String> requestNaverToken(String,String)
+}
+
+
+class com.aws.spacecreation.SecurityConfig {
+- UserService userService
+- CustomOAuth2UserService customOAuth2UserService
+~ SecurityFilterChain filterChain(HttpSecurity)
+~ AuthenticationManager authenticationManager(AuthenticationConfiguration)
++ OAuth2UserService<OAuth2UserRequest,OAuth2User> oauth2UserService()
+}
+
+
+class com.aws.spacecreation.interiorboard.InteriorBoardController {
+- InteriorBoardService interiorBoardService
+- LikeService likeService
+- UserRepository userRepository
+- S3Service s3Service
+- UserSecuritySerivce userSecurityService
+- CommentService commentService
++ String detail(Integer,Model)
++ String toggleLike(Integer,HttpSession)
++ String createForm()
++ String create(InteriorBoard,List<String>)
++ String showEditForm(Integer,Model)
++ String update(Integer,InteriorBoard,List<String>)
++ ResponseEntity<String> uploadImage(MultipartFile)
++ String delete(Integer)
++ String getInteriorBoardList(String,Model)
+}
+
+
+class com.aws.spacecreation.user.UserSecuritySerivce {
+- UserRepository userRepository
++ UserDetails loadUserByUsername(String)
++ SiteUser getAuthen()
+}
+
+
+class com.aws.spacecreation.user.config.RestTemplateConfig {
++ RestTemplate restTemplate()
+}
+
+class com.aws.spacecreation.MainController {
+- InteriorBoardService interiorBoardservice
+- QuestionRepository questionRepository
++ String root(Model)
++ String index()
++ String home()
++ String about()
++ String fag(Model)
+}
+
+
+class com.aws.spacecreation.question.Question {
+- Integer id
+- String subject
+- String content
+- LocalDateTime createDate
+- LocalDateTime updateDate
+- String image1
+- String image2
+- String image3
+- SiteUser user
+- List<Answer> answerList
+- int views
+}
+
+class com.aws.spacecreation.interiorboardreply.InteriorBoardReplyService {
+- JavaMailSender mailSender
+- InteriorBoardReplyRepository interiorBoardReplyRepository
+- UserService userService
++ void create(InteriorBoard,String)
+}
+
+
+class com.aws.spacecreation.like.LikeService {
+- LikeRepository likeRepository
++ void toggleLike(InteriorBoard,SiteUser)
++ boolean isLikedByUser(InteriorBoard,SiteUser)
++ int getLikeCount(InteriorBoard)
+}
+
+
+class com.aws.spacecreation.user.config.SecurityBeansConfig {
++ PasswordEncoder passwordEncoder()
+}
+
+interface com.aws.spacecreation.interiorboardreply.InteriorBoardReplyRepository {
+}
+class com.aws.spacecreation.user.auth.OAuthService {
+- UserService userService
+- {static} Logger logger
++ SiteUser registerOrUpdateUser(String,OAuth2AuthenticationToken)
++ SiteUser processKakaoLogin(String)
++ SiteUser processNaverLogin(String)
+}
+
+
+class com.aws.spacecreation.interiorboard.InteriorBoard {
+- Integer id
+- String poster
+- String subject
+- String content
+- LocalDateTime createDate
+- List<String> imageUrls
+- Integer viewCount
+- List<BoardLike> likes
+- SiteUser user
+- List<Comment> comments
++ String toString()
+}
+
+
+class com.aws.spacecreation.comment.CommentController {
+- CommentService commentService
+- UserSecuritySerivce userSecurityService
++ String addComment(Integer,String,Model)
++ String deleteComment(Long,Integer)
+}
+
+
+class com.aws.spacecreation.user.auth.CustomOAuth2UserService {
+- Logger logger
+- UserService userService
++ OAuth2User loadUser(OAuth2UserRequest)
+- OAuth2User processOAuth2User(OAuth2UserRequest,OAuth2User)
+}
+
+
+class com.aws.spacecreation.comment.CommentService {
+- CommentRepository commentRepository
+- InteriorBoardRepository boardRepository
+- UserRepository userRepository
++ List<Comment> getCommentsByBoardId(Integer)
++ Comment addComment(Integer,Long,String)
++ boolean deleteComment(Long,Long)
+}
+
+
+class com.aws.spacecreation.user.SiteUser {
+- Long id
+- String username
+- String nickname
+- String password
+- String provider
+- String email
+- UserRole userRole
++ Map<String,Object> getAttributes()
++ String getName()
++ Collection<? extends GrantedAuthority> getAuthorities()
+}
+
+
+class com.aws.spacecreation.user.OAuthAttributes {
+- Map<String,Object> attributes
+- String nameAttributeKey
+- String name
+- String email
++ {static} OAuthAttributes of(String,String,Map<String,Object>)
+- {static} OAuthAttributes ofKakao(String,Map<String,Object>)
++ SiteUser toEntity()
++ Map<String,Object> getAttributes()
++ String getNameAttributeKey()
+}
+
+
+class com.aws.spacecreation.question.MailConfig {
++ JavaMailSender javaMailSender()
+}
+
+class com.aws.spacecreation.SpaceCreationApplication {
++ {static} void main(String[])
+}
+
+class com.aws.spacecreation.user.auth.config.CustomConfig {
+}
+interface com.aws.spacecreation.like.LikeRepository {
+~ int countByBoard(InteriorBoard)
+~ boolean existsByBoardAndUser(InteriorBoard,SiteUser)
+~ void deleteByBoardAndUser(InteriorBoard,SiteUser)
+}
+
+class com.aws.spacecreation.like.BoardLike {
+- Long id
+- InteriorBoard board
+- SiteUser user
+}
+
+class com.aws.spacecreation.question.EmailService {
+- JavaMailSender daumMailSender
+- String daumFromEmail
++ void sendEmailFromDaum(Question)
+}
+
+
+class com.aws.spacecreation.answer.Answer {
+- Integer id
+- String content
+- LocalDateTime createDate
+- Question question
+}
+
+class com.aws.spacecreation.S3Config {
+- String awsAccessKey
+- String awsSecretKey
+- String region
++ AmazonS3 s3Client()
+}
+
+
+
+
+org.springframework.data.jpa.repository.JpaRepository <|-- com.aws.spacecreation.question.QuestionRepository
+org.springframework.data.jpa.repository.JpaRepository <|-- com.aws.spacecreation.interiorboard.InteriorBoardRepository
+org.springframework.data.jpa.repository.JpaRepository <|-- com.aws.spacecreation.answer.AnswerRepository
+org.springframework.data.jpa.repository.JpaRepository <|-- com.aws.spacecreation.comment.CommentRepository
+org.springframework.data.jpa.repository.JpaRepository <|-- com.aws.spacecreation.user.UserRepository
+org.springframework.security.core.userdetails.UserDetails <|.. com.aws.spacecreation.user.auth.CustomUserDetails
+org.springframework.security.oauth2.core.user.OAuth2User <|.. com.aws.spacecreation.user.auth.CustomUserDetails
+com.aws.spacecreation.interiorboard.RuntimeException <|-- com.aws.spacecreation.interiorboard.DataNotFoundException
+org.springframework.security.core.userdetails.UserDetailsService <|.. com.aws.spacecreation.user.UserSecuritySerivce
+org.springframework.data.jpa.repository.JpaRepository <|-- com.aws.spacecreation.interiorboardreply.InteriorBoardReplyRepository
+org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService <|-- com.aws.spacecreation.user.auth.CustomOAuth2UserService
+org.springframework.security.oauth2.core.user.OAuth2User <|.. com.aws.spacecreation.user.SiteUser
+org.springframework.data.jpa.repository.JpaRepository <|-- com.aws.spacecreation.like.LikeRepository
+@enduml

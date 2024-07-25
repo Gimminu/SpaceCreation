@@ -18,6 +18,7 @@
                     JOIN US
                 </h1>
                 <form class="form-box px-3" th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+
                     <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
                     <div th:fragment="formErrorsFragment" class="alert alert-danger"
                          role="alert" th:if="${#fields.hasAnyErrors()}">

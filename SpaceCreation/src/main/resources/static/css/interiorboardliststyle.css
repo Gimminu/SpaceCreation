@@ -1,12 +1,5 @@
-@font-face {
-	font-family: 'GowunBatang-Regular';
-	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
 
 body {
-	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
 	background-color: #ffd5cd;
@@ -51,7 +44,6 @@ header nav ul li a {
 
 .filters h1 {
 	margin-right: 30px;
-	font-family: 'GowunBatang-Regular', sans-serif; /* 헤더에만 폰트 적용 */
 }
 
 .filters select {
@@ -187,7 +179,6 @@ header nav ul li a {
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'GowunBatang-Regular', sans-serif;
 }
 
 

@@ -62,6 +62,7 @@ public class OAuthController {
             return "redirect:/error";
         }
     }
+    /*
     @GetMapping("/oauth2/authorization/{registrationId}")
     public String oauth2Login(@PathVariable String registrationId, OAuth2AuthenticationToken authentication, HttpSession session) {
         try {
@@ -77,7 +78,7 @@ public class OAuthController {
             return "redirect:/error";
         }
     }
-
+*/
     private void setSessionAndAuthentication(SiteUser user, HttpSession session) {
         Authentication auth = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(auth);

@@ -4,11 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.aws.spacecreation.user.SiteUser;
 import com.aws.spacecreation.user.UserSecuritySerivce;
-
+@RequestMapping("/comment")
 @Controller
 public class CommentController {
 
@@ -43,10 +44,10 @@ public class CommentController {
 	        }
 	        boolean isDeleted = commentService.deleteComment(commentId, currentUser.getId());
 	        if (isDeleted) {
-	            return "redirect:/interiorboarddetail/" + boardId;
+	            return "redirect:/interiorboard/interiorboarddetail/" + boardId;
 	        }
 	        
-	        return "redirect:/interiorboarddetail/" + boardId;
+	        return "redirect:/interiorboard/interiorboarddetail/" + boardId;
 	    }
 
 }

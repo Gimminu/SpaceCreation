@@ -1,5 +1,32 @@
 <!DOCTYPE html>
-<html layout:decorate="~{/layout/layout}">
+<html layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+    <script>
+        function summarizeContent(content, length) {
+            var div = document.createElement("div");
+            div.innerHTML = content;
+            var text = div.textContent || div.innerText || "";
+
+            if (text.length > length) {
+                text = text.substring(0, length) + "...";
+            }
+
+            return text;
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            var posts = document.querySelectorAll(".board-item p");
+
+            posts.forEach(function(post) {
+                var content = post.getAttribute("data-content");
+                var summary = summarizeContent(content, 100);
+                post.textContent = summary;
+            });
+        });
+    </script>
+</head>
+<body>
 <div layout:fragment="content" class="container-fluid">
     <div class="hero-section text-center position-relative">
         <div class="overlay"></div>
@@ -27,7 +54,8 @@
                             <a th:href="@{/interiorboard/interiorboarddetail/{id}(id=${post.id})}" class="board-item-link">
                                 <div class="board-item">
                                     <h3 th:text="${post.subject}">게시글 제목</h3>
-                                    <p th:text="${post.content}">게시글 요약 내용</p>
+                                    <!-- 원본 내용을 data-content 속성에 저장 -->
+                                    <p th:attr="data-content=${post.content}">게시글 요약 내용</p>
                                 </div>
                             </a>
                         </div>
@@ -47,4 +75,5 @@
         </div>
     </div>
 </div>
+</body>
 </html>
