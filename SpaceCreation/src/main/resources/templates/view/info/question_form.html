@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko" layout:decorate="~{layout/layout}">
+<head>
+    <link rel="stylesheet" href="/css/questionstyle.css">
+    <style>
+        .button--winona, .button--winona--friends {
+            padding: 10px 20px;
+            border-radius: 5px; /* 사각형 모양으로 변경 */
+            border: 2px solid #1A1C20;
+            color: #1A1C20;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            background-color: transparent;
+        }
+
+        .button--winona:hover, .button--winona--friends:hover {
+            border-color: #1A1C20;
+            background-color: rgba(249, 129, 58, 0.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .form-container .button-container {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .form-container .button-container .button--winona,
+        .form-container .button-container .button--winona--friends {
+            margin-left: 10px; /* 간격 조정 */
+        }
+
+        .form-group {
+            width: 100%;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+        .answer-form {
+            width: 100%;
+        }
+
+        .answer-form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content" class="container">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="my-3">질문 등록하기</h5>
+            </div>
+            <div class="card-body">
+                <form id="questionForm" th:action="@{/question/create}" method="post" class="form-container">
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">제목</label>
+                            <input type="text" class="form-control" id="subject" name="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="content" class="form-label">내용</label>
+                            <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <input type="submit" value="질문 등록" class="button--winona">
+                        <a th:href="@{/question/list}" class="button--winona button--winona--friends">리스트로 돌아가기</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.project-detail {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.project-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.project-info {
+    margin-left: 20px;
+    flex: 1;
+}
+
+.project-info h1 {
+    font-size: 2.5em;
+    margin: 0 0 20px;
+}
+
+.project-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.project-meta p {
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.project-actions {
+    margin-top: 20px;
+}
+
+.project-actions button {
+    background-color: #386fa5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.project-actions button:hover {
+    background-color: #0056b3;
+}
+
+.related-projects {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.related-projects h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.project-list {
+    display: flex;
+    gap: 20px;
+}
+
+.project-item {
+    flex: 1;
+    text-align: center;
+}
+
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.project-item h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}

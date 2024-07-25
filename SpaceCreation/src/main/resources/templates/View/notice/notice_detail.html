@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout/layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 상세</title>
+    <style>
+
+        .content.notice {
+            width: 1000px;
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin: 20px auto;
+        }
+
+        .content.notice h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .content.notice p {
+            margin: 15px 0;
+        }
+
+        .content.notice .date {
+            font-size: 18px;
+            color: #666;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .content.notice .post-content {
+            margin: 20px 0;
+        }
+
+        .btn_set.notice, .btn_set2.notice {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .btn_set.notice a, .btn_set2.notice a {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #1A1C20;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .btn_set.notice a:hover, .btn_set2.notice a:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body class="notice">
+<div layout:fragment="content">
+    <div class="content notice">
+        <div class="row">
+            <h1 th:text="${notice.subject}"></h1>
+            <div class="date" th:text="'조회수 : ' + ${notice.view}"></div>
+            <div class="date" th:text="${#temporals.format(notice.createDate, 'yyyy-MM-dd HH:mm')}"></div>
+            <hr>
+        </div>
+        <div class="post-content" th:text="${notice.content}"></div>
+        <img th:src="${notice.image1}">
+        <hr>
+        <div class="btn_set notice">
+            <a th:if="${#authentication.getAuthorities().toArray()[0]?.getAuthority() == 'ROLE_ADMIN'}" th:href="@{|/notice/delete/${notice.id}|}">삭제</a>
+        </div>
+        <div class="btn_set2 notice">
+            <a href="/notice/list">목록으로</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

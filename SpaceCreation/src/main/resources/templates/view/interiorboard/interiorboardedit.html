@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout/layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 수정</title>
+    <link rel="stylesheet" href="/css/interiorboardform.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+    <style>
+body {
+	background-color: #ffd5cd ;
+}
+
+.form-container {
+	max-width: 600px;
+	margin: 50px auto;
+	padding: 20px;
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.form-group input[type="text"], .form-group input[type="file"],
+	.form-group textarea {
+	width: calc(100% - 22px); /* padding과 border를 제외한 width */
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box; /* padding과 border를 width에 포함 */
+}
+
+.form-group textarea {
+	resize: vertical;
+	height: 100px;
+}
+
+.form-group button {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: white;
+	background-color: #386fa5;
+	border: none;
+	border-radius: 25px; /* 둥근 모서리 */
+	cursor: pointer;
+	transition: background-color 0.3s;
+	text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.form-group button:hover {
+	background-color: #0056b3;
+}
+
+.add-image-button {
+	background-color: #5cb85c;
+	margin-top: 10px;
+}
+
+.add-image-button:hover {
+	background-color: #4cae4c;
+}
+    </style>
+</head>
+
+<body>
+<div layout:fragment="content">
+    <div class="form-container">
+        <h2>게시물 수정</h2>
+        <form id="postForm" th:action="@{/interiorboard/interiorboardedit/{id}(id=${board.id})}" method="post" enctype="multipart/form-data">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+            <div class="form-group">
+                <label for="subject">제목</label>
+                <input type="text" id="subject" name="subject" th:value="${board.subject}" required>
+            </div>
+            <div>
+                <label for="content" class="custom-font">내용</label>
+                <textarea id="summernote" name="content" required th:utext="${board.content}"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">수정</button>
+            </div>
+            <input type="hidden" id="imageURL" name="imageURL" th:value="${#lists.isEmpty(board.imageUrls) ? '' : board.imageUrls[0]}">
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                height: 300,
+                lang: 'ko-KR',
+                focus: true,
+                toolbar: [
+                    ['fontname', ['fontname']],
+                    ['fontsize', ['fontsize']],
+                    ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+                    ['color', ['forecolor', 'color']],
+                    ['table', ['table']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']],
+                    ['insert', ['picture', 'link', 'video']],
+                    ['view', ['codeview', 'fullscreen', 'help']]
+                ],
+                callbacks: {
+                    onImageUpload: function(files) {
+                        for (let i = 0; i < files.length; i++) {
+                            uploadSummernoteImageFile(files[i], this);
+                        }
+                    }
+                }
+            });
+
+            function uploadSummernoteImageFile(file, editor) {
+                let data = new FormData();
+                data.append("file", file);
+                var csrfToken = $('#postForm input[name="_csrf"]').val();
+                data.append("_csrf", csrfToken);
+                $.ajax({
+                    url: "/uploadImage",
+                    type: "POST",
+                    data: data,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        const jsonResponse = JSON.parse(response);
+                        if (jsonResponse.url) {
+                            $(editor).summernote('insertImage', jsonResponse.url);
+                            $('#imageURL').val(jsonResponse.url); // 업로드된 이미지 URL을 hidden 필드에 저장
+                        } else {
+                            alert("이미지 URL을 가져오지 못했습니다. 다시 시도해주세요.");
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error("Upload failed: ", textStatus, errorThrown);
+                        alert("이미지 업로드에 실패했습니다. 다시 시도해주세요.");
+                    }
+                });
+            }
+
+            $('#postForm').on('submit', function(e) {
+                e.preventDefault();
+                var content = $('#summernote').summernote('code');
+                $('#summernote').val(content);
+
+                var formData = new FormData(this);
+
+                var csrfToken = $('#postForm input[name="_csrf"]').val();
+                formData.append("_csrf", csrfToken);
+
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        alert('게시물이 성공적으로 수정되었습니다.');
+                        window.location.href = '/interiorboard/list';
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        alert('게시물 수정에 실패했습니다.');
+                        console.error(textStatus, errorThrown);
+                    }
+                });
+            });
+        });
+    </script>
+</div>
+</body>
+</html>

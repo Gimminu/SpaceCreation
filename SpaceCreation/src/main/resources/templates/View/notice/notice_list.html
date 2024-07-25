@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout/layout}">
+
+<head>
+    <title>공지사항</title>
+    <style>
+        .page_tits.notice {
+            width: 50%;
+            margin: 30px;
+            margin-left: 0px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: white;
+        }
+
+        .page_tits.notice h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .page_tits.notice .path {
+            color: #666;
+        }
+
+        .content.notice {
+            width: 80%;
+            background-color: #ffffff;
+            padding: 100px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin: 0 auto; /* 중앙 정렬을 위한 마진 */
+        }
+
+        .search_box.notice {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search_box.notice select, .search_box.notice input {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search_box.notice button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ff5733;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search_box.notice button:hover {
+            background-color: #e14e2d;
+        }
+
+        .tb.notice {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            padding: 0;
+        }
+
+        .tb.notice th, .tb.notice td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tb.notice th {
+            background-color: #f3f3f3;
+            font-weight: bold;
+        }
+
+        .tb.notice tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .tb.notice colgroup col {
+            width: 100%;
+        }
+
+        .btn_set.notice {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .btn_set.notice a {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #1A1C20;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn_set.notice a:hover {
+            background-color: #333;
+        }
+
+        .bt_search.notice {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ff5733;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .bt_search.notice:hover {
+            background-color: #e14e2d;
+        }
+    </style>
+</head>
+<body class="notice">
+<div layout:fragment="content">
+    <div class="page_tits notice">
+    </div>
+    <div class="content notice">
+        <h1>공지사항</h1>
+        <hr>
+        <section>
+            <!-- 검색 -->
+            <div class="search_box notice">
+                <form id="searchForm" th:action="@{/notice/list(orderby=${orderby})}"
+                      role="search" autocomplete="off">
+                    <div class="sch_group fl">
+                        <select title="검색 유형 선택" name="mode">
+                            <option value="1" th:selected="${selectedMode == '1'}">전체 검색</option>
+                            <option value="2" th:selected="${selectedMode == '2'}">제목</option>
+                            <option value="3" th:selected="${selectedMode == '3'}">내용</option>
+                        </select>
+                        <input type="text" name="keyword" placeholder="키워드를 입력해 주세요." th:value="${keyword}"/>
+                        <button type="submit" class="bt_search notice"><i class="fas fa-search"></i><span
+                                class="skip_info">검색</span></button>
+                    </div>
+                </form>
+            </div>
+
+            <table class="tb notice">
+                <colgroup>
+                    <col style="width:10%;"/>
+                    <col style="width:68%;"/>
+                    <col style="width:15%;"/>
+                    <col style="width:10%;"/>
+                    <col style="width:7%;"/>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>등록일</th>
+                    <th>조회수</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="posts : ${posts}">
+                    <td th:text="${posts.id}"></td>
+                    <td><a th:href="@{|/notice/detail/${posts.id}|}" th:text="${posts.subject}"></a></td>
+                    <td th:text="${#temporals.format(posts.createDate, 'yyyy-MM-dd')}"></td>
+                    <td th:text="${posts.view}"></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p class="btn_set notice">
+                <a th:href="@{/notice/list}" class="btns btn_st3 btn_mid">전체 보기</a>
+                <a th:href="@{/}" class="btns btn_st3 btn_mid">홈으로</a>
+                <a th:if="${#authentication.getAuthorities().toArray()[0]?.getAuthority() == 'ROLE_ADMIN'}" th:href="@{/notice/create}" class="btns btn_st3 btn_mid">글쓰기</a>
+            </p>
+            <div th:if="${!posts.isEmpty()}">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"
+                        th:classappend="${!posts.hasPrevious} ? 'disabled'"><a
+                            class="page-link"
+                            th:href="@{|?page=${posts.number-1}&keyword=${keyword}&orderby=${orderby}&poster=${poster}|}">
+                        <span>이전</span>
+                    </a></li>
+                    <li th:each="page: ${#numbers.sequence(1, posts.totalPages)}"
+                        th:classappend="${page == posts.number + 1} ? 'active'"
+                        class="page-item"><a th:text="${page}" class="page-link"
+                                             th:href="@{|?page=${page-1}&keyword=${keyword}&orderby=${orderby}&poster=${poster}|}"></a>
+                    </li>
+                    <li class="page-item"
+                        th:classappend="${!posts.hasNext} ? 'disabled'"><a
+                            class="page-link"
+                            th:href="@{|?page=${posts.number+1}&keyword=${keyword}&orderby=${orderby}&poster=${poster}|}">
+                        <span>다음</span>
+                    </a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+</html>

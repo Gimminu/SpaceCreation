@@ -1,8 +1,11 @@
 <!Doctype html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<th:block th:replace="~{/layout/fragments/header :: headerLayout}"></th:block>
+<th:block th:replace="~{layout/fragments/header :: headerLayout}"></th:block>
 <body>
+<th:block th:replace="~{layout/fragments/navbar}"></th:block>
+<div class="body-content" id="wrap">
     <th:block layout:fragment="content"></th:block>
+</div>
 </body>
-<th:block th:replace="~{/layout/fragments/footer :: footerLayout}"></th:block>
+<th:block th:replace="~{layout/fragments/footer :: footerLayout}"></th:block>
 </html>

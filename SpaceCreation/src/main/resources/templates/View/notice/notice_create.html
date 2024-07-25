@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout/layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항 생성</title>
+    <style>
+
+        .content.notice-create {
+            width: 80%;
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin: 20px auto;
+        }
+
+        .content.notice-create h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .content.notice-create p {
+            margin: 15px 0;
+        }
+
+        .content.notice-create input[type="text"], .content.notice-create textarea, .content.notice-create input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .content.notice-create textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .content.notice-create input[type="submit"] {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ff5733;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .content.notice-create input[type="submit"]:hover {
+            background-color: #e14e2d;
+        }
+
+        .btn_set.notice-create {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .btn_set.notice-create a {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #1A1C20;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn_set.notice-create a:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body class="notice-create">
+<div layout:fragment="content">
+    <div class="content notice-create">
+        <h1>공지사항 작성</h1>
+        <form action="/notice/create" method="post" enctype="multipart/form-data">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+            <p>제목 : <input type="text" name="subject"></p>
+            <p>내용 : <textarea name="content"></textarea></p>
+            <p>사진 : <input type="file" name="file" accept="image/*"></p>
+            <p><input type="submit" value="제출"></p>
+        </form>
+        <p class="btn_set notice-create">
+            <a href="/notice/list">목록으로</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>

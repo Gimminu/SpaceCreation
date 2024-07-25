@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인테리어 게시판</title>
+    <link rel="stylesheet" href="/css/interiorboardliststyle.css">
+    <link href="/css/phoneix/prism-okaidia.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="/css/phoneix/simplebar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="/css/phoneix/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
+    <link href="/css/phoneix/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+    <link href="/css/phoneix/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
+    <link href="/css/phoneix/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+    <style>
+        body, .navbar{
+            font-family: 'WavvePADO-Regular';
+        }
+        footer h1, h3, h4 {
+            color: rgb(255,255,255);
+        }
+        .pagination{
+            font-family: 'WavvePADO-Regular';
+        }
+    </style>
+</head>
+<body>
+<div layout:fragment="content">
+    <section class="filters">
+        <h1>인테리어 게시판</h1>
+        <div class="filter-buttons">
+            <div class="filter-button">
+                <span id="filterText">[[${sort}]]</span> <span class="dropdown-indicator">&#9662;</span>
+                <div class="filter-dropdown">
+                    <a th:href="@{/interiorboard/list(sort='최신순', page=${page})}" onclick="updateFilterText('최신순')">최신순</a>
+                    <a th:href="@{/interiorboard/list(sort='조회순', page=${page})}" onclick="updateFilterText('조회순')">조회순</a>
+                    <a th:href="@{/interiorboard/list(sort='인기순', page=${page})}" onclick="updateFilterText('인기순')">인기순</a>
+                </div>
+            </div>
+            <!-- 검색 바 추가 -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="검색어를 입력하세요" onkeyup="filterProjects()">
+            </div>
+            <a sec:authorize="isAuthenticated"  th:href="@{/interiorboard/interiorboardform}" class="register-button">게시물 등록</a>
+        </div>
+    </section>
+    <div class="container-medium">
+        <main class="project-list" id="projectList">
+            <a th:each="board : ${boardPage.getContent()}"
+               th:href="@{/interiorboard/interiorboarddetail/{id}(id=${board.id})}"
+               class="project-item">
+                <img th:src="${#lists.isEmpty(board.imageUrls) ? '/images/logo2.png' : board.imageUrls[0]}"
+                     alt="프로젝트 이미지">
+                <div class="text-container">
+                    <h2 th:text="${board.subject}">프로젝트 제목</h2>
+                    <div class="additional-info">
+                        <p>등록일시: <span th:text="${#temporals.format(board.createDate, 'yyyy-MM-dd HH:mm')}"></span></p>
+                    </div>
+                </div>
+            </a>
+        </main>
+    </div>
+    <!-- 페이징 버튼 -->
+    <div class="pagination flex-center">
+        <ul>
+            <li th:if="${boardPage.hasPrevious()}">
+                <a th:href="@{/interiorboard/list(sort=${sort}, page=${boardPage.number - 1})}">이전</a>
+            </li>
+            <li th:each="i : ${#numbers.sequence(1, boardPage.totalPages)}">
+                <a th:href="@{/interiorboard/list(sort=${sort}, page=${i - 1})}" th:text="${i}" th:class="${boardPage.number == i - 1} ? 'active' : ''"></a>
+            </li>
+            <li th:if="${boardPage.hasNext()}">
+                <a th:href="@{/interiorboard/list(sort=${sort}, page=${boardPage.number + 1})}">다음</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function updateFilterText(text) {
+        document.getElementById('filterText').innerText = text;
+    }
+
+    function filterProjects() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+        const projectItems = document.querySelectorAll('.project-item');
+        projectItems.forEach(item => {
+            const title = item.querySelector('.text-container h2').innerText.toLowerCase();
+            const content = item.querySelector('.text-container .additional-info').innerText.toLowerCase();
+            if (title.includes(searchInput) || content.includes(searchInput)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+    <script>
+        function summarizeContent(content, length) {
+            var div = document.createElement("div");
+            div.innerHTML = content;
+            var text = div.textContent || div.innerText || "";
+
+            if (text.length > length) {
+                text = text.substring(0, length) + "...";
+            }
+
+            return text;
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            var posts = document.querySelectorAll(".board-item p");
+
+            posts.forEach(function(post) {
+                var content = post.getAttribute("data-content");
+                var summary = summarizeContent(content, 100);
+                post.textContent = summary;
+            });
+        });
+    </script>
+</head>
+<body>
+<div layout:fragment="content" class="container-fluid">
+    <div class="hero-section text-center position-relative">
+        <div class="overlay"></div>
+        <div class="hero-content position-absolute top-50 start-50 translate-middle">
+            <h1>당신의 공간<br>우리들의 디자인</h1>
+            <p>다양한 사람들과 많은 정보를 주고 받는 이 곳<br>당신의 공간을 아름답게 바꿔보세요</p>
+            <a href="/about" class="btn btn-custom-orange custom-dashborder pd-2">더 알아보기</a>
+        </div>
+    </div>
+    <div class="content-section bg-white">
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="image-grid">
+                        <img src="images/interior-1.png" class="img-fluid" alt="Interior Design">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="board-section">
+                        <div class="board-header-container">
+                            <h2 class="board-header">정보게시판</h2>
+                            <a href="/interiorboard/list" class="btn btn-custom-more">+ 더보기</a>
+                        </div>
+                        <div th:each="post, iterStat : ${InteriorBoard}" th:if="${iterStat.count <= 4}">
+                            <a th:href="@{/interiorboard/interiorboarddetail/{id}(id=${post.id})}" class="board-item-link">
+                                <div class="board-item">
+                                    <h3 th:text="${post.subject}">게시글 제목</h3>
+                                    <!-- 원본 내용을 data-content 속성에 저장 -->
+                                    <p th:attr="data-content=${post.content}">게시글 요약 내용</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="faq-section">
+        <div class="faq-text">
+            <h2 style="color: #35414b;">도움이 필요하신가요?</h2>
+            <p style="color: #35414b;">자주 묻는 질문(FAQ)에서<br>답을 찾아보세요!</p>
+            <a href="/faq" class="custom-faq-button">자세히 보기</a>
+        </div>
+        <div class="faq-image">
+            <img src="/images/FAQ.png" alt="FAQ Image">
+        </div>
+    </div>
+</div>
+</body>
+</html>
