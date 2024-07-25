@@ -16,7 +16,7 @@
             justify-content: center;
             height: 100vh;
             width: 100%;
-        }
+        }	
 
         .content {
             width: 1000px;
@@ -82,7 +82,7 @@
         <img th:src="${notice.image1}">
         <hr>
         <div class="btn_set">
-          <!--  <sec:authorize access="hasRole('ROLE_ADMIN')" > <a th:href="@{|/notice/update/${notice.id}|}">수정</a></sec:authorize> -->
+           <sec:authorize access="hasRole('ROLE_ADMIN')" > <a th:href="@{|/notice/update/${notice.id}|}">수정</a></sec:authorize>
            <sec:authorize access="hasRole('ROLE_ADMIN')" > <a th:href="@{|/notice/delete/${notice.id}|}">삭제</a></sec:authorize>
         </div>
     </div>

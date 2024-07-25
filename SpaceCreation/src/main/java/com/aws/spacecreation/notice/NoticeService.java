@@ -48,8 +48,13 @@ public class NoticeService {
 	
 	public void create(Notice notice, MultipartFile file) throws IOException {
 		
-		
+		Optional<Notice> temp= noticeRepository.findById(notice.getId());
+		Notice notice1 = temp.get();
+		if(!file.isEmpty())
 		notice.setImage1(s3Service.uploadFile(file));
+		else {
+			notice.setImage1(notice1.getImage1());
+		}
 		
 		String pc = notice.getContent();
 		pc = pc.replaceAll("(?i)<br\\s*/?>", "\n");

@@ -96,8 +96,8 @@ public class NoticeController {
 	
 	@GetMapping("/update/{id}")
 	public String update(Model model, @PathVariable ("id") Integer id) {
-		
-		model.addAttribute("Notice", noticeService.getNotice(id));
+		Notice notice = noticeService.getNotice(id);
+		model.addAttribute("notice", notice );
 
 		return "view/notice/notice_update";
 	}
@@ -107,7 +107,7 @@ public class NoticeController {
 			@RequestParam("file") MultipartFile file) throws IOException {
 		
 		noticeService.create(notice,file);
-		return "redirect:/Notice/list";
+		return "redirect:/notice/list";
 	}
 	
 	
