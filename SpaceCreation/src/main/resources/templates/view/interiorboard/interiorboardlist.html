@@ -28,26 +28,27 @@
         <h1>인테리어 게시판</h1>
         <div class="filter-buttons">
             <div class="filter-button">
-                <span id="filterButtonText">최신순</span>
-                <span class="dropdown-indicator">&#9662;</span>
+                <span id="filterText">[[${sort}]]</span> <span class="dropdown-indicator">&#9662;</span>
                 <div class="filter-dropdown">
-                    <table>
-                        <tr><td><a href="/interiorboard/list?sort=latest" onclick="updateFilterText('최신순')">최신순</a></td></tr>
-                        <tr><td><a href="/interiorboard/list?sort=views" onclick="updateFilterText('조회순')">조회순</a></td></tr>
-                        <tr><td><a href="/interiorboard/list?sort=likes" onclick="updateFilterText('인기순')">인기순</a></td></tr>
-                    </table>
+                    <a th:href="@{/interiorboardlist(sort='최신순', page=${page})}" onclick="updateFilterText('최신순')">최신순</a>
+                    <a th:href="@{/interiorboardlist(sort='조회순', page=${page})}" onclick="updateFilterText('조회순')">조회순</a>
+                    <a th:href="@{/interiorboardlist(sort='인기순', page=${page})}" onclick="updateFilterText('인기순')">인기순</a>
                 </div>
             </div>
+            <!-- 검색 바 추가 -->
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="검색어를 입력하세요" onkeyup="filterProjects()">
             </div>
-            <a sec:authorize="isAuthenticated" href="/interiorboard/interiorboardform" class="register-button">게시물 등록</a>
+            <a sec:authorize="isAuthenticated"  th:href="@{/interiorboardform}" class="register-button">게시물 등록</a>
         </div>
     </section>
     <div class="container-medium">
         <main class="project-list" id="projectList">
-            <a th:each="board : ${boards}" th:href="@{/interiorboard/interiorboarddetail/{id}(id=${board.id})}" class="project-item">
-                <img th:src="${#lists.isEmpty(board.imageUrls) ? '/images/logo2.png' : board.imageUrls[0]}" alt="프로젝트 이미지">
+            <a th:each="board : ${boardPage.getContent()}"
+               th:href="@{/interiorboarddetail/{id}(id=${board.id})}"
+               class="project-item">
+                <img th:src="${#lists.isEmpty(board.imageUrls) ? '/images/logo2.png' : board.imageUrls[0]}"
+                     alt="프로젝트 이미지">
                 <div class="text-container">
                     <h2 th:text="${board.subject}">프로젝트 제목</h2>
                     <div class="additional-info">
@@ -57,31 +58,40 @@
             </a>
         </main>
     </div>
+    <!-- 페이징 버튼 -->
+    <div class="pagination">
+        <ul>
+            <li th:if="${boardPage.hasPrevious()}">
+                <a th:href="@{/interiorboardlist(sort=${sort}, page=${boardPage.number - 1})}">이전</a>
+            </li>
+            <li th:each="i : ${#numbers.sequence(1, boardPage.totalPages)}">
+                <a th:href="@{/interiorboardlist(sort=${sort}, page=${i - 1})}" th:text="${i}" th:class="${boardPage.number == i - 1} ? 'active' : ''"></a>
+            </li>
+            <li th:if="${boardPage.hasNext()}">
+                <a th:href="@{/interiorboardlist(sort=${sort}, page=${boardPage.number + 1})}">다음</a>
+            </li>
+        </ul>
+    </div>
 </div>
-<script>
-    console.log("Script loaded and running");
 
+<script>
     function updateFilterText(text) {
-        document.getElementById('filterButtonText').innerText = text;
-        console.log("Filter text updated to: " + text);
+        document.getElementById('filterText').innerText = text;
     }
 
     function filterProjects() {
-        console.log("filterProjects function called");
         const searchInput = document.getElementById('searchInput').value.toLowerCase();
         const projectItems = document.querySelectorAll('.project-item');
         projectItems.forEach(item => {
             const title = item.querySelector('.text-container h2').innerText.toLowerCase();
-            const dateInfo = item.querySelector('.text-container .additional-info p').innerText.toLowerCase();
-            if (title.includes(searchInput) || dateInfo.includes(searchInput)) {
+            const content = item.querySelector('.text-container .additional-info').innerText.toLowerCase();
+            if (title.includes(searchInput) || content.includes(searchInput)) {
                 item.style.display = '';
             } else {
                 item.style.display = 'none';
             }
         });
     }
-
-    document.getElementById('searchInput').addEventListener('keyup', filterProjects);
 </script>
 </body>
 </html>

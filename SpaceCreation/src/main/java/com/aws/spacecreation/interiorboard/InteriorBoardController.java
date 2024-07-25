@@ -8,6 +8,7 @@ import com.aws.spacecreation.user.SiteUser;
 import com.aws.spacecreation.user.UserRepository;
 import com.aws.spacecreation.user.UserSecuritySerivce;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -131,21 +132,15 @@ public class InteriorBoardController {
         return "redirect:/interiorboard/list";
     }
 
+
     @GetMapping("/list")
-    public String getInteriorBoardList(@RequestParam(value = "sort", required = false, defaultValue = "latest") String sort, Model model) {
-        List<InteriorBoard> boards;
-        switch (sort) {
-            case "views":
-                boards = interiorBoardService.getBoardsSortedByViews();
-                break;
-            case "likes":
-                boards = interiorBoardService.getBoardsSortedByLikes();
-                break;
-            default:
-                boards = interiorBoardService.getBoardsSortedByDate();
-                break;
-        }
-        model.addAttribute("boards", boards);
+    public String getInteriorBoardList(
+            @RequestParam(value = "sort", required = false, defaultValue = "최신순") String sort,
+            @RequestParam(value = "page", required = false, defaultValue = "0") int page,
+            Model model) {
+        int size = 8; // 한 페이지에 보여줄 게시물 수
+        Page<InteriorBoard> boardPage = interiorBoardService.getBoards(page, size, sort);
+        model.addAttribute("boardPage", boardPage);
         model.addAttribute("sort", sort);
         return "view/interiorboard/interiorboardlist";
     }
