@@ -75,7 +75,7 @@
             <a href="/notice/list">목록으로</a>
         </div>
         <h1 th:text="${notice.subject}"></h1>
-        조회수 : <a class="post-content" th:text="${notice.view}"></a>
+        <div class="date" th:text="'조회수 : ' + ${notice.view}"></div>
         <div class="date" th:text="${#temporals.format(notice.createDate, 'yyyy-MM-dd HH:mm')}"></div>
         <hr>
         <div class="post-content" th:text="${notice.content}"></div>
